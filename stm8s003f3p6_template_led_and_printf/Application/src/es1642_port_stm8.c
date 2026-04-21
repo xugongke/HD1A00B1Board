@@ -118,8 +118,6 @@ static void es1642_on_frame(es1642_handle_t *handle, const es1642_frame_t *frame
       }
     }
 
-    /* 非必需命令可先空应答，后面按你的业务继续细化 */
-    (void)ES1642_SendAckEmpty(handle, frame->cmd);
 }
 
 static void es1642_on_error(es1642_handle_t *handle, es1642_status_t status, void *user_arg)
