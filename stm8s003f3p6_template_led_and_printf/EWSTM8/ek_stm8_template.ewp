@@ -1651,6 +1651,12 @@
             <name>$PROJ_DIR$\..\Application\src\ek_uart.c</name>
         </file>
         <file>
+            <name>$PROJ_DIR$\..\Application\src\es1642.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\Application\src\es1642_port_stm8.c</name>
+        </file>
+        <file>
             <name>$PROJ_DIR$\..\Application\src\main.c</name>
         </file>
         <file>

@@ -1,32 +1,34 @@
 #include "ek_gpio.h"
-#include "ek_tim.h"
-
-/* led control variable */
-ek_led_handle_typedef ek_led_handle = {0};
-
-/* led control function */
-void ek_systick_led(void)
+void board_outputs_all_off(void)
 {
-    /* led frequent */
-    if(ek_led_handle.timer == 0)
-    {
-        /* start led timer, and control led state */
-        ek_led_handle.timer = EK_LED_PERIOD;
-        ek_led_handle.flag = !ek_led_handle.flag;
-        
-        /* led off */
-        if(ek_led_handle.flag) ek_led_of;
-        /* led on */
-        else                   ek_led_on;
-    }
+    BOARD_OUT1_OFF();
+    BOARD_OUT2_OFF();
+    BOARD_OUT3_OFF();
 }
 
-/* gpio init */
+uint8_t board_input1_read(void)
+{
+    return (GPIO_ReadInputPin(BOARD_IN1_PORT, BOARD_IN1_PIN) != RESET) ? 1U : 0U;
+}
+
+uint8_t board_input2_read(void)
+{
+    return (GPIO_ReadInputPin(BOARD_IN2_PORT, BOARD_IN2_PIN) != RESET) ? 1U : 0U;
+}
+
 void ek_gpio_init(void)
 {
-    /* gpio init for led */
-    GPIO_Init(EK_LED_PORT, EK_LED_PIN, GPIO_MODE_OUT_PP_HIGH_SLOW);
-    
-    /* default, led off */
-    ek_led_of;
+    /* outputs */
+    GPIO_Init(BOARD_OUT1_PORT, BOARD_OUT1_PIN, GPIO_MODE_OUT_PP_LOW_FAST);
+    GPIO_Init(BOARD_OUT2_PORT, BOARD_OUT2_PIN, GPIO_MODE_OUT_PP_LOW_FAST);
+    GPIO_Init(BOARD_OUT3_PORT, BOARD_OUT3_PIN, GPIO_MODE_OUT_PP_LOW_FAST);
+    board_outputs_all_off();
+
+    /* digital inputs */
+    GPIO_Init(BOARD_IN1_PORT, BOARD_IN1_PIN, GPIO_MODE_IN_PU_NO_IT);
+    GPIO_Init(BOARD_IN2_PORT, BOARD_IN2_PIN, GPIO_MODE_IN_PU_NO_IT);
+
+    /* ADC pins keep input floating */
+    GPIO_Init(BOARD_ADC1_PORT, BOARD_ADC1_PIN, GPIO_MODE_IN_FL_NO_IT);
+    GPIO_Init(BOARD_ADC2_PORT, BOARD_ADC2_PIN, GPIO_MODE_IN_FL_NO_IT);
 }

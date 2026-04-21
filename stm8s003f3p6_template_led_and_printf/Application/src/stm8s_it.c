@@ -1,6 +1,7 @@
 #include "stm8s_it.h"
 #include "ek_gpio.h"
 #include "ek_tim.h"
+#include "es1642_port_stm8.h"
 
 /** @addtogroup Template_Project
   * @{
@@ -309,6 +310,7 @@ INTERRUPT_HANDLER(TIM1_CAP_COM_IRQHandler, 12)
     /* In order to detect unexpected events during development,
        it is recommended to set a breakpoint on the following instruction.
     */
+    es1642_uart_rx_irq_handler();
  }
 #endif /* (STM8S208) || (STM8S207) || (STM8S103) || (STM8S001) || (STM8S903) || (STM8AF62Ax) || (STM8AF52Ax) */
 

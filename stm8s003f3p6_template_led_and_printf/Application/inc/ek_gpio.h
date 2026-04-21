@@ -3,26 +3,38 @@
 
 #include "stm8s.h"
 
-/* led port and pin */
-#define EK_LED_PORT     GPIOB
-#define EK_LED_PIN      GPIO_PIN_5
+#define BOARD_UART_TX_PORT          GPIOD
+#define BOARD_UART_TX_PIN           GPIO_PIN_5
+#define BOARD_UART_RX_PORT          GPIOD
+#define BOARD_UART_RX_PIN           GPIO_PIN_6
 
-/* led control, low level to light */
-#define ek_led_on       GPIO_WriteLow(EK_LED_PORT, EK_LED_PIN)
-#define ek_led_of       GPIO_WriteHigh(EK_LED_PORT, EK_LED_PIN)
+#define BOARD_ADC1_PORT             GPIOD
+#define BOARD_ADC1_PIN              GPIO_PIN_2
+#define BOARD_ADC2_PORT             GPIOD
+#define BOARD_ADC2_PIN              GPIO_PIN_3
 
-/* nms @1ms, the max value is 65535 */
-#define EK_LED_PERIOD   500
+#define BOARD_IN1_PORT              GPIOB
+#define BOARD_IN1_PIN               GPIO_PIN_5
+#define BOARD_IN2_PORT              GPIOC
+#define BOARD_IN2_PIN               GPIO_PIN_7
 
-typedef struct
-{
-    __IO uint16_t timer;
-    __IO uint8_t  flag;
-} ek_led_handle_typedef;
+#define BOARD_OUT1_PORT             GPIOC
+#define BOARD_OUT1_PIN              GPIO_PIN_4
+#define BOARD_OUT2_PORT             GPIOC
+#define BOARD_OUT2_PIN              GPIO_PIN_5
+#define BOARD_OUT3_PORT             GPIOC
+#define BOARD_OUT3_PIN              GPIO_PIN_6
 
-extern ek_led_handle_typedef ek_led_handle;
+#define BOARD_OUT1_ON()             GPIO_WriteHigh(BOARD_OUT1_PORT, BOARD_OUT1_PIN)
+#define BOARD_OUT1_OFF()            GPIO_WriteLow(BOARD_OUT1_PORT, BOARD_OUT1_PIN)
+#define BOARD_OUT2_ON()             GPIO_WriteHigh(BOARD_OUT2_PORT, BOARD_OUT2_PIN)
+#define BOARD_OUT2_OFF()            GPIO_WriteLow(BOARD_OUT2_PORT, BOARD_OUT2_PIN)
+#define BOARD_OUT3_ON()             GPIO_WriteHigh(BOARD_OUT3_PORT, BOARD_OUT3_PIN)
+#define BOARD_OUT3_OFF()            GPIO_WriteLow(BOARD_OUT3_PORT, BOARD_OUT3_PIN)
 
 void ek_gpio_init(void);
-void ek_systick_led(void);
+void board_outputs_all_off(void);
+uint8_t board_input1_read(void);
+uint8_t board_input2_read(void);
 
 #endif

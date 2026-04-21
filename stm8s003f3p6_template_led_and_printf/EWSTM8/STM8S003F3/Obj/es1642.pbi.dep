@@ -1,0 +1,9 @@
+es1642.pbi: E:\IARSTM8\stm8\inc\c\ysizet.h E:\IARSTM8\stm8\inc\c\ycheck.h \
+  E:\IARSTM8\stm8\inc\c\string.h E:\IARSTM8\stm8\inc\c\stdint.h \
+  E:\IARSTM8\stm8\inc\c\DLib_Threads.h E:\IARSTM8\stm8\inc\c\yvals.h \
+  E:\IARSTM8\stm8\inc\c\xencoding_limits.h \
+  E:\IARSTM8\stm8\inc\c\DLib_Product.h \
+  E:\IARSTM8\stm8\inc\c\DLib_Defaults.h E:\IARSTM8\stm8\inc\c\stddef.h \
+  E:\IARSTM8\stm8\inc\c\stdbool.h \
+  F:\Cubemx_Project\STM8XB\stm8s003f3p6_template_led_and_printf\EWSTM8\..\Application\inc\es1642.h \
+  F:\Cubemx_Project\STM8XB\stm8s003f3p6_template_led_and_printf\Application\src\es1642.c

@@ -7,10 +7,6 @@ __IO uint32_t ek_delay_tick = 0;
 void ek_soft_timer(void)
 {
     /* for led control */
-    if(ek_led_handle.timer)
-    {
-        ek_led_handle.timer--;
-    }
 }
 
 /* nms @1ms */
