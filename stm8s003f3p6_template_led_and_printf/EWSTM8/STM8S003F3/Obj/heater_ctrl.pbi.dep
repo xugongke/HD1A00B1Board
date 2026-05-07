@@ -1,5 +1,6 @@
-main.pbi: \
-  F:\Cubemx_Project\STM8XB\stm8s003f3p6_template_led_and_printf\Application\src\main.c \
+heater_ctrl.pbi: \
+  F:\Cubemx_Project\STM8XB\stm8s003f3p6_template_led_and_printf\Application\src\heater_ctrl.c \
+  F:\Cubemx_Project\STM8XB\stm8s003f3p6_template_led_and_printf\EWSTM8\..\Application\inc\heater_ctrl.h \
   F:\Cubemx_Project\STM8XB\stm8s003f3p6_template_led_and_printf\EWSTM8\..\Libraries\STM8S_StdPeriph_Driver\inc\stm8s.h \
   E:\IARSTM8\stm8\inc\c\stdint.h E:\IARSTM8\stm8\inc\c\ycheck.h \
   E:\IARSTM8\stm8\inc\c\yvals.h E:\IARSTM8\stm8\inc\c\DLib_Defaults.h \
@@ -26,13 +27,5 @@ main.pbi: \
   F:\Cubemx_Project\STM8XB\stm8s003f3p6_template_led_and_printf\EWSTM8\..\Libraries\STM8S_StdPeriph_Driver\inc\stm8s_uart1.h \
   F:\Cubemx_Project\STM8XB\stm8s003f3p6_template_led_and_printf\EWSTM8\..\Libraries\STM8S_StdPeriph_Driver\inc\stm8s_wwdg.h \
   E:\IARSTM8\stm8\inc\c\intrinsics.h \
-  F:\Cubemx_Project\STM8XB\stm8s003f3p6_template_led_and_printf\EWSTM8\..\Application\inc\ek_clk.h \
   F:\Cubemx_Project\STM8XB\stm8s003f3p6_template_led_and_printf\EWSTM8\..\Application\inc\ek_gpio.h \
-  F:\Cubemx_Project\STM8XB\stm8s003f3p6_template_led_and_printf\EWSTM8\..\Application\inc\ek_tim.h \
-  F:\Cubemx_Project\STM8XB\stm8s003f3p6_template_led_and_printf\EWSTM8\..\Application\inc\ek_uart.h \
-  E:\IARSTM8\stm8\inc\c\stdio.h E:\IARSTM8\stm8\inc\c\ysizet.h \
-  E:\IARSTM8\stm8\inc\c\ystdio.h \
-  F:\Cubemx_Project\STM8XB\stm8s003f3p6_template_led_and_printf\EWSTM8\..\Application\inc\es1642_port_stm8.h \
-  F:\Cubemx_Project\STM8XB\stm8s003f3p6_template_led_and_printf\EWSTM8\..\Application\inc/es1642.h \
-  E:\IARSTM8\stm8\inc\c\stdbool.h E:\IARSTM8\stm8\inc\c\stddef.h \
-  F:\Cubemx_Project\STM8XB\stm8s003f3p6_template_led_and_printf\EWSTM8\..\Application\inc\heater_ctrl.h
+  F:\Cubemx_Project\STM8XB\stm8s003f3p6_template_led_and_printf\EWSTM8\..\Application\inc\ek_tim.h

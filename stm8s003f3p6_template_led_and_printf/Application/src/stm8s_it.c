@@ -241,9 +241,12 @@ INTERRUPT_HANDLER(TIM1_CAP_COM_IRQHandler, 12)
   */
  INTERRUPT_HANDLER(TIM2_UPD_OVF_BRK_IRQHandler, 13)
  {
-  /* In order to detect unexpected events during development,
-     it is recommended to set a breakpoint on the following instruction.
-  */
+    /* software timer */
+    ek_soft_timer();
+    /* counter for delay function */
+    ek_delay_counter();
+    /* clear interrupt pending bit */
+    TIM2_ClearITPendingBit(TIM2_IT_UPDATE);
  }
 
 /**
@@ -455,13 +458,6 @@ INTERRUPT_HANDLER(TIM6_UPD_OVF_TRG_IRQHandler, 23)
   /* In order to detect unexpected events during development,
      it is recommended to set a breakpoint on the following instruction.
   */
-   
-    /* software timer */
-    ek_soft_timer();
-    /* counter for delay function */
-    ek_delay_counter();
-    /* clear interrupt pending bit */
-    TIM4_ClearITPendingBit(TIM4_IT_UPDATE);
  }
 #endif /* (STM8S903) || (STM8AF622x)*/
 

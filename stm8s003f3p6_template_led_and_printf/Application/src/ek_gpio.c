@@ -4,6 +4,7 @@ void board_outputs_all_off(void)
     BOARD_OUT1_OFF();
     BOARD_OUT2_OFF();
     BOARD_OUT3_OFF();
+    ES1642_RES_OFF();
 }
 
 uint8_t board_input1_read(void)
@@ -22,6 +23,7 @@ void ek_gpio_init(void)
     GPIO_Init(BOARD_OUT1_PORT, BOARD_OUT1_PIN, GPIO_MODE_OUT_PP_LOW_FAST);
     GPIO_Init(BOARD_OUT2_PORT, BOARD_OUT2_PIN, GPIO_MODE_OUT_PP_LOW_FAST);
     GPIO_Init(BOARD_OUT3_PORT, BOARD_OUT3_PIN, GPIO_MODE_OUT_PP_LOW_FAST);
+    GPIO_Init(ES1642_RES_PORT, ES1642_RES_PIN, GPIO_MODE_OUT_PP_LOW_FAST);
     board_outputs_all_off();
 
     /* digital inputs */

@@ -2,6 +2,15 @@
 #include "es1642_port_stm8.h"
 #include "ek_uart.h"
 #include "ek_gpio.h"
+#include "heater_ctrl.h"
+
+#define MASTER_CMD_SET_ADDR    0x01  /* Ö÷»úÃüÁî: ÉèÖÃÍ¨ĞÅµØÖ· */
+#define MASTER_CMD_HEATER_ON   0x02  /* Ö÷»úÃüÁî: Æô¶¯¼ÓÈÈ */
+#define MASTER_CMD_HEATER_OFF  0x03  /* Ö÷»úÃüÁî: Í£Ö¹¼ÓÈÈ */
+#define MASTER_CMD_READ_STATUS 0x04  /* Ö÷»úÃüÁî: ¶ÁÈ¡´Ó»ú×´Ì¬ */
+
+#define SLAVE_RESULT_OK        0x01
+#define SLAVE_RESULT_FAIL      0x00
 
 static es1642_handle_t g_es1642;
 static uint8_t mac_addr[ES1642_ADDR_LEN];
@@ -9,134 +18,122 @@ static uint8_t mac_addr[ES1642_ADDR_LEN];
 static int32_t stm8_es1642_write(const uint8_t *data, uint16_t len, void *user_arg)
 {
     (void)user_arg;
-    if ((data == 0) || (len == 0U))
-    {
-        return 0;
-    }
-
+    if ((data == 0) || (len == 0U)) { return 0; }
     ek_uart_send_bytes(data, len);
     return (int32_t)len;
 }
 
-static void es1642_apply_user_command(const uint8_t *data, uint16_t len)
-{
-    if ((data == 0) || (len == 0U))
-    {
-        return;
-    }
-
-    switch (data[0])
-    {
-    case 0x01:
-        if (len >= 2U)
-        {
-            if (data[1]) BOARD_OUT1_ON(); else BOARD_OUT1_OFF();
-        }
-        break;
-
-    case 0x02:
-        if (len >= 2U)
-        {
-            if (data[1]) BOARD_OUT2_ON(); else BOARD_OUT2_OFF();
-        }
-        break;
-
-    case 0x03:
-        if (len >= 2U)
-        {
-            if (data[1]) BOARD_OUT3_ON(); else BOARD_OUT3_OFF();
-        }
-        break;
-
-    default:
-        break;
-    }
-}
+static es1642_search_notify_t notify;
+static es1642_recv_data_t recv_data;
 
 static void es1642_on_frame(es1642_handle_t *handle, const es1642_frame_t *frame, void *user_arg)
 {
-    es1642_status_t status; 
-    uint8_t src_addr[6] = {0x12,0x34,0x56,0x78,0x9A,0xBC};
-    if ((handle == 0) || (frame == 0))
-    {
-        return;
-    }
-    
-    /* æ ¹æ®æŒ‡ä»¤å­—å¤„ç†ä¸åŒç±»å‹çš„å“åº” */
+    es1642_status_t status;
+    (void)user_arg;
+    if ((handle == 0) || (frame == 0)) { return; }
+
     switch (frame->cmd)
     {
-      case ES1642_CMD_RECV_DATA:
-      {
-        es1642_recv_data_t recv_data;
+    case ES1642_CMD_RECV_DATA:
+    {
         status = ES1642_DecodeRecvData(frame, &recv_data);
         if (status == ES1642_STATUS_OK)
         {
-          if(recv_data.user_data_len == 6)
-          {
-            //è®¾ç½®é€šä¿¡åœ°å€
-            ES1642_SendSetAddr(handle,recv_data.user_data);
-          }
+            if (recv_data.user_data_len >= 2U)
+            {
+                uint8_t cmd = recv_data.user_data[0];
+                uint8_t data_len = recv_data.user_data[1];
+                const uint8_t *data = &recv_data.user_data[2];
+                if (recv_data.user_data_len >= (2U + data_len))
+                {
+                    switch (cmd)
+                    {
+                    case MASTER_CMD_SET_ADDR:
+                        if (data_len == ES1642_ADDR_LEN)
+                        {
+                            ES1642_SendSetAddr(handle, data);
+                        }
+                        break;
+                    case MASTER_CMD_HEATER_ON:
+                        /* Ö÷»úÃüÁîÆô¶¯¼ÓÈÈ: ÉèÖÃÈ«¾ÖÃüÁî±êÖ¾ */
+                        g_master_cmd = 1;
+                        /* »Ø¸´Ö÷»ú: [cmd][len][result] */
+                        {
+                            uint8_t reply[3] = {MASTER_CMD_HEATER_ON, 0x01, SLAVE_RESULT_OK};
+                            (void)ES1642_SendData(handle, recv_data.src_addr, reply, 3U, 0U, FALSE);
+                        }
+                        break;
+                    case MASTER_CMD_HEATER_OFF:
+                        /* Ö÷»úÃüÁîÍ£Ö¹¼ÓÈÈ: Çå³ıÈ«¾ÖÃüÁî±êÖ¾ */
+                        g_master_cmd = 0;
+                        /* »Ø¸´Ö÷»ú: [cmd][len][result] */
+                        {
+                            uint8_t reply[3] = {MASTER_CMD_HEATER_OFF, 0x01, SLAVE_RESULT_OK};
+                            (void)ES1642_SendData(handle, recv_data.src_addr, reply, 3U, 0U, FALSE);
+                        }
+                        break;
+                    case MASTER_CMD_READ_STATUS:
+                        /* Ö÷»úÇëÇó¶ÁÈ¡´Ó»ú×´Ì¬: ´ò°üÎÂ¶È+µçÑ¹+×´Ì¬×Ö½Ú»Ø¸´ */
+                        {
+                            /* »Ø¸´¸ñÊ½: [cmd=0x04][len=0x04][temp][vol_lo][vol_hi][state] */
+                            uint8_t reply[2 + 4];
+                            reply[0] = MASTER_CMD_READ_STATUS;
+                            reply[1] = 0x04;  /* Êı¾İ³¤¶È: 4×Ö½Ú */
+                            reply[2] = (uint8_t)g_temperature;                    /* ÎÂ¶È (int8_t) */
+                            reply[3] = (uint8_t)(g_input_vol & 0xFF);             /* µçÑ¹µÍ×Ö½Ú */
+                            reply[4] = (uint8_t)((g_input_vol >> 8) & 0xFF);      /* µçÑ¹¸ß×Ö½Ú */
+                            reply[5] = g_state.byte;                               /* ×´Ì¬×Ö */
+                            (void)ES1642_SendData(handle, recv_data.src_addr, reply, sizeof(reply), 0U, FALSE);
+                        }
+                        break;
+                    default:
+                        break;
+                    }
+                }
+            }
         }
         break;
-      }
-      case ES1642_CMD_SET_ADDR:
-      {
-          status = ES1642_DecodeEmptyResponse(frame, ES1642_CMD_SET_ADDR);
-          if (status == ES1642_STATUS_OK)//å¦‚æœè®¾ç½®é€šä¿¡åœ°å€æˆåŠŸ,ç»™ä¸»æœºåœ°å€å‘é€OK
-          {
-              uint8_t reply[4] = {0xaa,0xaa,0xaa,0xaa};
-              //ç»™ä¸»æœºå›å¤æˆåŠŸä¿®æ”¹å“åº”
-             (void)ES1642_SendData(handle, src_addr, reply, 4U, 0U, FALSE);
-          }
-          else
-          {
-              uint8_t reply[4] = {0xbb,0xbb,0xbb,0xbb};
-              //ç»™ä¸»æœºå›å¤ä¿®æ”¹å¤±è´¥å“åº”
-             (void)ES1642_SendData(handle, src_addr, reply, 4U, 0U, FALSE);
-          }
-          break;
-      }
-      case ES1642_CMD_NOTIFY_SEARCH://æ¥æ”¶åˆ°ä¸»æœºæ­£åœ¨æœç´¢
-      {
-          es1642_search_notify_t notify;
-          status = ES1642_DecodeSearchNotify(frame, &notify);
-          if (status == ES1642_STATUS_OK)
-          {
-              //å›å¤æœç´¢,å¹¶å°†ä»æœºMACåœ°å€ä¸€å—å‘é€åˆ°ä¸»æœº
-              ES1642_SendSearchReply(handle, notify.src_addr, notify.task_id, 1, mac_addr, ES1642_ADDR_LEN);
-          }
-          break;
-      }
-      case ES1642_CMD_READ_MAC://å°†MACåœ°å€ä¿å­˜åˆ°RAMä¸­
-      {
-          status = ES1642_DecodeMac(frame, mac_addr);
-          if (status == ES1642_STATUS_OK)
-          {
-            
-          }
-          break;
-      }
     }
-
-}
-
-static void es1642_on_error(es1642_handle_t *handle, es1642_status_t status, void *user_arg)
-{
-    (void)handle;
-    (void)status;
-    (void)user_arg;
+    case ES1642_CMD_SET_ADDR:
+    {
+        status = ES1642_DecodeEmptyResponse(frame, ES1642_CMD_SET_ADDR);
+        if (status == ES1642_STATUS_OK)
+        {
+            uint8_t reply[3] = {MASTER_CMD_SET_ADDR, 0x01, SLAVE_RESULT_OK};
+            (void)ES1642_SendData(handle, recv_data.src_addr, reply, 3U, 0U, FALSE);
+        }
+        else
+        {
+            uint8_t reply[3] = {MASTER_CMD_SET_ADDR, 0x01, SLAVE_RESULT_FAIL};
+            (void)ES1642_SendData(handle, recv_data.src_addr, reply, 3U, 0U, FALSE);
+        }
+        break;
+    }
+    case ES1642_CMD_NOTIFY_SEARCH:
+    {
+        ES1642_DecodeSearchNotify(frame, &notify);
+        ES1642_ReadMac();
+        break;
+    }
+    case ES1642_CMD_READ_MAC:
+    {
+        status = ES1642_DecodeMac(frame, mac_addr);
+        if (status == ES1642_STATUS_OK)
+        {
+            ES1642_SendSearchReply(handle, notify.src_addr, notify.task_id, 1, mac_addr, ES1642_ADDR_LEN);
+        }
+        break;
+    }
+    }
 }
 
 void es1642_app_init(void)
 {
     es1642_port_t port;
-
     memset(&port, 0, sizeof(port));
     port.write = stm8_es1642_write;
     port.on_frame = es1642_on_frame;
-    port.on_error = es1642_on_error;
-    port.user_arg = 0;
-
+    port.on_error = 0;
     ES1642_Init(&g_es1642, &port);
     ES1642_ResetRx(&g_es1642);
 }
@@ -155,24 +152,10 @@ void es1642_uart_rx_irq_handler(void)
     ek_uart_rx_isr();
 }
 
-es1642_handle_t *es1642_get_handle(void)
-{
-    return &g_es1642;
-}
-/**
- * @brief  è¯»å–æ¨¡å—MACåœ°å€
- * @retval 0: æˆåŠŸ, -1: å¤±è´¥
- */
 int ES1642_ReadMac(void)
 {
     es1642_status_t status;
-    
     status = ES1642_SendReadMac(&g_es1642);
-    
-    if (status != ES1642_STATUS_OK)
-    {
-        return -1;
-    }
-    
+    if (status != ES1642_STATUS_OK) { return -1; }
     return 0;
 }

@@ -2,6 +2,7 @@
 #include "ek_gpio.h"
 
 __IO uint32_t ek_delay_tick = 0;
+static volatile uint32_t ek_millis_tick = 0;
 
 /* software timer */
 void ek_soft_timer(void)
@@ -13,38 +14,35 @@ void ek_soft_timer(void)
 void ek_delay(__IO uint32_t nms)
 {
     ek_delay_tick = nms;
-    
-    /* wait */
-    while(ek_delay_tick);
+    while (ek_delay_tick);
 }
 
 /* count for delay function */
 void ek_delay_counter(void)
 {
-    if(ek_delay_tick)
+    ek_millis_tick++;
+    if (ek_delay_tick)
     {
         ek_delay_tick--;
     }
 }
 
-/* hardware timer init */
+/* get elapsed milliseconds since boot */
+uint32_t ek_millis(void)
+{
+    return ek_millis_tick;
+}
+
+/* hardware timer init - use TIM2 (16-bit) */
 void ek_sys_tim_init(void)
 {
-    /* system timer reset */
-    TIM4_DeInit();
-    
-    /* set clock, and update period */
-    TIM4_TimeBaseInit(TIM4_PRESCALER_64, EK_UPDATE_TIME);
-    
-    /* arr register preload */
-    TIM4_ARRPreloadConfig(ENABLE);
-    
-    /* clear update flag */
-    TIM4_ClearFlag(TIM4_FLAG_UPDATE);
-    
-    /* enable update interrupt */
-    TIM4_ITConfig(TIM4_IT_UPDATE, ENABLE);
-    
-    /* start timer */
-    TIM4_Cmd(ENABLE);
+    TIM2_DeInit();
+
+    /* 16MHz / 16 = 1MHz, ARR=999 ¡ú 1ms overflow */
+    TIM2_TimeBaseInit(TIM2_PRESCALER_16, EK_UPDATE_TIME);
+
+    TIM2_ARRPreloadConfig(ENABLE);
+    TIM2_ClearFlag(TIM2_FLAG_UPDATE);
+    TIM2_ITConfig(TIM2_IT_UPDATE, ENABLE);
+    TIM2_Cmd(ENABLE);
 }

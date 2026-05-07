@@ -2174,6 +2174,9 @@
             <name>$PROJ_DIR$\..\Application\src\es1642_port_stm8.c</name>
         </file>
         <file>
+            <name>$PROJ_DIR$\..\Application\src\heater_ctrl.c</name>
+        </file>
+        <file>
             <name>$PROJ_DIR$\..\Application\src\main.c</name>
         </file>
         <file>
