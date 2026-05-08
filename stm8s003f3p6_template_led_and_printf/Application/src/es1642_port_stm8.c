@@ -18,7 +18,11 @@ static uint8_t mac_addr[ES1642_ADDR_LEN];
 static int32_t stm8_es1642_write(const uint8_t *data, uint16_t len, void *user_arg)
 {
     (void)user_arg;
-    if ((data == 0) || (len == 0U)) { return 0; }
+    if ((data == 0) || (len == 0U))
+    {
+        return 0;
+    }
+
     ek_uart_send_bytes(data, len);
     return (int32_t)len;
 }
