@@ -72,7 +72,6 @@ static void es1642_calc_checksum(const uint8_t *buf, uint16_t len, uint8_t *csum
  */
 static es1642_status_t es1642_expect_normal(const es1642_frame_t *f, uint8_t cmd)
 {
-    if (f == NULL) { return ES1642_STATUS_ERROR_PARAM; }
     if (f->cmd != cmd) { return ES1642_STATUS_ERROR_CMD_MISMATCH; }
     if (f->is_exception) { return ES1642_STATUS_ERROR_FRAME_IS_EXCEPTION; }
     return ES1642_STATUS_OK;
@@ -88,7 +87,6 @@ static es1642_status_t es1642_expect_normal(const es1642_frame_t *f, uint8_t cmd
  */
 void ES1642_Init(es1642_handle_t *h, const es1642_port_t *port)
 {
-    if (h == NULL) { return; }
     (void)memset(h, 0, sizeof(*h));
     if (port) { h->port = *port; }
 }
@@ -100,7 +98,7 @@ void ES1642_Init(es1642_handle_t *h, const es1642_port_t *port)
  */
 void ES1642_ResetRx(es1642_handle_t *h)
 {
-    if (h) { h->rx_index = 0U; h->rx_expected_len = 0U; }
+    h->rx_index = 0U; h->rx_expected_len = 0U;
 }
 
 /* ========================= Ctrl控制字节辅助 ========================= */
@@ -116,9 +114,6 @@ void ES1642_ResetRx(es1642_handle_t *h)
  *   DEVICE_REQUEST (0x58) = 从机主动发请求 (PRM=1)
  *   DEVICE_REPLY   (0x18) = 从机被动应答   (PRM=0)
  */
-uint8_t ES1642_MakeDeviceRequestCtrl(void) { return ES1642_CTRL_DEVICE_REQUEST; }
-uint8_t ES1642_MakeDeviceReplyCtrl(void)   { return ES1642_CTRL_DEVICE_REPLY; }
-
 /* SendData时的CTRL: prm=true用请求帧, prm=false用应答帧 */
 uint8_t ES1642_MakeSendDataCtrlByte(bool prm)
 {
@@ -151,10 +146,7 @@ es1642_status_t ES1642_SendFrame(es1642_handle_t *h, uint8_t ctrl, uint8_t cmd,
     uint8_t csum, cxor;
     int32_t sent;
 
-    if (h == NULL) { return ES1642_STATUS_ERROR_PARAM; }
-    if (h->port.write == NULL) { return ES1642_STATUS_ERROR_NO_TX_PORT; }
     if (data_len > ES1642_MAX_DATA_LEN) { return ES1642_STATUS_ERROR_DATA_TOO_LONG; }
-    if ((data_len > 0U) && (data == NULL)) { return ES1642_STATUS_ERROR_PARAM; }
 
     total = (uint16_t)(ES1642_MIN_FRAME_LEN + data_len);
 
@@ -189,12 +181,11 @@ es1642_status_t ES1642_SendFrame(es1642_handle_t *h, uint8_t ctrl, uint8_t cmd,
  * @param f    输出: 解析后的帧结构
  * @return OK=解析成功, 其他=错误类型
  */
-es1642_status_t ES1642_ParseFrame(const uint8_t *raw, uint16_t flen, es1642_frame_t *f)
+static es1642_status_t es1642_parse_frame(const uint8_t *raw, uint16_t flen, es1642_frame_t *f)
 {
     uint16_t dlen;
     uint8_t csum, cxor;
 
-    if ((raw == NULL) || (f == NULL)) { return ES1642_STATUS_ERROR_PARAM; }
     if (flen < ES1642_MIN_FRAME_LEN) { return ES1642_STATUS_ERROR_BAD_LENGTH; }
     if (raw[0] != ES1642_FRAME_HEAD) { return ES1642_STATUS_ERROR_BAD_HEAD; }
 
@@ -254,8 +245,6 @@ es1642_status_t ES1642_InputByte(es1642_handle_t *h, uint8_t byte)
     es1642_frame_t frame;
     es1642_status_t st;
 
-    if (h == NULL) { return ES1642_STATUS_ERROR_PARAM; }
-
     /* 状态0: 等待帧头 0x79 */
     if (h->rx_index == 0U)
     {
@@ -285,7 +274,7 @@ es1642_status_t ES1642_InputByte(es1642_handle_t *h, uint8_t byte)
     if ((h->rx_expected_len > 0U) && (h->rx_index >= h->rx_expected_len))
     {
         /* 解析帧 */
-        st = ES1642_ParseFrame(h->rx_buf, h->rx_expected_len, &frame);
+        st = es1642_parse_frame(h->rx_buf, h->rx_expected_len, &frame);
         if (st == ES1642_STATUS_OK)
         {
             /* 解析成功: 通过回调通知应用层 */
@@ -330,8 +319,6 @@ es1642_status_t ES1642_SendData(es1642_handle_t *h,
     uint8_t payload[ES1642_MAX_DATA_LEN];
     uint16_t plen;
 
-    if (dst == NULL) { return ES1642_STATUS_ERROR_PARAM; }
-    if ((ulen > 0U) && (udata == NULL)) { return ES1642_STATUS_ERROR_PARAM; }
     plen = (uint16_t)(ES1642_SEND_DATA_FIXED_LEN + ulen);
     if (plen > ES1642_MAX_DATA_LEN) { return ES1642_STATUS_ERROR_DATA_TOO_LONG; }
 
@@ -415,7 +402,6 @@ es1642_status_t ES1642_DecodeMac(const es1642_frame_t *f, uint8_t mac[ES1642_ADD
     es1642_status_t st = es1642_expect_normal(f, ES1642_CMD_READ_MAC);
     if (st != ES1642_STATUS_OK) { return st; }
     if (f->data_len < ES1642_ADDR_LEN) { return ES1642_STATUS_ERROR_PAYLOAD_LENGTH; }
-    if (mac == NULL) { return ES1642_STATUS_ERROR_PARAM; }
     (void)memcpy(mac, f->data, ES1642_ADDR_LEN);
     return ES1642_STATUS_OK;
 }

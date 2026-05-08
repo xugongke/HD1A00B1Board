@@ -146,15 +146,12 @@ struct es1642_handle
 void ES1642_Init(es1642_handle_t *handle, const es1642_port_t *port);
 void ES1642_ResetRx(es1642_handle_t *handle);
 
-/* Ctrl辅助 */
-uint8_t ES1642_MakeDeviceRequestCtrl(void);
-uint8_t ES1642_MakeDeviceReplyCtrl(void);
+/* Ctrl辅助 (仅保留实际使用的) */
 uint8_t ES1642_MakeSendDataCtrlByte(bool prm);
 
 /* 帧发送/解析 */
 es1642_status_t ES1642_SendFrame(es1642_handle_t *handle, uint8_t ctrl, uint8_t cmd,
                                  const uint8_t *data, uint16_t data_len);
-es1642_status_t ES1642_ParseFrame(const uint8_t *raw, uint16_t len, es1642_frame_t *f);
 es1642_status_t ES1642_InputByte(es1642_handle_t *handle, uint8_t byte);
 
 /* 数据收发 */

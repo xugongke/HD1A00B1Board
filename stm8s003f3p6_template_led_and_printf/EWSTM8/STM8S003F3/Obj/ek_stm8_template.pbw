@@ -46300,7 +46300,7 @@
     "display": "void ES1642_Init(es1642_handle_t *, const es1642_port_t *)",
     "location": {
       "column": "6",
-      "line": "89",
+      "line": "88",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\es1642.c"
     },
     "name": "ES1642_Init",
@@ -46314,38 +46314,10 @@
     "display": "void ES1642_ResetRx(es1642_handle_t *)",
     "location": {
       "column": "6",
-      "line": "101",
+      "line": "99",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\es1642.c"
     },
     "name": "ES1642_ResetRx",
-    "origin": "project_file",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@ES1642_MakeDeviceRequestCtrl",
-    "What": "Function",
-    "defdec": "Def",
-    "display": "uint8_t ES1642_MakeDeviceRequestCtrl(void)",
-    "location": {
-      "column": "9",
-      "line": "119",
-      "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\es1642.c"
-    },
-    "name": "ES1642_MakeDeviceRequestCtrl",
-    "origin": "project_file",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@ES1642_MakeDeviceReplyCtrl",
-    "What": "Function",
-    "defdec": "Def",
-    "display": "uint8_t ES1642_MakeDeviceReplyCtrl(void)",
-    "location": {
-      "column": "9",
-      "line": "120",
-      "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\es1642.c"
-    },
-    "name": "ES1642_MakeDeviceReplyCtrl",
     "origin": "project_file",
     "scope": null
   },
@@ -46356,7 +46328,7 @@
     "display": "uint8_t ES1642_MakeSendDataCtrlByte(bool)",
     "location": {
       "column": "9",
-      "line": "123",
+      "line": "118",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\es1642.c"
     },
     "name": "ES1642_MakeSendDataCtrlByte",
@@ -46370,7 +46342,7 @@
     "display": "es1642_status_t ES1642_SendFrame(es1642_handle_t *, uint8_t, uint8_t, const uint8_t *, uint16_t)",
     "location": {
       "column": "17",
-      "line": "146",
+      "line": "141",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\es1642.c"
     },
     "name": "ES1642_SendFrame",
@@ -46378,13 +46350,13 @@
     "scope": null
   },
   {
-    "ID": "c:es1642.c@5790@F@ES1642_SendFrame@buf",
+    "ID": "c:es1642.c@5523@F@ES1642_SendFrame@buf",
     "What": "Variable",
     "defdec": "Def",
     "display": "buf",
     "location": {
       "column": "13",
-      "line": "149",
+      "line": "144",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\es1642.c"
     },
     "name": "buf",
@@ -46392,13 +46364,13 @@
     "scope": null
   },
   {
-    "ID": "c:es1642.c@5830@F@ES1642_SendFrame@total",
+    "ID": "c:es1642.c@5563@F@ES1642_SendFrame@total",
     "What": "Variable",
     "defdec": "Def",
     "display": "total",
     "location": {
       "column": "14",
-      "line": "150",
+      "line": "145",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\es1642.c"
     },
     "name": "total",
@@ -46406,13 +46378,13 @@
     "scope": null
   },
   {
-    "ID": "c:es1642.c@5851@F@ES1642_SendFrame@csum",
+    "ID": "c:es1642.c@5584@F@ES1642_SendFrame@csum",
     "What": "Variable",
     "defdec": "Def",
     "display": "csum",
     "location": {
       "column": "13",
-      "line": "151",
+      "line": "146",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\es1642.c"
     },
     "name": "csum",
@@ -46420,13 +46392,13 @@
     "scope": null
   },
   {
-    "ID": "c:es1642.c@5851@F@ES1642_SendFrame@cxor",
+    "ID": "c:es1642.c@5584@F@ES1642_SendFrame@cxor",
     "What": "Variable",
     "defdec": "Dec",
     "display": "cxor",
     "location": {
       "column": "19",
-      "line": "151",
+      "line": "146",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\es1642.c"
     },
     "name": "cxor",
@@ -46434,13 +46406,13 @@
     "scope": null
   },
   {
-    "ID": "c:es1642.c@5876@F@ES1642_SendFrame@sent",
+    "ID": "c:es1642.c@5609@F@ES1642_SendFrame@sent",
     "What": "Variable",
     "defdec": "Def",
     "display": "sent",
     "location": {
       "column": "13",
-      "line": "152",
+      "line": "147",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\es1642.c"
     },
     "name": "sent",
@@ -46448,27 +46420,27 @@
     "scope": null
   },
   {
-    "ID": "c:@F@ES1642_ParseFrame",
+    "ID": "c:es1642.c@F@es1642_parse_frame",
     "What": "Function",
     "defdec": "Def",
-    "display": "es1642_status_t ES1642_ParseFrame(const uint8_t *, uint16_t, es1642_frame_t *)",
+    "display": "es1642_status_t es1642_parse_frame(const uint8_t *, uint16_t, es1642_frame_t *)",
     "location": {
-      "column": "17",
-      "line": "192",
+      "column": "24",
+      "line": "184",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\es1642.c"
     },
-    "name": "ES1642_ParseFrame",
+    "name": "es1642_parse_frame",
     "origin": "project_file",
     "scope": null
   },
   {
-    "ID": "c:es1642.c@7349@F@ES1642_ParseFrame@dlen",
+    "ID": "c:es1642.c@6875@F@es1642_parse_frame@dlen",
     "What": "Variable",
     "defdec": "Def",
     "display": "dlen",
     "location": {
       "column": "14",
-      "line": "194",
+      "line": "186",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\es1642.c"
     },
     "name": "dlen",
@@ -46476,13 +46448,13 @@
     "scope": null
   },
   {
-    "ID": "c:es1642.c@7369@F@ES1642_ParseFrame@csum",
+    "ID": "c:es1642.c@6895@F@es1642_parse_frame@csum",
     "What": "Variable",
     "defdec": "Def",
     "display": "csum",
     "location": {
       "column": "13",
-      "line": "195",
+      "line": "187",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\es1642.c"
     },
     "name": "csum",
@@ -46490,13 +46462,13 @@
     "scope": null
   },
   {
-    "ID": "c:es1642.c@7369@F@ES1642_ParseFrame@cxor",
+    "ID": "c:es1642.c@6895@F@es1642_parse_frame@cxor",
     "What": "Variable",
     "defdec": "Dec",
     "display": "cxor",
     "location": {
       "column": "19",
-      "line": "195",
+      "line": "187",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\es1642.c"
     },
     "name": "cxor",
@@ -46510,7 +46482,7 @@
     "display": "es1642_status_t ES1642_InputByte(es1642_handle_t *, uint8_t)",
     "location": {
       "column": "17",
-      "line": "252",
+      "line": "243",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\es1642.c"
     },
     "name": "ES1642_InputByte",
@@ -46518,13 +46490,13 @@
     "scope": null
   },
   {
-    "ID": "c:es1642.c@10448@F@ES1642_InputByte@frame",
+    "ID": "c:es1642.c@9897@F@ES1642_InputByte@frame",
     "What": "Variable",
     "defdec": "Def",
     "display": "frame",
     "location": {
       "column": "20",
-      "line": "254",
+      "line": "245",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\es1642.c"
     },
     "name": "frame",
@@ -46532,13 +46504,13 @@
     "scope": null
   },
   {
-    "ID": "c:es1642.c@10475@F@ES1642_InputByte@st",
+    "ID": "c:es1642.c@9924@F@ES1642_InputByte@st",
     "What": "Variable",
     "defdec": "Def",
     "display": "st",
     "location": {
       "column": "21",
-      "line": "255",
+      "line": "246",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\es1642.c"
     },
     "name": "st",
@@ -46546,13 +46518,13 @@
     "scope": null
   },
   {
-    "ID": "c:es1642.c@11193@F@ES1642_InputByte@dl",
+    "ID": "c:es1642.c@10582@F@ES1642_InputByte@dl",
     "What": "Variable",
     "defdec": "Def",
     "display": "dl",
     "location": {
       "column": "18",
-      "line": "278",
+      "line": "267",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\es1642.c"
     },
     "name": "dl",
@@ -46566,7 +46538,7 @@
     "display": "es1642_status_t ES1642_SendData(es1642_handle_t *, const uint8_t *, const uint8_t *, uint16_t, uint8_t, bool)",
     "location": {
       "column": "17",
-      "line": "325",
+      "line": "314",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\es1642.c"
     },
     "name": "ES1642_SendData",
@@ -46574,13 +46546,13 @@
     "scope": null
   },
   {
-    "ID": "c:es1642.c@13522@F@ES1642_SendData@payload",
+    "ID": "c:es1642.c@12912@F@ES1642_SendData@payload",
     "What": "Variable",
     "defdec": "Def",
     "display": "payload",
     "location": {
       "column": "13",
-      "line": "330",
+      "line": "319",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\es1642.c"
     },
     "name": "payload",
@@ -46588,13 +46560,13 @@
     "scope": null
   },
   {
-    "ID": "c:es1642.c@13565@F@ES1642_SendData@plen",
+    "ID": "c:es1642.c@12955@F@ES1642_SendData@plen",
     "What": "Variable",
     "defdec": "Def",
     "display": "plen",
     "location": {
       "column": "14",
-      "line": "331",
+      "line": "320",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\es1642.c"
     },
     "name": "plen",
@@ -46608,7 +46580,7 @@
     "display": "es1642_status_t ES1642_DecodeRecvData(const es1642_frame_t *, es1642_recv_data_t *)",
     "location": {
       "column": "17",
-      "line": "364",
+      "line": "351",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\es1642.c"
     },
     "name": "ES1642_DecodeRecvData",
@@ -46616,13 +46588,13 @@
     "scope": null
   },
   {
-    "ID": "c:es1642.c@15340@F@ES1642_DecodeRecvData@ulen",
+    "ID": "c:es1642.c@14591@F@ES1642_DecodeRecvData@ulen",
     "What": "Variable",
     "defdec": "Def",
     "display": "ulen",
     "location": {
       "column": "14",
-      "line": "366",
+      "line": "353",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\es1642.c"
     },
     "name": "ulen",
@@ -46630,13 +46602,13 @@
     "scope": null
   },
   {
-    "ID": "c:es1642.c@15360@F@ES1642_DecodeRecvData@st",
+    "ID": "c:es1642.c@14611@F@ES1642_DecodeRecvData@st",
     "What": "Variable",
     "defdec": "Def",
     "display": "st",
     "location": {
       "column": "21",
-      "line": "367",
+      "line": "354",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\es1642.c"
     },
     "name": "st",
@@ -46650,7 +46622,7 @@
     "display": "es1642_status_t ES1642_SendSetAddr(es1642_handle_t *, const uint8_t *)",
     "location": {
       "column": "17",
-      "line": "392",
+      "line": "379",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\es1642.c"
     },
     "name": "ES1642_SendSetAddr",
@@ -46664,7 +46636,7 @@
     "display": "es1642_status_t ES1642_SendReadMac(es1642_handle_t *)",
     "location": {
       "column": "17",
-      "line": "397",
+      "line": "384",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\es1642.c"
     },
     "name": "ES1642_SendReadMac",
@@ -46678,7 +46650,7 @@
     "display": "es1642_status_t ES1642_DecodeEmptyResponse(const es1642_frame_t *, uint8_t)",
     "location": {
       "column": "17",
-      "line": "403",
+      "line": "390",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\es1642.c"
     },
     "name": "ES1642_DecodeEmptyResponse",
@@ -46692,7 +46664,7 @@
     "display": "es1642_status_t ES1642_DecodeMac(const es1642_frame_t *, uint8_t *)",
     "location": {
       "column": "17",
-      "line": "413",
+      "line": "400",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\es1642.c"
     },
     "name": "ES1642_DecodeMac",
@@ -46700,13 +46672,13 @@
     "scope": null
   },
   {
-    "ID": "c:es1642.c@17483@F@ES1642_DecodeMac@st",
+    "ID": "c:es1642.c@16734@F@ES1642_DecodeMac@st",
     "What": "Variable",
     "defdec": "Def",
     "display": "st",
     "location": {
       "column": "21",
-      "line": "415",
+      "line": "402",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\es1642.c"
     },
     "name": "st",
@@ -46720,7 +46692,7 @@
     "display": "es1642_status_t ES1642_DecodeSearchNotify(const es1642_frame_t *, es1642_search_notify_t *)",
     "location": {
       "column": "17",
-      "line": "426",
+      "line": "412",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\es1642.c"
     },
     "name": "ES1642_DecodeSearchNotify",
@@ -46728,13 +46700,13 @@
     "scope": null
   },
   {
-    "ID": "c:es1642.c@18007@F@ES1642_DecodeSearchNotify@st",
+    "ID": "c:es1642.c@17198@F@ES1642_DecodeSearchNotify@st",
     "What": "Variable",
     "defdec": "Def",
     "display": "st",
     "location": {
       "column": "21",
-      "line": "428",
+      "line": "414",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\es1642.c"
     },
     "name": "st",
@@ -46748,7 +46720,7 @@
     "display": "es1642_status_t ES1642_SendSearchReply(es1642_handle_t *, const uint8_t *, uint8_t, bool, const uint8_t *, uint8_t)",
     "location": {
       "column": "17",
-      "line": "444",
+      "line": "430",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\es1642.c"
     },
     "name": "ES1642_SendSearchReply",
@@ -46756,13 +46728,13 @@
     "scope": null
   },
   {
-    "ID": "c:es1642.c@18974@F@ES1642_SendSearchReply@payload",
+    "ID": "c:es1642.c@18165@F@ES1642_SendSearchReply@payload",
     "What": "Variable",
     "defdec": "Def",
     "display": "payload",
     "location": {
       "column": "13",
-      "line": "449",
+      "line": "435",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\es1642.c"
     },
     "name": "payload",
@@ -46770,13 +46742,13 @@
     "scope": null
   },
   {
-    "ID": "c:es1642.c@19017@F@ES1642_SendSearchReply@plen",
+    "ID": "c:es1642.c@18208@F@ES1642_SendSearchReply@plen",
     "What": "Variable",
     "defdec": "Def",
     "display": "plen",
     "location": {
       "column": "14",
-      "line": "450",
+      "line": "436",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\es1642.c"
     },
     "name": "plen",
@@ -47961,69 +47933,13 @@
     "scope": null
   },
   {
-    "ID": "c:@F@ES1642_MakeDeviceRequestCtrl",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "uint8_t ES1642_MakeDeviceRequestCtrl(void)",
-    "location": {
-      "column": "9",
-      "line": "150",
-      "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\es1642.h"
-    },
-    "name": "ES1642_MakeDeviceRequestCtrl",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@ES1642_MakeDeviceRequestCtrl",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "uint8_t ES1642_MakeDeviceRequestCtrl(void)",
-    "location": {
-      "column": "9",
-      "line": "150",
-      "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\es1642.h"
-    },
-    "name": "ES1642_MakeDeviceRequestCtrl",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@ES1642_MakeDeviceReplyCtrl",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "uint8_t ES1642_MakeDeviceReplyCtrl(void)",
-    "location": {
-      "column": "9",
-      "line": "151",
-      "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\es1642.h"
-    },
-    "name": "ES1642_MakeDeviceReplyCtrl",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@ES1642_MakeDeviceReplyCtrl",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "uint8_t ES1642_MakeDeviceReplyCtrl(void)",
-    "location": {
-      "column": "9",
-      "line": "151",
-      "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\es1642.h"
-    },
-    "name": "ES1642_MakeDeviceReplyCtrl",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
     "ID": "c:@F@ES1642_MakeSendDataCtrlByte",
     "What": "Function",
     "defdec": "Dec",
     "display": "uint8_t ES1642_MakeSendDataCtrlByte(bool)",
     "location": {
       "column": "9",
-      "line": "152",
+      "line": "150",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\es1642.h"
     },
     "name": "ES1642_MakeSendDataCtrlByte",
@@ -48037,7 +47953,7 @@
     "display": "uint8_t ES1642_MakeSendDataCtrlByte(_Bool)",
     "location": {
       "column": "9",
-      "line": "152",
+      "line": "150",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\es1642.h"
     },
     "name": "ES1642_MakeSendDataCtrlByte",
@@ -48051,7 +47967,7 @@
     "display": "uint8_t ES1642_MakeSendDataCtrlByte(bool)",
     "location": {
       "column": "9",
-      "line": "152",
+      "line": "150",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\es1642.h"
     },
     "name": "ES1642_MakeSendDataCtrlByte",
@@ -48065,7 +47981,7 @@
     "display": "es1642_status_t ES1642_SendFrame(es1642_handle_t *, uint8_t, uint8_t, const uint8_t *, uint16_t)",
     "location": {
       "column": "17",
-      "line": "155",
+      "line": "153",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\es1642.h"
     },
     "name": "ES1642_SendFrame",
@@ -48079,38 +47995,10 @@
     "display": "es1642_status_t ES1642_SendFrame(es1642_handle_t *, uint8_t, uint8_t, const uint8_t *, uint16_t)",
     "location": {
       "column": "17",
-      "line": "155",
+      "line": "153",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\es1642.h"
     },
     "name": "ES1642_SendFrame",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@ES1642_ParseFrame",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "es1642_status_t ES1642_ParseFrame(const uint8_t *, uint16_t, es1642_frame_t *)",
-    "location": {
-      "column": "17",
-      "line": "157",
-      "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\es1642.h"
-    },
-    "name": "ES1642_ParseFrame",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@ES1642_ParseFrame",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "es1642_status_t ES1642_ParseFrame(const uint8_t *, uint16_t, es1642_frame_t *)",
-    "location": {
-      "column": "17",
-      "line": "157",
-      "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\es1642.h"
-    },
-    "name": "ES1642_ParseFrame",
     "origin": "user_include",
     "scope": null
   },
@@ -48121,7 +48009,7 @@
     "display": "es1642_status_t ES1642_InputByte(es1642_handle_t *, uint8_t)",
     "location": {
       "column": "17",
-      "line": "158",
+      "line": "155",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\es1642.h"
     },
     "name": "ES1642_InputByte",
@@ -48135,7 +48023,7 @@
     "display": "es1642_status_t ES1642_InputByte(es1642_handle_t *, uint8_t)",
     "location": {
       "column": "17",
-      "line": "158",
+      "line": "155",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\es1642.h"
     },
     "name": "ES1642_InputByte",
@@ -48149,7 +48037,7 @@
     "display": "es1642_status_t ES1642_SendData(es1642_handle_t *, const uint8_t *, const uint8_t *, uint16_t, uint8_t, bool)",
     "location": {
       "column": "17",
-      "line": "161",
+      "line": "158",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\es1642.h"
     },
     "name": "ES1642_SendData",
@@ -48163,7 +48051,7 @@
     "display": "es1642_status_t ES1642_SendData(es1642_handle_t *, const uint8_t *, const uint8_t *, uint16_t, uint8_t, bool)",
     "location": {
       "column": "17",
-      "line": "161",
+      "line": "158",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\es1642.h"
     },
     "name": "ES1642_SendData",
@@ -48177,7 +48065,7 @@
     "display": "es1642_status_t ES1642_SendData(es1642_handle_t *, const uint8_t *, const uint8_t *, uint16_t, uint8_t, _Bool)",
     "location": {
       "column": "17",
-      "line": "161",
+      "line": "158",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\es1642.h"
     },
     "name": "ES1642_SendData",
@@ -48191,7 +48079,7 @@
     "display": "es1642_status_t ES1642_DecodeRecvData(const es1642_frame_t *, es1642_recv_data_t *)",
     "location": {
       "column": "17",
-      "line": "165",
+      "line": "162",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\es1642.h"
     },
     "name": "ES1642_DecodeRecvData",
@@ -48205,7 +48093,7 @@
     "display": "es1642_status_t ES1642_DecodeRecvData(const es1642_frame_t *, es1642_recv_data_t *)",
     "location": {
       "column": "17",
-      "line": "165",
+      "line": "162",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\es1642.h"
     },
     "name": "ES1642_DecodeRecvData",
@@ -48219,7 +48107,7 @@
     "display": "es1642_status_t ES1642_SendSetAddr(es1642_handle_t *, const uint8_t *)",
     "location": {
       "column": "17",
-      "line": "168",
+      "line": "165",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\es1642.h"
     },
     "name": "ES1642_SendSetAddr",
@@ -48233,7 +48121,7 @@
     "display": "es1642_status_t ES1642_SendSetAddr(es1642_handle_t *, const uint8_t *)",
     "location": {
       "column": "17",
-      "line": "168",
+      "line": "165",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\es1642.h"
     },
     "name": "ES1642_SendSetAddr",
@@ -48247,7 +48135,7 @@
     "display": "es1642_status_t ES1642_SendReadMac(es1642_handle_t *)",
     "location": {
       "column": "17",
-      "line": "169",
+      "line": "166",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\es1642.h"
     },
     "name": "ES1642_SendReadMac",
@@ -48261,7 +48149,7 @@
     "display": "es1642_status_t ES1642_SendReadMac(es1642_handle_t *)",
     "location": {
       "column": "17",
-      "line": "169",
+      "line": "166",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\es1642.h"
     },
     "name": "ES1642_SendReadMac",
@@ -48275,7 +48163,7 @@
     "display": "es1642_status_t ES1642_DecodeMac(const es1642_frame_t *, uint8_t *)",
     "location": {
       "column": "17",
-      "line": "170",
+      "line": "167",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\es1642.h"
     },
     "name": "ES1642_DecodeMac",
@@ -48289,7 +48177,7 @@
     "display": "es1642_status_t ES1642_DecodeMac(const es1642_frame_t *, uint8_t *)",
     "location": {
       "column": "17",
-      "line": "170",
+      "line": "167",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\es1642.h"
     },
     "name": "ES1642_DecodeMac",
@@ -48303,7 +48191,7 @@
     "display": "es1642_status_t ES1642_DecodeEmptyResponse(const es1642_frame_t *, uint8_t)",
     "location": {
       "column": "17",
-      "line": "171",
+      "line": "168",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\es1642.h"
     },
     "name": "ES1642_DecodeEmptyResponse",
@@ -48317,7 +48205,7 @@
     "display": "es1642_status_t ES1642_DecodeEmptyResponse(const es1642_frame_t *, uint8_t)",
     "location": {
       "column": "17",
-      "line": "171",
+      "line": "168",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\es1642.h"
     },
     "name": "ES1642_DecodeEmptyResponse",
@@ -48331,7 +48219,7 @@
     "display": "es1642_status_t ES1642_DecodeSearchNotify(const es1642_frame_t *, es1642_search_notify_t *)",
     "location": {
       "column": "17",
-      "line": "174",
+      "line": "171",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\es1642.h"
     },
     "name": "ES1642_DecodeSearchNotify",
@@ -48345,7 +48233,7 @@
     "display": "es1642_status_t ES1642_DecodeSearchNotify(const es1642_frame_t *, es1642_search_notify_t *)",
     "location": {
       "column": "17",
-      "line": "174",
+      "line": "171",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\es1642.h"
     },
     "name": "ES1642_DecodeSearchNotify",
@@ -48359,7 +48247,7 @@
     "display": "es1642_status_t ES1642_SendSearchReply(es1642_handle_t *, const uint8_t *, uint8_t, bool, const uint8_t *, uint8_t)",
     "location": {
       "column": "17",
-      "line": "175",
+      "line": "172",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\es1642.h"
     },
     "name": "ES1642_SendSearchReply",
@@ -48373,7 +48261,7 @@
     "display": "es1642_status_t ES1642_SendSearchReply(es1642_handle_t *, const uint8_t *, uint8_t, _Bool, const uint8_t *, uint8_t)",
     "location": {
       "column": "17",
-      "line": "175",
+      "line": "172",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\es1642.h"
     },
     "name": "ES1642_SendSearchReply",
@@ -48387,81 +48275,11 @@
     "display": "es1642_status_t ES1642_SendSearchReply(es1642_handle_t *, const uint8_t *, uint8_t, bool, const uint8_t *, uint8_t)",
     "location": {
       "column": "17",
-      "line": "175",
+      "line": "172",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\es1642.h"
     },
     "name": "ES1642_SendSearchReply",
     "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stdbool.h@173@macro@_STDBOOL",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "_STDBOOL",
-    "location": {
-      "column": "9",
-      "line": "7",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdbool.h"
-    },
-    "name": "_STDBOOL",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stdbool.h@277@macro@bool",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "bool",
-    "location": {
-      "column": "9",
-      "line": "16",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdbool.h"
-    },
-    "name": "bool",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stdbool.h@297@macro@true",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "true",
-    "location": {
-      "column": "9",
-      "line": "17",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdbool.h"
-    },
-    "name": "true",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stdbool.h@313@macro@false",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "false",
-    "location": {
-      "column": "9",
-      "line": "18",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdbool.h"
-    },
-    "name": "false",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stdbool.h@361@macro@__bool_true_false_are_defined",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "__bool_true_false_are_defined",
-    "location": {
-      "column": "9",
-      "line": "22",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdbool.h"
-    },
-    "name": "__bool_true_false_are_defined",
-    "origin": "system_include",
     "scope": null
   },
   {
@@ -49221,12 +49039,12 @@
     "scope": null
   },
   {
-    "ID": "c:es1642_port_stm8.c@1315@F@es1642_on_frame@cmd",
+    "ID": "c:es1642_port_stm8.c@1331@F@es1642_on_frame@cmd",
     "What": "Variable",
     "defdec": "Def",
     "display": "cmd",
     "location": {
-      "column": "25",
+      "column": "27",
       "line": "44",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\es1642_port_stm8.c"
     },
@@ -49235,12 +49053,12 @@
     "scope": null
   },
   {
-    "ID": "c:es1642_port_stm8.c@1370@F@es1642_on_frame@data_len",
+    "ID": "c:es1642_port_stm8.c@1388@F@es1642_on_frame@data_len",
     "What": "Variable",
     "defdec": "Def",
     "display": "data_len",
     "location": {
-      "column": "25",
+      "column": "27",
       "line": "45",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\es1642_port_stm8.c"
     },
@@ -49249,12 +49067,12 @@
     "scope": null
   },
   {
-    "ID": "c:es1642_port_stm8.c@1430@F@es1642_on_frame@data",
+    "ID": "c:es1642_port_stm8.c@1450@F@es1642_on_frame@data",
     "What": "Variable",
     "defdec": "Def",
     "display": "data",
     "location": {
-      "column": "32",
+      "column": "34",
       "line": "46",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\es1642_port_stm8.c"
     },
@@ -49263,12 +49081,12 @@
     "scope": null
   },
   {
-    "ID": "c:es1642_port_stm8.c@2145@F@es1642_on_frame@reply",
+    "ID": "c:es1642_port_stm8.c@2197@F@es1642_on_frame@reply",
     "What": "Variable",
     "defdec": "Def",
     "display": "reply",
     "location": {
-      "column": "37",
+      "column": "39",
       "line": "62",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\es1642_port_stm8.c"
     },
@@ -49277,12 +49095,12 @@
     "scope": null
   },
   {
-    "ID": "c:es1642_port_stm8.c@2646@F@es1642_on_frame@reply",
+    "ID": "c:es1642_port_stm8.c@2716@F@es1642_on_frame@reply",
     "What": "Variable",
     "defdec": "Def",
     "display": "reply",
     "location": {
-      "column": "37",
+      "column": "39",
       "line": "71",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\es1642_port_stm8.c"
     },
@@ -49291,12 +49109,12 @@
     "scope": null
   },
   {
-    "ID": "c:es1642_port_stm8.c@3155@F@es1642_on_frame@reply",
+    "ID": "c:es1642_port_stm8.c@3241@F@es1642_on_frame@reply",
     "What": "Variable",
     "defdec": "Def",
     "display": "reply",
     "location": {
-      "column": "37",
+      "column": "39",
       "line": "79",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\es1642_port_stm8.c"
     },
@@ -49305,12 +49123,12 @@
     "scope": null
   },
   {
-    "ID": "c:es1642_port_stm8.c@4212@F@es1642_on_frame@reply",
+    "ID": "c:es1642_port_stm8.c@4344@F@es1642_on_frame@reply",
     "What": "Variable",
     "defdec": "Def",
     "display": "reply",
     "location": {
-      "column": "21",
+      "column": "23",
       "line": "102",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\es1642_port_stm8.c"
     },
@@ -49319,12 +49137,12 @@
     "scope": null
   },
   {
-    "ID": "c:es1642_port_stm8.c@4412@F@es1642_on_frame@reply",
+    "ID": "c:es1642_port_stm8.c@4554@F@es1642_on_frame@reply",
     "What": "Variable",
     "defdec": "Def",
     "display": "reply",
     "location": {
-      "column": "21",
+      "column": "23",
       "line": "107",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\es1642_port_stm8.c"
     },
@@ -49347,7 +49165,7 @@
     "scope": null
   },
   {
-    "ID": "c:es1642_port_stm8.c@5077@F@es1642_app_init@port",
+    "ID": "c:es1642_port_stm8.c@5257@F@es1642_app_init@port",
     "What": "Variable",
     "defdec": "Def",
     "display": "port",
@@ -49375,7 +49193,7 @@
     "scope": null
   },
   {
-    "ID": "c:es1642_port_stm8.c@5342@F@es1642_app_poll@byte",
+    "ID": "c:es1642_port_stm8.c@5522@F@es1642_app_poll@byte",
     "What": "Variable",
     "defdec": "Def",
     "display": "byte",
@@ -49417,7 +49235,7 @@
     "scope": null
   },
   {
-    "ID": "c:es1642_port_stm8.c@5573@F@ES1642_ReadMac@status",
+    "ID": "c:es1642_port_stm8.c@5753@F@ES1642_ReadMac@status",
     "What": "Variable",
     "defdec": "Def",
     "display": "status",
@@ -49428,6 +49246,132 @@
     },
     "name": "status",
     "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:stddef.h@100@macro@_STDDEF",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "_STDDEF",
+    "location": {
+      "column": "9",
+      "line": "4",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stddef.h"
+    },
+    "name": "_STDDEF",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stddef.h@304@macro@NULL",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "NULL",
+    "location": {
+      "column": "11",
+      "line": "18",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stddef.h"
+    },
+    "name": "NULL",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stddef.h@367@macro@offsetof",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "offsetof",
+    "location": {
+      "column": "11",
+      "line": "22",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stddef.h"
+    },
+    "name": "offsetof",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stddef.h@551@macro@_PTRDIFF_T",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "_PTRDIFF_T",
+    "location": {
+      "column": "11",
+      "line": "27",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stddef.h"
+    },
+    "name": "_PTRDIFF_T",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stddef.h@573@macro@_PTRDIFFT",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "_PTRDIFFT",
+    "location": {
+      "column": "11",
+      "line": "28",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stddef.h"
+    },
+    "name": "_PTRDIFFT",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stddef.h@594@macro@_STD_USING_PTRDIFF_T",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "_STD_USING_PTRDIFF_T",
+    "location": {
+      "column": "11",
+      "line": "29",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stddef.h"
+    },
+    "name": "_STD_USING_PTRDIFF_T",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stddef.h@T@ptrdiff_t",
+    "What": "Typedef",
+    "defdec": "Def",
+    "display": "_Ptrdifft",
+    "location": {
+      "column": "21",
+      "line": "30",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stddef.h"
+    },
+    "name": "ptrdiff_t",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stddef.h@735@macro@_WCHART",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "_WCHART",
+    "location": {
+      "column": "11",
+      "line": "34",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stddef.h"
+    },
+    "name": "_WCHART",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stddef.h@T@wchar_t",
+    "What": "Typedef",
+    "defdec": "Def",
+    "display": "_Wchart",
+    "location": {
+      "column": "19",
+      "line": "35",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stddef.h"
+    },
+    "name": "wchar_t",
+    "origin": "system_include",
     "scope": null
   },
   {
@@ -50205,128 +50149,72 @@
     "scope": null
   },
   {
-    "ID": "c:stddef.h@100@macro@_STDDEF",
+    "ID": "c:stdbool.h@173@macro@_STDBOOL",
     "What": "MacroDef",
     "defdec": "Def",
-    "display": "_STDDEF",
+    "display": "_STDBOOL",
     "location": {
       "column": "9",
-      "line": "4",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stddef.h"
+      "line": "7",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdbool.h"
     },
-    "name": "_STDDEF",
+    "name": "_STDBOOL",
     "origin": "system_include",
     "scope": null
   },
   {
-    "ID": "c:stddef.h@304@macro@NULL",
+    "ID": "c:stdbool.h@277@macro@bool",
     "What": "MacroDef",
     "defdec": "Def",
-    "display": "NULL",
+    "display": "bool",
     "location": {
-      "column": "11",
+      "column": "9",
+      "line": "16",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdbool.h"
+    },
+    "name": "bool",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stdbool.h@297@macro@true",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "true",
+    "location": {
+      "column": "9",
+      "line": "17",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdbool.h"
+    },
+    "name": "true",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stdbool.h@313@macro@false",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "false",
+    "location": {
+      "column": "9",
       "line": "18",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stddef.h"
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdbool.h"
     },
-    "name": "NULL",
+    "name": "false",
     "origin": "system_include",
     "scope": null
   },
   {
-    "ID": "c:stddef.h@367@macro@offsetof",
+    "ID": "c:stdbool.h@361@macro@__bool_true_false_are_defined",
     "What": "MacroDef",
     "defdec": "Def",
-    "display": "offsetof",
+    "display": "__bool_true_false_are_defined",
     "location": {
-      "column": "11",
+      "column": "9",
       "line": "22",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stddef.h"
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdbool.h"
     },
-    "name": "offsetof",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stddef.h@551@macro@_PTRDIFF_T",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "_PTRDIFF_T",
-    "location": {
-      "column": "11",
-      "line": "27",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stddef.h"
-    },
-    "name": "_PTRDIFF_T",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stddef.h@573@macro@_PTRDIFFT",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "_PTRDIFFT",
-    "location": {
-      "column": "11",
-      "line": "28",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stddef.h"
-    },
-    "name": "_PTRDIFFT",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stddef.h@594@macro@_STD_USING_PTRDIFF_T",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "_STD_USING_PTRDIFF_T",
-    "location": {
-      "column": "11",
-      "line": "29",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stddef.h"
-    },
-    "name": "_STD_USING_PTRDIFF_T",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stddef.h@T@ptrdiff_t",
-    "What": "Typedef",
-    "defdec": "Def",
-    "display": "_Ptrdifft",
-    "location": {
-      "column": "21",
-      "line": "30",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stddef.h"
-    },
-    "name": "ptrdiff_t",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stddef.h@735@macro@_WCHART",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "_WCHART",
-    "location": {
-      "column": "11",
-      "line": "34",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stddef.h"
-    },
-    "name": "_WCHART",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stddef.h@T@wchar_t",
-    "What": "Typedef",
-    "defdec": "Def",
-    "display": "_Wchart",
-    "location": {
-      "column": "19",
-      "line": "35",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stddef.h"
-    },
-    "name": "wchar_t",
+    "name": "__bool_true_false_are_defined",
     "origin": "system_include",
     "scope": null
   },
@@ -50681,7 +50569,7 @@
     "scope": null
   },
   {
-    "ID": "c:heater_ctrl.c@2899@macro@TEMP_ERR_RETRY_CNT",
+    "ID": "c:heater_ctrl.c@2906@macro@TEMP_ERR_RETRY_CNT",
     "What": "MacroDef",
     "defdec": "Def",
     "display": "TEMP_ERR_RETRY_CNT",
@@ -50807,7 +50695,7 @@
     "scope": null
   },
   {
-    "ID": "c:heater_ctrl.c@4234@F@adc_read_channel@sum",
+    "ID": "c:heater_ctrl.c@4241@F@adc_read_channel@sum",
     "What": "Variable",
     "defdec": "Def",
     "display": "sum",
@@ -50821,7 +50709,7 @@
     "scope": null
   },
   {
-    "ID": "c:heater_ctrl.c@4257@F@adc_read_channel@i",
+    "ID": "c:heater_ctrl.c@4264@F@adc_read_channel@i",
     "What": "Variable",
     "defdec": "Def",
     "display": "i",
@@ -50835,7 +50723,7 @@
     "scope": null
   },
   {
-    "ID": "c:heater_ctrl.c@4257@F@adc_read_channel@count",
+    "ID": "c:heater_ctrl.c@4264@F@adc_read_channel@count",
     "What": "Variable",
     "defdec": "Dec",
     "display": "count",
@@ -50933,7 +50821,7 @@
     "scope": null
   },
   {
-    "ID": "c:heater_ctrl.c@6341@F@heater_get_temperature@i",
+    "ID": "c:heater_ctrl.c@6348@F@heater_get_temperature@i",
     "What": "Variable",
     "defdec": "Def",
     "display": "i",
@@ -50947,7 +50835,7 @@
     "scope": null
   },
   {
-    "ID": "c:heater_ctrl.c@6341@F@heater_get_temperature@high",
+    "ID": "c:heater_ctrl.c@6348@F@heater_get_temperature@high",
     "What": "Variable",
     "defdec": "Dec",
     "display": "high",
@@ -50961,7 +50849,7 @@
     "scope": null
   },
   {
-    "ID": "c:heater_ctrl.c@6341@F@heater_get_temperature@low",
+    "ID": "c:heater_ctrl.c@6348@F@heater_get_temperature@low",
     "What": "Variable",
     "defdec": "Dec",
     "display": "low",
@@ -50975,7 +50863,7 @@
     "scope": null
   },
   {
-    "ID": "c:heater_ctrl.c@6368@F@heater_get_temperature@adc_value",
+    "ID": "c:heater_ctrl.c@6375@F@heater_get_temperature@adc_value",
     "What": "Variable",
     "defdec": "Def",
     "display": "adc_value",
@@ -51003,7 +50891,7 @@
     "scope": null
   },
   {
-    "ID": "c:heater_ctrl.c@8729@F@heater_get_input_vol@cal",
+    "ID": "c:heater_ctrl.c@8732@F@heater_get_input_vol@cal",
     "What": "Variable",
     "defdec": "Def",
     "display": "cal",
@@ -51017,7 +50905,7 @@
     "scope": null
   },
   {
-    "ID": "c:heater_ctrl.c@8748@F@heater_get_input_vol@adc_value",
+    "ID": "c:heater_ctrl.c@8751@F@heater_get_input_vol@adc_value",
     "What": "Variable",
     "defdec": "Def",
     "display": "adc_value",
@@ -51045,7 +50933,7 @@
     "scope": null
   },
   {
-    "ID": "c:heater_ctrl.c@10129@F@heater_open@retry",
+    "ID": "c:heater_ctrl.c@10132@F@heater_open@retry",
     "What": "Variable",
     "defdec": "Def",
     "display": "retry",
@@ -51073,7 +50961,7 @@
     "scope": null
   },
   {
-    "ID": "c:heater_ctrl.c@12547@F@heater_close@retry",
+    "ID": "c:heater_ctrl.c@12550@F@heater_close@retry",
     "What": "Variable",
     "defdec": "Def",
     "display": "retry",
@@ -51115,7 +51003,7 @@
     "scope": null
   },
   {
-    "ID": "c:heater_ctrl.c@17096@F@heater_process@i",
+    "ID": "c:heater_ctrl.c@17099@F@heater_process@i",
     "What": "Variable",
     "defdec": "Def",
     "display": "i",
