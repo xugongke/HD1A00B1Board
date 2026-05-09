@@ -69,30 +69,32 @@ void main(void)
     /* 上电延时等待电压稳定 */
     ek_delay(200);
 
-    /* LED上电指示 */
-    BOARD_OUT1_ON();
-    heater_delay_seconds(6);  /* 延时6秒, 等待系统稳定 */
-    BOARD_OUT1_OFF();
-
-    /* 主循环 */
+    /* 主循环 - 快速循环, 不阻塞
+     *
+     * 非阻塞架构原理 (类似操作系统的线程调度):
+     *   1. 每个模块的process函数只做一小步就返回
+     *   2. 主循环快速轮询各模块
+     *   3. 用时间戳(ek_get_tick)判断是否该执行下一步
+     *   4. 效果等价于两个"线程"并发运行:
+     *        - 通信线程: es1642_app_poll() 持续处理载波通信
+     *        - 控制线程: heater_process() 采样+控制+等待
+     *   5. 但不需要操作系统, 不需要额外RAM/Flash
+     */
     while (1)
     {
 #if WDG_ENABLE
         iwdg_feed();
 #endif
 
-        /* ES1642载波通信轮询 (接收/发送) */
+        /* ES1642载波通信轮询 (接收/发送) - 必须频繁调用 */
         es1642_app_poll();
 
-        /* 加热控制处理 (采集+安全检测+控制) */
+        /* 加热控制状态机 (非阻塞, 采集+安全检测+控制) */
         heater_process();
 
-        /* 喂狗 */
 #if WDG_ENABLE
         iwdg_feed();
 #endif
-
-        /* 主循环延时约1秒 (heater_process内部已有延时) */
     }
 }
 

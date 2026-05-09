@@ -12,5 +12,6 @@ void ek_sys_tim_init(void);
 void ek_soft_timer(void);
 void ek_delay_counter(void);
 void ek_delay(__IO uint32_t nms);
+uint32_t ek_get_tick(void);
 
 #endif

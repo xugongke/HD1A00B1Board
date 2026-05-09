@@ -74,6 +74,38 @@ static uint8_t s_err_over_cycle = 0;  /* 传感器异常确认周期数 */
 static uint8_t s_abnormal_flag = 0;   /* 继电器控制异常标志 (3次重试均失败) */
 static uint16_t s_normal_cnt = 0;     /* 异常恢复倒计时计数器 */
 
+/* ==================== 非阻塞状态机 ====================
+ *
+ * 核心思想: 用状态机代替阻塞延时
+ * 原来的问题: heater_delay_seconds(120) 会阻塞CPU 120秒
+ *            期间 es1642_app_poll() 无法执行, 通信卡死
+ * 解决方案: 每次调用 heater_process() 只做一小步就返回
+ *          让出CPU给 es1642_app_poll() 执行通信
+ *
+ * 状态转移图:
+ *   IDLE ──(温度≥75℃)──→ SAFETY_WAIT(15s) ──→ 执行close ──→ IDLE
+ *   IDLE ──(主机命令)──→ 执行open/close ──(失败)──→ RETRY_WAIT(120s) ──→ 重试
+ *   3次重试均失败 ──→ ABNORMAL(30s LED闪烁) ──→ IDLE
+ *
+ * 所有等待状态(SAFETY_WAIT/RETRY_WAIT/ABNORMAL)都是非阻塞的:
+ *   - 每次调用立即返回, 不会卡住主循环
+ *   - 等待期间每秒采样一次温度/电压(保持安全监测)
+ *   - 主循环中 es1642_app_poll() 可正常执行
+ */
+
+typedef enum {
+    FSM_IDLE = 0,          /* 正常监测: 采样传感器, 检查命令 */
+    FSM_SAFETY_WAIT,       /* 温度异常, 等待15秒后关闭继电器 */
+    FSM_RETRY_WAIT,        /* 继电器操作失败, 等待120秒重试 */
+    FSM_ABNORMAL           /* 3次重试失败, LED闪烁30秒恢复 */
+} HeaterFSM;
+
+static HeaterFSM s_fsm = FSM_IDLE;
+static uint32_t  s_wait_target = 0;    /* 等待结束的目标时刻 (tick) */
+static uint32_t  s_last_sample = 0;    /* 上次传感器采样时刻 (tick) */
+static uint8_t   s_retry_cnt = 0;      /* 重试计数器 0~HEATER_RETRY_MAX */
+static uint8_t   s_retry_action = 0;   /* 重试动作: 0=close, 1=open */
+
 /* ==================== 内部函数声明 ==================== */
 
 static void adc_read_channel(uint16_t *value, ADC1_Channel_TypeDef channel, uint16_t samples);
@@ -429,130 +461,292 @@ void heater_delay_seconds(uint16_t sec)
     }
 }
 
-/* ==================== 加热控制主处理 ==================== */
+/* ==================== 非阻塞时间检查工具 ==================== */
 
 /*
- * heater_process - 加热控制主逻辑 (在main的while(1)中循环调用)
+ * tick_elapsed - 检查从 start 时刻起是否已经过 ms 毫秒
+ * 处理 uint32 溢出的情况 (约49天后溢出, 仍然正确)
+ */
+static uint8_t tick_elapsed(uint32_t start, uint32_t ms)
+{
+    return (uint8_t)((ek_get_tick() - start) >= ms);
+}
+
+/* ==================== 非阻塞加热控制主处理 ==================== */
+
+/*
+ * heater_process - 非阻塞状态机 (在main的while(1)中快速循环调用)
  *
- * 完整决策流程:
+ * 与旧版本的区别:
+ *   旧版: heater_delay_seconds(120) 阻塞CPU 120秒, 通信卡死
+ *   新版: 设置目标等待时间后立即返回, 下次进来检查时间到没到
+ *         主循环中 es1642_app_poll() 可持续执行, 通信不中断
  *
- *   ┌─────────────────────────────────────────────────┐
- *   │ 第1步: 数据采集                                  │
- *   │   采集当前温度 → g_temperature                   │
- *   │   采集当前电压 → g_input_vol                     │
- *   │   更新LED指示灯 (正常时: 闭合=亮, 断开=灭)       │
- *   ├─────────────────────────────────────────────────┤
- *   │ 第2步: 最高优先级 - 安全保护                     │
- *   │   温度 ≥ 75℃ 或 温度 < -10℃(传感器故障)?        │
- *   │   ├── 是 → 强制关闭加热(最多重试3次)             │
- *   │   │        清除主机命令 g_master_cmd=0           │
- *   │   │        直接return (不再执行后续逻辑)         │
- *   │   └── 否 → 继续                                 │
- *   ├─────────────────────────────────────────────────┤
- *   │ 第3步: 异常恢复处理                              │
- *   │   s_abnormal_flag==1? (之前3次重试都失败)        │
- *   │   ├── 是 → LED闪烁 + 延时500ms                  │
- *   │   │        累计60次(约30秒)后清除异常标志        │
- *   │   │        直接return                            │
- *   │   └── 否 → 继续                                 │
- *   ├─────────────────────────────────────────────────┤
- *   │ 第4步: 执行主机命令                              │
- *   │   g_master_cmd==1 (启动加热)?                    │
- *   │   ├── 是 → 电压 ≥ 启动阈值?                     │
- *   │   │        ├── 是 → 继电器当前断开?              │
- *   │   │        │        └── 启动加热(最多重试3次)    │
- *   │   │        │            失败3次 → 置异常标志     │
- *   │   │        └── 否 → 不操作(电压不足)             │
- *   │   └── 否 (g_master_cmd==0, 停止加热)            │
- *   │            继电器当前闭合?                        │
- *   │            └── 关闭加热(最多重试3次)             │
- *   │                失败3次 → 置异常标志              │
- *   └─────────────────────────────────────────────────┘
+ * 调用频率要求:
+ *   主循环中需要足够快地调用此函数 (至少每100ms一次)
+ *   继电器操作(heater_open/close)内部仍有~1秒的阻塞延时
+ *   这是继电器机械动作所需的, 无法避免, 且1秒通信中断可接受
  *
- * 重试机制说明:
- *   每次OpenHeater/CloseHeater失败后, 等待120秒再重试
- *   最多重试HEATER_RETRY_MAX(3)次
- *   3次都失败则进入异常状态(s_abnormal_flag=1)
- *   异常状态下LED每500ms闪烁一次, 持续30秒后自动恢复
+ * 状态转移图:
+ *
+ *   ┌─────── IDLE ───────────────────────────────────────────────┐
+ *   │ 每个周期: 采样传感器, 更新LED                                │
+ *   │ 温度≥75℃ 或 <-10℃ 且 继电器闭合?                            │
+ *   │   └──→ 设置等待15秒 → 进入 FSM_SAFETY_WAIT                  │
+ *   │ 温度正常 且 主机命令=启动 且 电压够 且 继电器断开?            │
+ *   │   └──→ 执行 heater_open()                                   │
+ *   │       ├── 成功 → 回到 IDLE                                  │
+ *   │       └── 失败 → 设置等待120秒 → 进入 FSM_RETRY_WAIT         │
+ *   │ 温度正常 且 主机命令=停止 且 继电器闭合?                      │
+ *   │   └──→ 执行 heater_close()                                  │
+ *   │       ├── 成功 → 回到 IDLE                                  │
+ *   │       └── 失败 → 设置等待120秒 → 进入 FSM_RETRY_WAIT         │
+ *   └─────────────────────────────────────────────────────────────┘
+ *
+ *   ┌─────── FSM_SAFETY_WAIT ────────────────────────────────────┐
+ *   │ 等待期间: 每秒采样一次温度/电压 (安全监测)                    │
+ *   │ 15秒到期?                                                    │
+ *   │   └──→ 执行 heater_close()                                  │
+ *   │       ├── 成功 → 回到 IDLE                                  │
+ *   │       └── 失败 → 重试计数++ → 等待120秒 → FSM_RETRY_WAIT    │
+ *   └─────────────────────────────────────────────────────────────┘
+ *
+ *   ┌─────── FSM_RETRY_WAIT ─────────────────────────────────────┐
+ *   │ 等待期间: 每秒采样一次温度/电压                              │
+ *   │ 120秒到期?                                                   │
+ *   │   └──→ 重试继电器操作                                       │
+ *   │       ├── 成功 → 回到 IDLE                                  │
+ *   │       └── 失败 → 重试计数++                                 │
+ *   │           重试≥3次? → 进入 FSM_ABNORMAL                     │
+ *   │           否则 → 再等120秒                                   │
+ *   └─────────────────────────────────────────────────────────────┘
+ *
+ *   ┌─────── FSM_ABNORMAL ───────────────────────────────────────┐
+ *   │ LED 每500ms闪烁一次                                         │
+ *   │ 累计60次(30秒)后 → 回到 IDLE, 清除异常标志                  │
+ *   └─────────────────────────────────────────────────────────────┘
  */
 void heater_process(void)
 {
-    uint8_t i;
+    uint32_t now = ek_get_tick();
 
-    /* ====== 第1步: 数据采集 ====== */
-    heater_get_temperature();
-    heater_get_input_vol();
-
-    /* 更新LED指示 (电源正常时根据继电器状态控制LED) */
-    if (!heater_is_power_reverse())
+    switch (s_fsm)
     {
-        if (heater_get_relay_state() == RELAY_STATE_DISCONNECT) { led_off(); }
-        else { led_on(); }
-    }
-
-    /* ====== 第2步: 安全保护 (最高优先级) ====== */
-    /* 温度≥75℃ 或 传感器异常(<-10℃) → 必须停止加热 */
-    if ((g_temperature >= TEMP_HIGH_THRESHOLD) || (g_temperature < -10))
+    /* ====== IDLE: 正常监测状态 ====== */
+    case FSM_IDLE:
     {
-        if (heater_get_relay_state() == RELAY_STATE_CLOSE)
+        /* 采样传感器数据 */
+        heater_get_temperature();
+        heater_get_input_vol();
+
+        /* 更新LED指示 */
+        if (!heater_is_power_reverse())
         {
-            heater_delay_seconds(15);  /* 延时15秒再关 (防止温度波动导致频繁开关) */
-            for (i = 0; i < HEATER_RETRY_MAX; i++)
+            if (heater_get_relay_state() == RELAY_STATE_DISCONNECT) { led_off(); }
+            else { led_on(); }
+        }
+
+        /* 最高优先级: 安全保护 - 温度异常 */
+        if ((g_temperature >= TEMP_HIGH_THRESHOLD) || (g_temperature < -10))
+        {
+            g_master_cmd = 0;  /* 清除主机命令 */
+            if (heater_get_relay_state() == RELAY_STATE_CLOSE)
             {
-                if (heater_close() == 1) break;       /* 关闭成功 */
-                heater_delay_seconds(120);             /* 失败后等2分钟再试 */
+                /* 继电器正在加热, 需要先等15秒再关 */
+                s_wait_target = now + (15UL * 1000UL);
+                s_last_sample = now;
+                s_retry_cnt = 0;
+                s_retry_action = 0;  /* close */
+                s_fsm = FSM_SAFETY_WAIT;
+            }
+            return;
+        }
+
+        /* 执行主机命令 */
+        if (g_master_cmd == 1)
+        {
+            /* 主机命令=启动加热 */
+            if (g_input_vol >= s_vol_start)
+            {
+                if (heater_get_relay_state() == RELAY_STATE_DISCONNECT)
+                {
+                    if (heater_open() == 1)
+                    {
+                        /* 启动成功, 回到IDLE */
+                    }
+                    else
+                    {
+                        /* 启动失败, 进入重试等待 */
+                        s_retry_cnt = 1;
+                        s_retry_action = 1;  /* open */
+                        s_wait_target = now + (120UL * 1000UL);
+                        s_last_sample = now;
+                        s_fsm = FSM_RETRY_WAIT;
+                    }
+                }
             }
         }
-        g_master_cmd = 0;  /* 清除主机命令, 强制停止 */
-        return;            /* 安全保护后直接返回, 不执行正常控制 */
-    }
-
-    /* ====== 第3步: 异常恢复处理 ====== */
-    if (s_abnormal_flag)
-    {
-        ek_delay(500);    /* 500ms延时, LED闪烁频率约1Hz */
-        led_toggle();     /* LED翻转 */
-        s_normal_cnt++;
-        if (s_normal_cnt >= 60)  /* 60次 × 500ms = 30秒后恢复 */
+        else
         {
-            s_normal_cnt = 0;
-            s_abnormal_flag = 0;  /* 清除异常标志, 重新进入正常控制 */
+            /* 主机命令=停止加热 */
+            if (heater_get_relay_state() == RELAY_STATE_CLOSE)
+            {
+                if (heater_close() == 1)
+                {
+                    /* 关闭成功, 回到IDLE */
+                }
+                else
+                {
+                    /* 关闭失败, 进入重试等待 */
+                    s_retry_cnt = 1;
+                    s_retry_action = 0;  /* close */
+                    s_wait_target = now + (120UL * 1000UL);
+                    s_last_sample = now;
+                    s_fsm = FSM_RETRY_WAIT;
+                }
+            }
         }
-        return;
+        break;
     }
 
-    /* ====== 第4步: 执行主机命令 ====== */
-    if (g_master_cmd == 1)
+    /* ====== SAFETY_WAIT: 温度异常, 等待15秒后关闭 ====== */
+    case FSM_SAFETY_WAIT:
     {
-        /* 主机命令=启动加热 */
-        if (g_input_vol >= s_vol_start)  /* 检查光伏电压是否足够 */
+        /* 等待期间每秒采样一次传感器 (安全监测) */
+        if (tick_elapsed(s_last_sample, 1000UL))
         {
+            heater_get_temperature();
+            heater_get_input_vol();
+            s_last_sample = now;
+            /* 极端情况: 温度继续升高中, 如果继电器已经断开则直接回IDLE */
             if (heater_get_relay_state() == RELAY_STATE_DISCONNECT)
             {
-                /* 继电器当前断开, 尝试启动加热 */
-                for (i = 0; i < HEATER_RETRY_MAX; i++)
-                {
-                    if (heater_open() == 1) break;     /* 启动成功 */
-                    heater_delay_seconds(120);          /* 失败后等2分钟再试 */
-                }
-                /* 3次都失败 → 进入异常状态 */
-                s_abnormal_flag = (i == HEATER_RETRY_MAX) ? 1 : 0;
+                s_fsm = FSM_IDLE;
+                break;
             }
         }
-    }
-    else
-    {
-        /* 主机命令=停止加热 (或无命令) */
-        if (heater_get_relay_state() == RELAY_STATE_CLOSE)
+
+        /* 等待15秒到期 */
+        if (tick_elapsed(s_wait_target, 0UL) == 0) { break; }
+
+        /* 15秒到, 执行关闭继电器 */
+        if (heater_close() == 1)
         {
-            /* 继电器当前闭合, 尝试关闭加热 */
-            for (i = 0; i < HEATER_RETRY_MAX; i++)
-            {
-                if (heater_close() == 1) break;        /* 关闭成功 */
-                heater_delay_seconds(120);              /* 失败后等2分钟再试 */
-            }
-            /* 3次都失败 → 进入异常状态 */
-            s_abnormal_flag = (i == HEATER_RETRY_MAX) ? 1 : 0;
+            /* 关闭成功 */
+            s_fsm = FSM_IDLE;
         }
+        else
+        {
+            /* 关闭失败, 进入重试等待 */
+            s_retry_cnt++;
+            s_retry_action = 0;  /* close */
+            s_wait_target = now + (120UL * 1000UL);
+            s_last_sample = now;
+            if (s_retry_cnt >= HEATER_RETRY_MAX)
+            {
+                s_normal_cnt = 0;
+                s_fsm = FSM_ABNORMAL;
+            }
+            else
+            {
+                s_fsm = FSM_RETRY_WAIT;
+            }
+        }
+        break;
+    }
+
+    /* ====== RETRY_WAIT: 继电器操作失败, 等待120秒重试 ====== */
+    case FSM_RETRY_WAIT:
+    {
+        /* 等待期间每秒采样一次传感器 (安全监测) */
+        if (tick_elapsed(s_last_sample, 1000UL))
+        {
+            heater_get_temperature();
+            heater_get_input_vol();
+            s_last_sample = now;
+            /* 安全保护: 如果温度异常且正在加热, 立即强制关闭 */
+            if ((g_temperature >= TEMP_HIGH_THRESHOLD) || (g_temperature < -10))
+            {
+                if (heater_get_relay_state() == RELAY_STATE_CLOSE)
+                {
+                    heater_close();  /* 立即关闭, 不等待 */
+                }
+                g_master_cmd = 0;
+            }
+        }
+
+        /* 等待120秒到期 */
+        if (tick_elapsed(s_wait_target, 0UL) == 0) { break; }
+
+        /* 120秒到, 执行重试 */
+        if (s_retry_action == 1)
+        {
+            /* 重试启动加热 */
+            if (heater_open() == 1)
+            {
+                s_fsm = FSM_IDLE;  /* 成功 */
+            }
+            else
+            {
+                s_retry_cnt++;
+                if (s_retry_cnt >= HEATER_RETRY_MAX)
+                {
+                    s_normal_cnt = 0;
+                    s_fsm = FSM_ABNORMAL;
+                }
+                else
+                {
+                    /* 再等120秒 */
+                    s_wait_target = now + (120UL * 1000UL);
+                    s_last_sample = now;
+                }
+            }
+        }
+        else
+        {
+            /* 重试关闭加热 */
+            if (heater_close() == 1)
+            {
+                s_fsm = FSM_IDLE;  /* 成功 */
+            }
+            else
+            {
+                s_retry_cnt++;
+                if (s_retry_cnt >= HEATER_RETRY_MAX)
+                {
+                    s_normal_cnt = 0;
+                    s_fsm = FSM_ABNORMAL;
+                }
+                else
+                {
+                    s_wait_target = now + (120UL * 1000UL);
+                    s_last_sample = now;
+                }
+            }
+        }
+        break;
+    }
+
+    /* ====== ABNORMAL: 3次重试均失败, LED闪烁30秒后恢复 ====== */
+    case FSM_ABNORMAL:
+    {
+        /* LED每500ms闪烁一次 (非阻塞方式) */
+        if (tick_elapsed(s_wait_target, 500UL))
+        {
+            led_toggle();
+            s_normal_cnt++;
+            s_wait_target = now;
+            if (s_normal_cnt >= 60)  /* 60 × 500ms = 30秒 */
+            {
+                s_normal_cnt = 0;
+                s_fsm = FSM_IDLE;  /* 恢复正常控制 */
+            }
+        }
+        break;
+    }
+
+    default:
+        s_fsm = FSM_IDLE;
+        break;
     }
 }

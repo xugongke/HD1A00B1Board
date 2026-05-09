@@ -2,6 +2,13 @@
 #include "ek_gpio.h"
 
 __IO uint32_t ek_delay_tick = 0;
+static __IO uint32_t ek_sys_tick = 0;
+
+/* get system tick in ms (non-blocking timer) */
+uint32_t ek_get_tick(void)
+{
+    return ek_sys_tick;
+}
 
 /* software timer */
 void ek_soft_timer(void)
@@ -9,18 +16,10 @@ void ek_soft_timer(void)
     /* for led control */
 }
 
-/* nms @1ms */
-void ek_delay(__IO uint32_t nms)
-{
-    ek_delay_tick = nms;
-    
-    /* wait */
-    while(ek_delay_tick);
-}
-
 /* count for delay function */
 void ek_delay_counter(void)
 {
+    ek_sys_tick++;
     if(ek_delay_tick)
     {
         ek_delay_tick--;
