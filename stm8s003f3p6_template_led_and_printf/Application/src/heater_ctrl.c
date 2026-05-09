@@ -86,6 +86,13 @@ static void led_toggle(void);
 /*
  * heater_ctrl_init - ADC外设初始化
  * 配置ADC1为单次转换模式, 右对齐, 用于温度和电压采集
+ADC1_SCHMITTTRIG_ALL, DISABLE 会禁用所有ADC通道的施密特触发器，包括：
+
+AIN5 = PD5 = UART1_TX
+AIN6 = PD6 = UART1_RX
+禁用PD6的施密特触发器 = 断开PD6的数字输入缓冲器 = UART1再也无法识别RX引脚上的电平变化 → 中断只触发一次后就不再触发了！
+
+禁用串口的施密特触发器之后，串口就获取不到0和1了也就读取不到数据了
  */
 void heater_ctrl_init(void)
 {
@@ -95,7 +102,7 @@ void heater_ctrl_init(void)
               ADC1_EXTTRIG_TIM,
               DISABLE,
               ADC1_ALIGN_RIGHT,
-              ADC1_SCHMITTTRIG_ALL,
+              (ADC1_SchmittTrigg_TypeDef)(ADC1_SCHMITTTRIG_CHANNEL3 | ADC1_SCHMITTTRIG_CHANNEL4),
               DISABLE);
     ADC1_Cmd(ENABLE);
 }
@@ -143,9 +150,11 @@ static void led_toggle(void) { BOARD_OUT1_PORT->ODR ^= BOARD_OUT1_PIN; }
  *         RELAY_STATE_DISCONNECT(1) = 继电器断开, 加热管断电
  * 检测方式: 通过数字输入引脚(INPUT1)读取, 低电平=闭合
  */
+uint8_t val;
 uint8_t heater_get_relay_state(void)
 {
-    return (board_input1_read() == 0) ? RELAY_STATE_CLOSE : RELAY_STATE_DISCONNECT;
+    val = board_input1_read();
+    return (val == 0) ? RELAY_STATE_CLOSE : RELAY_STATE_DISCONNECT;
 }
 
 /*
@@ -383,7 +392,6 @@ uint8_t heater_close(void)
     ek_delay(RELAY_ACTION_DELAY_MS);
     BOARD_OUT2_OFF();    /* 断开MOS管 */
     ek_delay(10);
-    BOARD_OUT3_OFF();    /* 释放继电器驱动 */
     ek_delay(400);
 
     /* 步骤4: 验证继电器是否成功断开 */

@@ -18,7 +18,7 @@
 
 /* ==================== 看门狗配置 ==================== */
 
-#define WDG_ENABLE  1
+#define WDG_ENABLE  0
 
 #if WDG_ENABLE
 static void iwdg_init(void)
@@ -43,7 +43,7 @@ static void iwdg_feed(void)
 
 void main(void)
 {
-    disableInterrupts();
+     disableInterrupts();
 
     /* 系统时钟初始化 */
     ek_sys_clk_init();
@@ -58,8 +58,8 @@ void main(void)
     ek_sys_tim_init();
     ek_uart_init();
 
-//    /* 加热控制模块初始化 (ADC) */
-//    heater_ctrl_init();
+    /* 加热控制模块初始化 (ADC) */
+    heater_ctrl_init();
 
     /* ES1642载波通信初始化 */
     es1642_app_init();
@@ -69,10 +69,10 @@ void main(void)
     /* 上电延时等待电压稳定 */
     ek_delay(200);
 
-//    /* LED上电指示 */
-//    BOARD_OUT1_ON();
-//    heater_delay_seconds(6);  /* 延时6秒, 等待系统稳定 */
-//    BOARD_OUT1_OFF();
+    /* LED上电指示 */
+    BOARD_OUT1_ON();
+    heater_delay_seconds(6);  /* 延时6秒, 等待系统稳定 */
+    BOARD_OUT1_OFF();
 
     /* 主循环 */
     while (1)
@@ -85,7 +85,7 @@ void main(void)
         es1642_app_poll();
 
         /* 加热控制处理 (采集+安全检测+控制) */
-//        heater_process();
+        heater_process();
 
         /* 喂狗 */
 #if WDG_ENABLE

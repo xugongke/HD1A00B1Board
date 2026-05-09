@@ -41,23 +41,13 @@ uint8_t ek_uart_read_byte(uint8_t *byte)
 
 void ek_uart_rx_isr(void)
 {
-    /* Read SR first - required to clear OR (Overrun) flag:
-     * STM8S OR clearing sequence: read SR, then read DR */
-    uint8_t sr = UART1->SR;
+    uint8_t data = UART1_ReceiveData8();
+    uint8_t next = (uint8_t)((s_rx_w + 1U) % UART_RX_FIFO_SIZE);
 
-    /* Read DR to clear RXNE and complete OR clearing */
-    uint8_t data = (uint8_t)UART1->DR;
-
-    /* Only store data if RXNE was set (not just an OR error) */
-    if (sr & (uint8_t)UART1_FLAG_RXNE)
+    if (next != s_rx_r)
     {
-        uint8_t next = (uint8_t)((s_rx_w + 1U) % UART_RX_FIFO_SIZE);
-
-        if (next != s_rx_r)
-        {
-            s_rx_fifo[s_rx_w] = data;
-            s_rx_w = next;
-        }
+        s_rx_fifo[s_rx_w] = data;
+        s_rx_w = next;
     }
 }
 

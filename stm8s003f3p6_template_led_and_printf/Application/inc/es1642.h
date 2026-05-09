@@ -60,17 +60,6 @@ extern "C" {
 #define ES1642_CTRL_DEVICE_REQUEST       0x58U
 #endif
 
-#ifndef ES1642_CTRL_DEVICE_REPLY
-#define ES1642_CTRL_DEVICE_REPLY         0x18U
-#endif
-
-#ifndef ES1642_CTRL_MODULE_NORMAL
-#define ES1642_CTRL_MODULE_NORMAL        0x98U
-#endif
-
-#ifndef ES1642_CTRL_MODULE_EXCEPTION
-#define ES1642_CTRL_MODULE_EXCEPTION     0xB8U
-#endif
 
 /* ========================= 指令字 ========================= */
 
@@ -274,26 +263,18 @@ typedef struct es1642_handle es1642_handle_t;
  * 返回值：
  * >=0  : 实际发送字节数
  *  <0  : 发送失败 */
-typedef int32_t (*es1642_write_fn_t)(const uint8_t *data, uint16_t len, void *user_arg);
+typedef int32_t (*es1642_write_fn_t)(const uint8_t *data, uint16_t len);
 
 /* 完整帧到达后的回调函数
  * 注意：frame->data / 解码结构体中的 user_data / attribute 指针都指向驱动内部 RX 缓冲。
  * 如果上层要长期保存，必须自行拷贝。 */
 typedef void (*es1642_frame_cb_t)(es1642_handle_t *handle,
-                                  const es1642_frame_t *frame,
-                                  void *user_arg);
-
-/* 解析或接收异常时的回调 */
-typedef void (*es1642_error_cb_t)(es1642_handle_t *handle,
-                                  es1642_status_t status,
-                                  void *user_arg);
+                                  const es1642_frame_t *frame);
 
 typedef struct
 {
     es1642_write_fn_t write;
     es1642_frame_cb_t on_frame;
-    es1642_error_cb_t on_error;
-    void *user_arg;
 } es1642_port_t;
 
 struct es1642_handle
@@ -312,8 +293,6 @@ void ES1642_ResetRx(es1642_handle_t *handle);
 uint8_t ES1642_MakeDeviceRequestCtrl(void);
 uint8_t ES1642_MakeDeviceReplyCtrl(void);
 uint8_t ES1642_MakeDeviceExceptionCtrl(void);
-uint8_t ES1642_MakeSendDataCtrlByte(bool prm);
-
 uint16_t ES1642_MakeTxDataCtrl(uint8_t relay_depth);
 uint16_t ES1642_MakeSearchCtrl(uint8_t depth, es1642_search_rule_t rule);
 uint16_t ES1642_MakeSearchReplyCtrl(bool participate);
@@ -366,8 +345,7 @@ es1642_status_t ES1642_SendData(es1642_handle_t *handle,
                                 const uint8_t dst_addr[ES1642_ADDR_LEN],
                                 const uint8_t *user_data,
                                 uint16_t user_data_len,
-                                uint8_t relay_depth,
-                                bool prm);
+                                uint8_t relay_depth);
 
 es1642_status_t ES1642_SendStartSearch(es1642_handle_t *handle,
                                        uint8_t depth,

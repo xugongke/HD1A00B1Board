@@ -15,9 +15,8 @@
 static es1642_handle_t g_es1642;
 static uint8_t mac_addr[ES1642_ADDR_LEN];
 
-static int32_t stm8_es1642_write(const uint8_t *data, uint16_t len, void *user_arg)
+static int32_t stm8_es1642_write(const uint8_t *data, uint16_t len)
 {
-    (void)user_arg;
     if ((data == 0) || (len == 0U))
     {
         return 0;
@@ -30,10 +29,9 @@ static int32_t stm8_es1642_write(const uint8_t *data, uint16_t len, void *user_a
 static es1642_search_notify_t notify;
 static es1642_recv_data_t recv_data;
 
-static void es1642_on_frame(es1642_handle_t *handle, const es1642_frame_t *frame, void *user_arg)
+static void es1642_on_frame(es1642_handle_t *handle, const es1642_frame_t *frame)
 {
     es1642_status_t status;
-    (void)user_arg;
     if ((handle == 0) || (frame == 0)) { return; }
 
     switch (frame->cmd)
@@ -64,7 +62,7 @@ static void es1642_on_frame(es1642_handle_t *handle, const es1642_frame_t *frame
                           /* 回复主机: [cmd][len][result] */
                           {
                               uint8_t reply[3] = {MASTER_CMD_HEATER_ON, 0x01, SLAVE_RESULT_OK};
-                              (void)ES1642_SendData(handle, recv_data.src_addr, reply, 3U, 0U, FALSE);
+                              (void)ES1642_SendData(handle, recv_data.src_addr, reply, 3U, 0U);
                           }
                           break;
                       case MASTER_CMD_HEATER_OFF:
@@ -73,7 +71,7 @@ static void es1642_on_frame(es1642_handle_t *handle, const es1642_frame_t *frame
                           /* 回复主机: [cmd][len][result] */
                           {
                               uint8_t reply[3] = {MASTER_CMD_HEATER_OFF, 0x01, SLAVE_RESULT_OK};
-                              (void)ES1642_SendData(handle, recv_data.src_addr, reply, 3U, 0U, FALSE);
+                              (void)ES1642_SendData(handle, recv_data.src_addr, reply, 3U, 0U);
                           }
                           break;
                       case MASTER_CMD_READ_STATUS:
@@ -87,7 +85,7 @@ static void es1642_on_frame(es1642_handle_t *handle, const es1642_frame_t *frame
                               reply[3] = (uint8_t)(g_input_vol & 0xFF);             /* 电压低字节 */
                               reply[4] = (uint8_t)((g_input_vol >> 8) & 0xFF);      /* 电压高字节 */
                               reply[5] = g_state.byte;                               /* 状态字 */
-                              (void)ES1642_SendData(handle, recv_data.src_addr, reply, sizeof(reply), 0U, FALSE);
+                              (void)ES1642_SendData(handle, recv_data.src_addr, reply, sizeof(reply), 0U);
                           }
                           break;
                       default:
@@ -104,12 +102,12 @@ static void es1642_on_frame(es1642_handle_t *handle, const es1642_frame_t *frame
           if (status == ES1642_STATUS_OK)
           {
               uint8_t reply[3] = {MASTER_CMD_SET_ADDR, 0x01, SLAVE_RESULT_OK};
-              (void)ES1642_SendData(handle, recv_data.src_addr, reply, 3U, 0U, FALSE);
+              (void)ES1642_SendData(handle, recv_data.src_addr, reply, 3U, 0U);
           }
           else
           {
               uint8_t reply[3] = {MASTER_CMD_SET_ADDR, 0x01, SLAVE_RESULT_FAIL};
-              (void)ES1642_SendData(handle, recv_data.src_addr, reply, 3U, 0U, FALSE);
+              (void)ES1642_SendData(handle, recv_data.src_addr, reply, 3U, 0U);
           }
           break;
       }
@@ -137,7 +135,6 @@ void es1642_app_init(void)
     memset(&port, 0, sizeof(port));
     port.write = stm8_es1642_write;
     port.on_frame = es1642_on_frame;
-    port.on_error = 0;
     ES1642_Init(&g_es1642, &port);
     ES1642_ResetRx(&g_es1642);
 }
