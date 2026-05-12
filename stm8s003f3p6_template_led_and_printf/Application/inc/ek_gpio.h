@@ -29,6 +29,8 @@
 
 #define BOARD_OUT1_ON()             GPIO_WriteHigh(BOARD_OUT1_PORT, BOARD_OUT1_PIN)
 #define BOARD_OUT1_OFF()            GPIO_WriteLow(BOARD_OUT1_PORT, BOARD_OUT1_PIN)
+#define BOARD_OUT1_REV()            GPIO_WriteReverse(BOARD_OUT1_PORT,BOARD_OUT1_PIN)
+
 #define BOARD_OUT2_ON()             GPIO_WriteHigh(BOARD_OUT2_PORT, BOARD_OUT2_PIN)
 #define BOARD_OUT2_OFF()            GPIO_WriteLow(BOARD_OUT2_PORT, BOARD_OUT2_PIN)
 #define BOARD_OUT3_ON()             GPIO_WriteHigh(BOARD_OUT3_PORT, BOARD_OUT3_PIN)

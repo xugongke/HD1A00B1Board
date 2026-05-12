@@ -31778,1070 +31778,6 @@
     "scope": null
   },
   {
-    "ID": "c:stdint.h@101@macro@_STDINT",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "_STDINT",
-    "location": {
-      "column": "9",
-      "line": "4",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
-    },
-    "name": "_STDINT",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stdint.h@T@int8_t",
-    "What": "Typedef",
-    "defdec": "Def",
-    "display": "signed char",
-    "location": {
-      "column": "29",
-      "line": "16",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
-    },
-    "name": "int8_t",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stdint.h@T@uint8_t",
-    "What": "Typedef",
-    "defdec": "Def",
-    "display": "unsigned char",
-    "location": {
-      "column": "28",
-      "line": "17",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
-    },
-    "name": "uint8_t",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stdint.h@T@int16_t",
-    "What": "Typedef",
-    "defdec": "Def",
-    "display": "int",
-    "location": {
-      "column": "30",
-      "line": "21",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
-    },
-    "name": "int16_t",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stdint.h@T@uint16_t",
-    "What": "Typedef",
-    "defdec": "Def",
-    "display": "unsigned int",
-    "location": {
-      "column": "29",
-      "line": "22",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
-    },
-    "name": "uint16_t",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stdint.h@T@int32_t",
-    "What": "Typedef",
-    "defdec": "Def",
-    "display": "long",
-    "location": {
-      "column": "30",
-      "line": "26",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
-    },
-    "name": "int32_t",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stdint.h@T@uint32_t",
-    "What": "Typedef",
-    "defdec": "Def",
-    "display": "unsigned long",
-    "location": {
-      "column": "29",
-      "line": "27",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
-    },
-    "name": "uint32_t",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stdint.h@T@int_least8_t",
-    "What": "Typedef",
-    "defdec": "Def",
-    "display": "signed char",
-    "location": {
-      "column": "33",
-      "line": "40",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
-    },
-    "name": "int_least8_t",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stdint.h@T@uint_least8_t",
-    "What": "Typedef",
-    "defdec": "Def",
-    "display": "unsigned char",
-    "location": {
-      "column": "32",
-      "line": "41",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
-    },
-    "name": "uint_least8_t",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stdint.h@T@int_least16_t",
-    "What": "Typedef",
-    "defdec": "Def",
-    "display": "int",
-    "location": {
-      "column": "34",
-      "line": "43",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
-    },
-    "name": "int_least16_t",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stdint.h@T@uint_least16_t",
-    "What": "Typedef",
-    "defdec": "Def",
-    "display": "unsigned int",
-    "location": {
-      "column": "33",
-      "line": "44",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
-    },
-    "name": "uint_least16_t",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stdint.h@T@int_least32_t",
-    "What": "Typedef",
-    "defdec": "Def",
-    "display": "long",
-    "location": {
-      "column": "34",
-      "line": "46",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
-    },
-    "name": "int_least32_t",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stdint.h@T@uint_least32_t",
-    "What": "Typedef",
-    "defdec": "Def",
-    "display": "unsigned long",
-    "location": {
-      "column": "33",
-      "line": "47",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
-    },
-    "name": "uint_least32_t",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stdint.h@T@int_fast8_t",
-    "What": "Typedef",
-    "defdec": "Def",
-    "display": "signed char",
-    "location": {
-      "column": "32",
-      "line": "66",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
-    },
-    "name": "int_fast8_t",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stdint.h@T@uint_fast8_t",
-    "What": "Typedef",
-    "defdec": "Def",
-    "display": "unsigned char",
-    "location": {
-      "column": "31",
-      "line": "67",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
-    },
-    "name": "uint_fast8_t",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stdint.h@T@int_fast16_t",
-    "What": "Typedef",
-    "defdec": "Def",
-    "display": "int",
-    "location": {
-      "column": "33",
-      "line": "69",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
-    },
-    "name": "int_fast16_t",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stdint.h@T@uint_fast16_t",
-    "What": "Typedef",
-    "defdec": "Def",
-    "display": "unsigned int",
-    "location": {
-      "column": "32",
-      "line": "70",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
-    },
-    "name": "uint_fast16_t",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stdint.h@T@int_fast32_t",
-    "What": "Typedef",
-    "defdec": "Def",
-    "display": "long",
-    "location": {
-      "column": "33",
-      "line": "72",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
-    },
-    "name": "int_fast32_t",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stdint.h@T@uint_fast32_t",
-    "What": "Typedef",
-    "defdec": "Def",
-    "display": "unsigned long",
-    "location": {
-      "column": "32",
-      "line": "73",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
-    },
-    "name": "uint_fast32_t",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stdint.h@T@intmax_t",
-    "What": "Typedef",
-    "defdec": "Def",
-    "display": "long",
-    "location": {
-      "column": "29",
-      "line": "91",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
-    },
-    "name": "intmax_t",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stdint.h@T@uintmax_t",
-    "What": "Typedef",
-    "defdec": "Def",
-    "display": "unsigned long",
-    "location": {
-      "column": "28",
-      "line": "92",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
-    },
-    "name": "uintmax_t",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stdint.h@T@intptr_t",
-    "What": "Typedef",
-    "defdec": "Def",
-    "display": "short",
-    "location": {
-      "column": "29",
-      "line": "97",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
-    },
-    "name": "intptr_t",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stdint.h@T@uintptr_t",
-    "What": "Typedef",
-    "defdec": "Def",
-    "display": "unsigned short",
-    "location": {
-      "column": "28",
-      "line": "98",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
-    },
-    "name": "uintptr_t",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stdint.h@3156@macro@__DATA_PTR_MEM_HELPER1__",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "__DATA_PTR_MEM_HELPER1__",
-    "location": {
-      "column": "9",
-      "line": "101",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
-    },
-    "name": "__DATA_PTR_MEM_HELPER1__",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stdint.h@T@__data_uintptr_t",
-    "What": "Typedef",
-    "defdec": "Def",
-    "display": "unsigned char",
-    "location": {
-      "column": "1",
-      "line": "104",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
-    },
-    "name": "__data_uintptr_t",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stdint.h@T@__data_intptr_t",
-    "What": "Typedef",
-    "defdec": "Def",
-    "display": "signed char",
-    "location": {
-      "column": "1",
-      "line": "104",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
-    },
-    "name": "__data_intptr_t",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stdint.h@3521@macro@INT8_MAX",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "INT8_MAX",
-    "location": {
-      "column": "11",
-      "line": "111",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
-    },
-    "name": "INT8_MAX",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stdint.h@3558@macro@INT8_MIN",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "INT8_MIN",
-    "location": {
-      "column": "11",
-      "line": "112",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
-    },
-    "name": "INT8_MIN",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stdint.h@3595@macro@UINT8_MAX",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "UINT8_MAX",
-    "location": {
-      "column": "11",
-      "line": "113",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
-    },
-    "name": "UINT8_MAX",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stdint.h@3667@macro@INT16_MAX",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "INT16_MAX",
-    "location": {
-      "column": "11",
-      "line": "117",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
-    },
-    "name": "INT16_MAX",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stdint.h@3706@macro@INT16_MIN",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "INT16_MIN",
-    "location": {
-      "column": "11",
-      "line": "118",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
-    },
-    "name": "INT16_MIN",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stdint.h@3745@macro@UINT16_MAX",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "UINT16_MAX",
-    "location": {
-      "column": "11",
-      "line": "119",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
-    },
-    "name": "UINT16_MAX",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stdint.h@3819@macro@INT32_MAX",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "INT32_MAX",
-    "location": {
-      "column": "11",
-      "line": "123",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
-    },
-    "name": "INT32_MAX",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stdint.h@3858@macro@INT32_MIN",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "INT32_MIN",
-    "location": {
-      "column": "11",
-      "line": "124",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
-    },
-    "name": "INT32_MIN",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stdint.h@3897@macro@UINT32_MAX",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "UINT32_MAX",
-    "location": {
-      "column": "11",
-      "line": "125",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
-    },
-    "name": "UINT32_MAX",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stdint.h@4096@macro@INT_LEAST8_MAX",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "INT_LEAST8_MAX",
-    "location": {
-      "column": "9",
-      "line": "134",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
-    },
-    "name": "INT_LEAST8_MAX",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stdint.h@4143@macro@INT_LEAST8_MIN",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "INT_LEAST8_MIN",
-    "location": {
-      "column": "9",
-      "line": "135",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
-    },
-    "name": "INT_LEAST8_MIN",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stdint.h@4190@macro@UINT_LEAST8_MAX",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "UINT_LEAST8_MAX",
-    "location": {
-      "column": "9",
-      "line": "136",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
-    },
-    "name": "UINT_LEAST8_MAX",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stdint.h@4239@macro@INT_LEAST16_MAX",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "INT_LEAST16_MAX",
-    "location": {
-      "column": "9",
-      "line": "138",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
-    },
-    "name": "INT_LEAST16_MAX",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stdint.h@4288@macro@INT_LEAST16_MIN",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "INT_LEAST16_MIN",
-    "location": {
-      "column": "9",
-      "line": "139",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
-    },
-    "name": "INT_LEAST16_MIN",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stdint.h@4337@macro@UINT_LEAST16_MAX",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "UINT_LEAST16_MAX",
-    "location": {
-      "column": "9",
-      "line": "140",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
-    },
-    "name": "UINT_LEAST16_MAX",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stdint.h@4388@macro@INT_LEAST32_MAX",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "INT_LEAST32_MAX",
-    "location": {
-      "column": "9",
-      "line": "142",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
-    },
-    "name": "INT_LEAST32_MAX",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stdint.h@4437@macro@INT_LEAST32_MIN",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "INT_LEAST32_MIN",
-    "location": {
-      "column": "9",
-      "line": "143",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
-    },
-    "name": "INT_LEAST32_MIN",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stdint.h@4486@macro@UINT_LEAST32_MAX",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "UINT_LEAST32_MAX",
-    "location": {
-      "column": "9",
-      "line": "144",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
-    },
-    "name": "UINT_LEAST32_MAX",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stdint.h@4769@macro@INT_FAST8_MAX",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "INT_FAST8_MAX",
-    "location": {
-      "column": "9",
-      "line": "155",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
-    },
-    "name": "INT_FAST8_MAX",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stdint.h@4814@macro@INT_FAST8_MIN",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "INT_FAST8_MIN",
-    "location": {
-      "column": "9",
-      "line": "156",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
-    },
-    "name": "INT_FAST8_MIN",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stdint.h@4859@macro@UINT_FAST8_MAX",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "UINT_FAST8_MAX",
-    "location": {
-      "column": "9",
-      "line": "157",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
-    },
-    "name": "UINT_FAST8_MAX",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stdint.h@4906@macro@INT_FAST16_MAX",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "INT_FAST16_MAX",
-    "location": {
-      "column": "9",
-      "line": "159",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
-    },
-    "name": "INT_FAST16_MAX",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stdint.h@4953@macro@INT_FAST16_MIN",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "INT_FAST16_MIN",
-    "location": {
-      "column": "9",
-      "line": "160",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
-    },
-    "name": "INT_FAST16_MIN",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stdint.h@5000@macro@UINT_FAST16_MAX",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "UINT_FAST16_MAX",
-    "location": {
-      "column": "9",
-      "line": "161",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
-    },
-    "name": "UINT_FAST16_MAX",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stdint.h@5049@macro@INT_FAST32_MAX",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "INT_FAST32_MAX",
-    "location": {
-      "column": "9",
-      "line": "163",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
-    },
-    "name": "INT_FAST32_MAX",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stdint.h@5096@macro@INT_FAST32_MIN",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "INT_FAST32_MIN",
-    "location": {
-      "column": "9",
-      "line": "164",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
-    },
-    "name": "INT_FAST32_MIN",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stdint.h@5143@macro@UINT_FAST32_MAX",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "UINT_FAST32_MAX",
-    "location": {
-      "column": "9",
-      "line": "165",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
-    },
-    "name": "UINT_FAST32_MAX",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stdint.h@5416@macro@INTMAX_MAX",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "INTMAX_MAX",
-    "location": {
-      "column": "9",
-      "line": "176",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
-    },
-    "name": "INTMAX_MAX",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stdint.h@5455@macro@INTMAX_MIN",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "INTMAX_MIN",
-    "location": {
-      "column": "9",
-      "line": "177",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
-    },
-    "name": "INTMAX_MIN",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stdint.h@5494@macro@UINTMAX_MAX",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "UINTMAX_MAX",
-    "location": {
-      "column": "9",
-      "line": "178",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
-    },
-    "name": "UINTMAX_MAX",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stdint.h@5535@macro@SIZE_MAX",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "SIZE_MAX",
-    "location": {
-      "column": "9",
-      "line": "180",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
-    },
-    "name": "SIZE_MAX",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stdint.h@5570@macro@PTRDIFF_MAX",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "PTRDIFF_MAX",
-    "location": {
-      "column": "9",
-      "line": "182",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
-    },
-    "name": "PTRDIFF_MAX",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stdint.h@5609@macro@PTRDIFF_MIN",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "PTRDIFF_MIN",
-    "location": {
-      "column": "9",
-      "line": "183",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
-    },
-    "name": "PTRDIFF_MIN",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stdint.h@5650@macro@INTPTR_MAX",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "INTPTR_MAX",
-    "location": {
-      "column": "9",
-      "line": "185",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
-    },
-    "name": "INTPTR_MAX",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stdint.h@5689@macro@INTPTR_MIN",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "INTPTR_MIN",
-    "location": {
-      "column": "9",
-      "line": "186",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
-    },
-    "name": "INTPTR_MIN",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stdint.h@5728@macro@UINTPTR_MAX",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "UINTPTR_MAX",
-    "location": {
-      "column": "9",
-      "line": "187",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
-    },
-    "name": "UINTPTR_MAX",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stdint.h@5769@macro@WCHAR_MIN",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "WCHAR_MIN",
-    "location": {
-      "column": "9",
-      "line": "189",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
-    },
-    "name": "WCHAR_MIN",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stdint.h@5795@macro@WCHAR_MAX",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "WCHAR_MAX",
-    "location": {
-      "column": "9",
-      "line": "190",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
-    },
-    "name": "WCHAR_MAX",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stdint.h@5823@macro@WINT_MIN",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "WINT_MIN",
-    "location": {
-      "column": "9",
-      "line": "192",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
-    },
-    "name": "WINT_MIN",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stdint.h@5848@macro@WINT_MAX",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "WINT_MAX",
-    "location": {
-      "column": "9",
-      "line": "193",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
-    },
-    "name": "WINT_MAX",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stdint.h@5875@macro@SIG_ATOMIC_MIN",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "SIG_ATOMIC_MIN",
-    "location": {
-      "column": "9",
-      "line": "195",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
-    },
-    "name": "SIG_ATOMIC_MIN",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stdint.h@5919@macro@SIG_ATOMIC_MAX",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "SIG_ATOMIC_MAX",
-    "location": {
-      "column": "9",
-      "line": "196",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
-    },
-    "name": "SIG_ATOMIC_MAX",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stdint.h@6175@macro@INT8_C",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "INT8_C",
-    "location": {
-      "column": "11",
-      "line": "206",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
-    },
-    "name": "INT8_C",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stdint.h@6224@macro@UINT8_C",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "UINT8_C",
-    "location": {
-      "column": "11",
-      "line": "207",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
-    },
-    "name": "UINT8_C",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stdint.h@6309@macro@INT16_C",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "INT16_C",
-    "location": {
-      "column": "11",
-      "line": "211",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
-    },
-    "name": "INT16_C",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stdint.h@6360@macro@UINT16_C",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "UINT16_C",
-    "location": {
-      "column": "11",
-      "line": "212",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
-    },
-    "name": "UINT16_C",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stdint.h@6447@macro@INT32_C",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "INT32_C",
-    "location": {
-      "column": "11",
-      "line": "216",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
-    },
-    "name": "INT32_C",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stdint.h@6498@macro@UINT32_C",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "UINT32_C",
-    "location": {
-      "column": "11",
-      "line": "217",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
-    },
-    "name": "UINT32_C",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stdint.h@6743@macro@INTMAX_C",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "INTMAX_C",
-    "location": {
-      "column": "9",
-      "line": "228",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
-    },
-    "name": "INTMAX_C",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stdint.h@6794@macro@UINTMAX_C",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "UINTMAX_C",
-    "location": {
-      "column": "9",
-      "line": "229",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
-    },
-    "name": "UINTMAX_C",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
     "ID": "c:stm8s_tim4.h@1284@macro@__STM8S_TIM4_H",
     "What": "MacroDef",
     "defdec": "Def",
@@ -34000,6 +32936,1070 @@
       "path": "E:\\IARSTM8\\stm8\\inc\\c\\intrinsics.h"
     },
     "name": "__BSET",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stdint.h@101@macro@_STDINT",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "_STDINT",
+    "location": {
+      "column": "9",
+      "line": "4",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
+    },
+    "name": "_STDINT",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stdint.h@T@int8_t",
+    "What": "Typedef",
+    "defdec": "Def",
+    "display": "signed char",
+    "location": {
+      "column": "29",
+      "line": "16",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
+    },
+    "name": "int8_t",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stdint.h@T@uint8_t",
+    "What": "Typedef",
+    "defdec": "Def",
+    "display": "unsigned char",
+    "location": {
+      "column": "28",
+      "line": "17",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
+    },
+    "name": "uint8_t",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stdint.h@T@int16_t",
+    "What": "Typedef",
+    "defdec": "Def",
+    "display": "int",
+    "location": {
+      "column": "30",
+      "line": "21",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
+    },
+    "name": "int16_t",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stdint.h@T@uint16_t",
+    "What": "Typedef",
+    "defdec": "Def",
+    "display": "unsigned int",
+    "location": {
+      "column": "29",
+      "line": "22",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
+    },
+    "name": "uint16_t",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stdint.h@T@int32_t",
+    "What": "Typedef",
+    "defdec": "Def",
+    "display": "long",
+    "location": {
+      "column": "30",
+      "line": "26",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
+    },
+    "name": "int32_t",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stdint.h@T@uint32_t",
+    "What": "Typedef",
+    "defdec": "Def",
+    "display": "unsigned long",
+    "location": {
+      "column": "29",
+      "line": "27",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
+    },
+    "name": "uint32_t",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stdint.h@T@int_least8_t",
+    "What": "Typedef",
+    "defdec": "Def",
+    "display": "signed char",
+    "location": {
+      "column": "33",
+      "line": "40",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
+    },
+    "name": "int_least8_t",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stdint.h@T@uint_least8_t",
+    "What": "Typedef",
+    "defdec": "Def",
+    "display": "unsigned char",
+    "location": {
+      "column": "32",
+      "line": "41",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
+    },
+    "name": "uint_least8_t",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stdint.h@T@int_least16_t",
+    "What": "Typedef",
+    "defdec": "Def",
+    "display": "int",
+    "location": {
+      "column": "34",
+      "line": "43",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
+    },
+    "name": "int_least16_t",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stdint.h@T@uint_least16_t",
+    "What": "Typedef",
+    "defdec": "Def",
+    "display": "unsigned int",
+    "location": {
+      "column": "33",
+      "line": "44",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
+    },
+    "name": "uint_least16_t",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stdint.h@T@int_least32_t",
+    "What": "Typedef",
+    "defdec": "Def",
+    "display": "long",
+    "location": {
+      "column": "34",
+      "line": "46",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
+    },
+    "name": "int_least32_t",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stdint.h@T@uint_least32_t",
+    "What": "Typedef",
+    "defdec": "Def",
+    "display": "unsigned long",
+    "location": {
+      "column": "33",
+      "line": "47",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
+    },
+    "name": "uint_least32_t",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stdint.h@T@int_fast8_t",
+    "What": "Typedef",
+    "defdec": "Def",
+    "display": "signed char",
+    "location": {
+      "column": "32",
+      "line": "66",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
+    },
+    "name": "int_fast8_t",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stdint.h@T@uint_fast8_t",
+    "What": "Typedef",
+    "defdec": "Def",
+    "display": "unsigned char",
+    "location": {
+      "column": "31",
+      "line": "67",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
+    },
+    "name": "uint_fast8_t",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stdint.h@T@int_fast16_t",
+    "What": "Typedef",
+    "defdec": "Def",
+    "display": "int",
+    "location": {
+      "column": "33",
+      "line": "69",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
+    },
+    "name": "int_fast16_t",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stdint.h@T@uint_fast16_t",
+    "What": "Typedef",
+    "defdec": "Def",
+    "display": "unsigned int",
+    "location": {
+      "column": "32",
+      "line": "70",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
+    },
+    "name": "uint_fast16_t",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stdint.h@T@int_fast32_t",
+    "What": "Typedef",
+    "defdec": "Def",
+    "display": "long",
+    "location": {
+      "column": "33",
+      "line": "72",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
+    },
+    "name": "int_fast32_t",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stdint.h@T@uint_fast32_t",
+    "What": "Typedef",
+    "defdec": "Def",
+    "display": "unsigned long",
+    "location": {
+      "column": "32",
+      "line": "73",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
+    },
+    "name": "uint_fast32_t",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stdint.h@T@intmax_t",
+    "What": "Typedef",
+    "defdec": "Def",
+    "display": "long",
+    "location": {
+      "column": "29",
+      "line": "91",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
+    },
+    "name": "intmax_t",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stdint.h@T@uintmax_t",
+    "What": "Typedef",
+    "defdec": "Def",
+    "display": "unsigned long",
+    "location": {
+      "column": "28",
+      "line": "92",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
+    },
+    "name": "uintmax_t",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stdint.h@T@intptr_t",
+    "What": "Typedef",
+    "defdec": "Def",
+    "display": "short",
+    "location": {
+      "column": "29",
+      "line": "97",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
+    },
+    "name": "intptr_t",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stdint.h@T@uintptr_t",
+    "What": "Typedef",
+    "defdec": "Def",
+    "display": "unsigned short",
+    "location": {
+      "column": "28",
+      "line": "98",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
+    },
+    "name": "uintptr_t",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stdint.h@3156@macro@__DATA_PTR_MEM_HELPER1__",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "__DATA_PTR_MEM_HELPER1__",
+    "location": {
+      "column": "9",
+      "line": "101",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
+    },
+    "name": "__DATA_PTR_MEM_HELPER1__",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stdint.h@T@__data_uintptr_t",
+    "What": "Typedef",
+    "defdec": "Def",
+    "display": "unsigned char",
+    "location": {
+      "column": "1",
+      "line": "104",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
+    },
+    "name": "__data_uintptr_t",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stdint.h@T@__data_intptr_t",
+    "What": "Typedef",
+    "defdec": "Def",
+    "display": "signed char",
+    "location": {
+      "column": "1",
+      "line": "104",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
+    },
+    "name": "__data_intptr_t",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stdint.h@3521@macro@INT8_MAX",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "INT8_MAX",
+    "location": {
+      "column": "11",
+      "line": "111",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
+    },
+    "name": "INT8_MAX",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stdint.h@3558@macro@INT8_MIN",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "INT8_MIN",
+    "location": {
+      "column": "11",
+      "line": "112",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
+    },
+    "name": "INT8_MIN",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stdint.h@3595@macro@UINT8_MAX",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "UINT8_MAX",
+    "location": {
+      "column": "11",
+      "line": "113",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
+    },
+    "name": "UINT8_MAX",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stdint.h@3667@macro@INT16_MAX",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "INT16_MAX",
+    "location": {
+      "column": "11",
+      "line": "117",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
+    },
+    "name": "INT16_MAX",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stdint.h@3706@macro@INT16_MIN",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "INT16_MIN",
+    "location": {
+      "column": "11",
+      "line": "118",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
+    },
+    "name": "INT16_MIN",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stdint.h@3745@macro@UINT16_MAX",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "UINT16_MAX",
+    "location": {
+      "column": "11",
+      "line": "119",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
+    },
+    "name": "UINT16_MAX",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stdint.h@3819@macro@INT32_MAX",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "INT32_MAX",
+    "location": {
+      "column": "11",
+      "line": "123",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
+    },
+    "name": "INT32_MAX",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stdint.h@3858@macro@INT32_MIN",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "INT32_MIN",
+    "location": {
+      "column": "11",
+      "line": "124",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
+    },
+    "name": "INT32_MIN",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stdint.h@3897@macro@UINT32_MAX",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "UINT32_MAX",
+    "location": {
+      "column": "11",
+      "line": "125",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
+    },
+    "name": "UINT32_MAX",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stdint.h@4096@macro@INT_LEAST8_MAX",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "INT_LEAST8_MAX",
+    "location": {
+      "column": "9",
+      "line": "134",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
+    },
+    "name": "INT_LEAST8_MAX",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stdint.h@4143@macro@INT_LEAST8_MIN",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "INT_LEAST8_MIN",
+    "location": {
+      "column": "9",
+      "line": "135",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
+    },
+    "name": "INT_LEAST8_MIN",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stdint.h@4190@macro@UINT_LEAST8_MAX",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "UINT_LEAST8_MAX",
+    "location": {
+      "column": "9",
+      "line": "136",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
+    },
+    "name": "UINT_LEAST8_MAX",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stdint.h@4239@macro@INT_LEAST16_MAX",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "INT_LEAST16_MAX",
+    "location": {
+      "column": "9",
+      "line": "138",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
+    },
+    "name": "INT_LEAST16_MAX",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stdint.h@4288@macro@INT_LEAST16_MIN",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "INT_LEAST16_MIN",
+    "location": {
+      "column": "9",
+      "line": "139",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
+    },
+    "name": "INT_LEAST16_MIN",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stdint.h@4337@macro@UINT_LEAST16_MAX",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "UINT_LEAST16_MAX",
+    "location": {
+      "column": "9",
+      "line": "140",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
+    },
+    "name": "UINT_LEAST16_MAX",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stdint.h@4388@macro@INT_LEAST32_MAX",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "INT_LEAST32_MAX",
+    "location": {
+      "column": "9",
+      "line": "142",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
+    },
+    "name": "INT_LEAST32_MAX",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stdint.h@4437@macro@INT_LEAST32_MIN",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "INT_LEAST32_MIN",
+    "location": {
+      "column": "9",
+      "line": "143",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
+    },
+    "name": "INT_LEAST32_MIN",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stdint.h@4486@macro@UINT_LEAST32_MAX",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "UINT_LEAST32_MAX",
+    "location": {
+      "column": "9",
+      "line": "144",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
+    },
+    "name": "UINT_LEAST32_MAX",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stdint.h@4769@macro@INT_FAST8_MAX",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "INT_FAST8_MAX",
+    "location": {
+      "column": "9",
+      "line": "155",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
+    },
+    "name": "INT_FAST8_MAX",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stdint.h@4814@macro@INT_FAST8_MIN",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "INT_FAST8_MIN",
+    "location": {
+      "column": "9",
+      "line": "156",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
+    },
+    "name": "INT_FAST8_MIN",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stdint.h@4859@macro@UINT_FAST8_MAX",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "UINT_FAST8_MAX",
+    "location": {
+      "column": "9",
+      "line": "157",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
+    },
+    "name": "UINT_FAST8_MAX",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stdint.h@4906@macro@INT_FAST16_MAX",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "INT_FAST16_MAX",
+    "location": {
+      "column": "9",
+      "line": "159",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
+    },
+    "name": "INT_FAST16_MAX",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stdint.h@4953@macro@INT_FAST16_MIN",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "INT_FAST16_MIN",
+    "location": {
+      "column": "9",
+      "line": "160",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
+    },
+    "name": "INT_FAST16_MIN",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stdint.h@5000@macro@UINT_FAST16_MAX",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "UINT_FAST16_MAX",
+    "location": {
+      "column": "9",
+      "line": "161",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
+    },
+    "name": "UINT_FAST16_MAX",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stdint.h@5049@macro@INT_FAST32_MAX",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "INT_FAST32_MAX",
+    "location": {
+      "column": "9",
+      "line": "163",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
+    },
+    "name": "INT_FAST32_MAX",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stdint.h@5096@macro@INT_FAST32_MIN",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "INT_FAST32_MIN",
+    "location": {
+      "column": "9",
+      "line": "164",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
+    },
+    "name": "INT_FAST32_MIN",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stdint.h@5143@macro@UINT_FAST32_MAX",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "UINT_FAST32_MAX",
+    "location": {
+      "column": "9",
+      "line": "165",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
+    },
+    "name": "UINT_FAST32_MAX",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stdint.h@5416@macro@INTMAX_MAX",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "INTMAX_MAX",
+    "location": {
+      "column": "9",
+      "line": "176",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
+    },
+    "name": "INTMAX_MAX",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stdint.h@5455@macro@INTMAX_MIN",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "INTMAX_MIN",
+    "location": {
+      "column": "9",
+      "line": "177",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
+    },
+    "name": "INTMAX_MIN",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stdint.h@5494@macro@UINTMAX_MAX",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "UINTMAX_MAX",
+    "location": {
+      "column": "9",
+      "line": "178",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
+    },
+    "name": "UINTMAX_MAX",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stdint.h@5535@macro@SIZE_MAX",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "SIZE_MAX",
+    "location": {
+      "column": "9",
+      "line": "180",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
+    },
+    "name": "SIZE_MAX",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stdint.h@5570@macro@PTRDIFF_MAX",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "PTRDIFF_MAX",
+    "location": {
+      "column": "9",
+      "line": "182",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
+    },
+    "name": "PTRDIFF_MAX",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stdint.h@5609@macro@PTRDIFF_MIN",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "PTRDIFF_MIN",
+    "location": {
+      "column": "9",
+      "line": "183",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
+    },
+    "name": "PTRDIFF_MIN",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stdint.h@5650@macro@INTPTR_MAX",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "INTPTR_MAX",
+    "location": {
+      "column": "9",
+      "line": "185",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
+    },
+    "name": "INTPTR_MAX",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stdint.h@5689@macro@INTPTR_MIN",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "INTPTR_MIN",
+    "location": {
+      "column": "9",
+      "line": "186",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
+    },
+    "name": "INTPTR_MIN",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stdint.h@5728@macro@UINTPTR_MAX",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "UINTPTR_MAX",
+    "location": {
+      "column": "9",
+      "line": "187",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
+    },
+    "name": "UINTPTR_MAX",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stdint.h@5769@macro@WCHAR_MIN",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "WCHAR_MIN",
+    "location": {
+      "column": "9",
+      "line": "189",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
+    },
+    "name": "WCHAR_MIN",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stdint.h@5795@macro@WCHAR_MAX",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "WCHAR_MAX",
+    "location": {
+      "column": "9",
+      "line": "190",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
+    },
+    "name": "WCHAR_MAX",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stdint.h@5823@macro@WINT_MIN",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "WINT_MIN",
+    "location": {
+      "column": "9",
+      "line": "192",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
+    },
+    "name": "WINT_MIN",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stdint.h@5848@macro@WINT_MAX",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "WINT_MAX",
+    "location": {
+      "column": "9",
+      "line": "193",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
+    },
+    "name": "WINT_MAX",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stdint.h@5875@macro@SIG_ATOMIC_MIN",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "SIG_ATOMIC_MIN",
+    "location": {
+      "column": "9",
+      "line": "195",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
+    },
+    "name": "SIG_ATOMIC_MIN",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stdint.h@5919@macro@SIG_ATOMIC_MAX",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "SIG_ATOMIC_MAX",
+    "location": {
+      "column": "9",
+      "line": "196",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
+    },
+    "name": "SIG_ATOMIC_MAX",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stdint.h@6175@macro@INT8_C",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "INT8_C",
+    "location": {
+      "column": "11",
+      "line": "206",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
+    },
+    "name": "INT8_C",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stdint.h@6224@macro@UINT8_C",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "UINT8_C",
+    "location": {
+      "column": "11",
+      "line": "207",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
+    },
+    "name": "UINT8_C",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stdint.h@6309@macro@INT16_C",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "INT16_C",
+    "location": {
+      "column": "11",
+      "line": "211",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
+    },
+    "name": "INT16_C",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stdint.h@6360@macro@UINT16_C",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "UINT16_C",
+    "location": {
+      "column": "11",
+      "line": "212",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
+    },
+    "name": "UINT16_C",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stdint.h@6447@macro@INT32_C",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "INT32_C",
+    "location": {
+      "column": "11",
+      "line": "216",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
+    },
+    "name": "INT32_C",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stdint.h@6498@macro@UINT32_C",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "UINT32_C",
+    "location": {
+      "column": "11",
+      "line": "217",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
+    },
+    "name": "UINT32_C",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stdint.h@6743@macro@INTMAX_C",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "INTMAX_C",
+    "location": {
+      "column": "9",
+      "line": "228",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
+    },
+    "name": "INTMAX_C",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stdint.h@6794@macro@UINTMAX_C",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "UINTMAX_C",
+    "location": {
+      "column": "9",
+      "line": "229",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdint.h"
+    },
+    "name": "UINTMAX_C",
     "origin": "system_include",
     "scope": null
   },
@@ -42582,13 +42582,27 @@
     "scope": null
   },
   {
-    "ID": "c:ek_gpio.h@1161@macro@BOARD_OUT2_ON",
+    "ID": "c:ek_gpio.h@1161@macro@BOARD_OUT1_REV",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "BOARD_OUT1_REV",
+    "location": {
+      "column": "9",
+      "line": "32",
+      "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\ek_gpio.h"
+    },
+    "name": "BOARD_OUT1_REV",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:ek_gpio.h@1250@macro@BOARD_OUT2_ON",
     "What": "MacroDef",
     "defdec": "Def",
     "display": "BOARD_OUT2_ON",
     "location": {
       "column": "9",
-      "line": "32",
+      "line": "34",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\ek_gpio.h"
     },
     "name": "BOARD_OUT2_ON",
@@ -42596,13 +42610,13 @@
     "scope": null
   },
   {
-    "ID": "c:ek_gpio.h@1246@macro@BOARD_OUT2_OFF",
+    "ID": "c:ek_gpio.h@1335@macro@BOARD_OUT2_OFF",
     "What": "MacroDef",
     "defdec": "Def",
     "display": "BOARD_OUT2_OFF",
     "location": {
       "column": "9",
-      "line": "33",
+      "line": "35",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\ek_gpio.h"
     },
     "name": "BOARD_OUT2_OFF",
@@ -42610,13 +42624,13 @@
     "scope": null
   },
   {
-    "ID": "c:ek_gpio.h@1330@macro@BOARD_OUT3_ON",
+    "ID": "c:ek_gpio.h@1419@macro@BOARD_OUT3_ON",
     "What": "MacroDef",
     "defdec": "Def",
     "display": "BOARD_OUT3_ON",
     "location": {
       "column": "9",
-      "line": "34",
+      "line": "36",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\ek_gpio.h"
     },
     "name": "BOARD_OUT3_ON",
@@ -42624,13 +42638,13 @@
     "scope": null
   },
   {
-    "ID": "c:ek_gpio.h@1415@macro@BOARD_OUT3_OFF",
+    "ID": "c:ek_gpio.h@1504@macro@BOARD_OUT3_OFF",
     "What": "MacroDef",
     "defdec": "Def",
     "display": "BOARD_OUT3_OFF",
     "location": {
       "column": "9",
-      "line": "35",
+      "line": "37",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\ek_gpio.h"
     },
     "name": "BOARD_OUT3_OFF",
@@ -42638,13 +42652,13 @@
     "scope": null
   },
   {
-    "ID": "c:ek_gpio.h@1499@macro@ES1642_RES_ON",
+    "ID": "c:ek_gpio.h@1588@macro@ES1642_RES_ON",
     "What": "MacroDef",
     "defdec": "Def",
     "display": "ES1642_RES_ON",
     "location": {
       "column": "9",
-      "line": "36",
+      "line": "38",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\ek_gpio.h"
     },
     "name": "ES1642_RES_ON",
@@ -42652,13 +42666,13 @@
     "scope": null
   },
   {
-    "ID": "c:ek_gpio.h@1583@macro@ES1642_RES_OFF",
+    "ID": "c:ek_gpio.h@1672@macro@ES1642_RES_OFF",
     "What": "MacroDef",
     "defdec": "Def",
     "display": "ES1642_RES_OFF",
     "location": {
       "column": "9",
-      "line": "37",
+      "line": "39",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\ek_gpio.h"
     },
     "name": "ES1642_RES_OFF",
@@ -42672,7 +42686,7 @@
     "display": "void ek_gpio_init(void)",
     "location": {
       "column": "6",
-      "line": "39",
+      "line": "41",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\ek_gpio.h"
     },
     "name": "ek_gpio_init",
@@ -42686,7 +42700,7 @@
     "display": "void ek_gpio_init(void)",
     "location": {
       "column": "6",
-      "line": "39",
+      "line": "41",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\ek_gpio.h"
     },
     "name": "ek_gpio_init",
@@ -42700,7 +42714,7 @@
     "display": "void board_outputs_all_off(void)",
     "location": {
       "column": "6",
-      "line": "40",
+      "line": "42",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\ek_gpio.h"
     },
     "name": "board_outputs_all_off",
@@ -42714,7 +42728,7 @@
     "display": "void board_outputs_all_off(void)",
     "location": {
       "column": "6",
-      "line": "40",
+      "line": "42",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\ek_gpio.h"
     },
     "name": "board_outputs_all_off",
@@ -42728,7 +42742,7 @@
     "display": "uint8_t board_input1_read(void)",
     "location": {
       "column": "9",
-      "line": "41",
+      "line": "43",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\ek_gpio.h"
     },
     "name": "board_input1_read",
@@ -42742,7 +42756,7 @@
     "display": "uint8_t board_input1_read(void)",
     "location": {
       "column": "9",
-      "line": "41",
+      "line": "43",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\ek_gpio.h"
     },
     "name": "board_input1_read",
@@ -42756,7 +42770,7 @@
     "display": "uint8_t board_input2_read(void)",
     "location": {
       "column": "9",
-      "line": "42",
+      "line": "44",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\ek_gpio.h"
     },
     "name": "board_input2_read",
@@ -42770,7 +42784,7 @@
     "display": "uint8_t board_input2_read(void)",
     "location": {
       "column": "9",
-      "line": "42",
+      "line": "44",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\ek_gpio.h"
     },
     "name": "board_input2_read",
@@ -44358,104 +44372,6 @@
     "scope": null
   },
   {
-    "ID": "c:DLib_Product.h@161@macro@_DLIB_PRODUCT_H",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "_DLIB_PRODUCT_H",
-    "location": {
-      "column": "9",
-      "line": "7",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\DLib_Product.h"
-    },
-    "name": "_DLIB_PRODUCT_H",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:DLib_Product.h@314@macro@_DLIB_SMALL_TARGET",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "_DLIB_SMALL_TARGET",
-    "location": {
-      "column": "9",
-      "line": "16",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\DLib_Product.h"
-    },
-    "name": "_DLIB_SMALL_TARGET",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:DLib_Product.h@427@macro@_DLIB_STM8ABI_DIFUNC_CONTAINS_OFFSETS",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "_DLIB_STM8ABI_DIFUNC_CONTAINS_OFFSETS",
-    "location": {
-      "column": "9",
-      "line": "21",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\DLib_Product.h"
-    },
-    "name": "_DLIB_STM8ABI_DIFUNC_CONTAINS_OFFSETS",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:DLib_Product.h@539@macro@_FLOATING_LESS_INLINES",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "_FLOATING_LESS_INLINES",
-    "location": {
-      "column": "9",
-      "line": "26",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\DLib_Product.h"
-    },
-    "name": "_FLOATING_LESS_INLINES",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:DLib_Product.h@633@macro@_DLIB_SMALL_FP_HELPERS",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "_DLIB_SMALL_FP_HELPERS",
-    "location": {
-      "column": "9",
-      "line": "31",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\DLib_Product.h"
-    },
-    "name": "_DLIB_SMALL_FP_HELPERS",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:DLib_Product.h@711@macro@__WEAK",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "__WEAK",
-    "location": {
-      "column": "9",
-      "line": "36",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\DLib_Product.h"
-    },
-    "name": "__WEAK",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:DLib_Product.h@838@macro@_TLS_CONST_DEFINITION",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "_TLS_CONST_DEFINITION",
-    "location": {
-      "column": "9",
-      "line": "45",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\DLib_Product.h"
-    },
-    "name": "_TLS_CONST_DEFINITION",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
     "ID": "c:stm8s_awu.h@1281@macro@__STM8S_AWU_H",
     "What": "MacroDef",
     "defdec": "Def",
@@ -45482,6 +45398,20 @@
     "scope": null
   },
   {
+    "ID": "c:@F@ek_sys_clk_init",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "void ek_sys_clk_init(void)",
+    "location": {
+      "column": "6",
+      "line": "3",
+      "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\ek_clk.c"
+    },
+    "name": "ek_sys_clk_init",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
     "ID": "c:ek_uart.h@28@macro@__EK_UART_H",
     "What": "MacroDef",
     "defdec": "Def",
@@ -45622,20 +45552,6 @@
     "scope": null
   },
   {
-    "ID": "c:@F@ek_sys_clk_init",
-    "What": "Function",
-    "defdec": "Def",
-    "display": "void ek_sys_clk_init(void)",
-    "location": {
-      "column": "6",
-      "line": "3",
-      "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\ek_clk.c"
-    },
-    "name": "ek_sys_clk_init",
-    "origin": "project_file",
-    "scope": null
-  },
-  {
     "ID": "c:ysizet.h@111@macro@_YSIZET_H",
     "What": "MacroDef",
     "defdec": "Def",
@@ -45772,6 +45688,104 @@
       "path": "E:\\IARSTM8\\stm8\\inc\\c\\ystdio.h"
     },
     "name": "rename",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:DLib_Product.h@161@macro@_DLIB_PRODUCT_H",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "_DLIB_PRODUCT_H",
+    "location": {
+      "column": "9",
+      "line": "7",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\DLib_Product.h"
+    },
+    "name": "_DLIB_PRODUCT_H",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:DLib_Product.h@314@macro@_DLIB_SMALL_TARGET",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "_DLIB_SMALL_TARGET",
+    "location": {
+      "column": "9",
+      "line": "16",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\DLib_Product.h"
+    },
+    "name": "_DLIB_SMALL_TARGET",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:DLib_Product.h@427@macro@_DLIB_STM8ABI_DIFUNC_CONTAINS_OFFSETS",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "_DLIB_STM8ABI_DIFUNC_CONTAINS_OFFSETS",
+    "location": {
+      "column": "9",
+      "line": "21",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\DLib_Product.h"
+    },
+    "name": "_DLIB_STM8ABI_DIFUNC_CONTAINS_OFFSETS",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:DLib_Product.h@539@macro@_FLOATING_LESS_INLINES",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "_FLOATING_LESS_INLINES",
+    "location": {
+      "column": "9",
+      "line": "26",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\DLib_Product.h"
+    },
+    "name": "_FLOATING_LESS_INLINES",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:DLib_Product.h@633@macro@_DLIB_SMALL_FP_HELPERS",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "_DLIB_SMALL_FP_HELPERS",
+    "location": {
+      "column": "9",
+      "line": "31",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\DLib_Product.h"
+    },
+    "name": "_DLIB_SMALL_FP_HELPERS",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:DLib_Product.h@711@macro@__WEAK",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "__WEAK",
+    "location": {
+      "column": "9",
+      "line": "36",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\DLib_Product.h"
+    },
+    "name": "__WEAK",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:DLib_Product.h@838@macro@_TLS_CONST_DEFINITION",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "_TLS_CONST_DEFINITION",
+    "location": {
+      "column": "9",
+      "line": "45",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\DLib_Product.h"
+    },
+    "name": "_TLS_CONST_DEFINITION",
     "origin": "system_include",
     "scope": null
   },
@@ -50789,6 +50803,258 @@
     "scope": null
   },
   {
+    "ID": "c:es1642_port_stm8.h@38@macro@__ES1642_PORT_STM8_H",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "__ES1642_PORT_STM8_H",
+    "location": {
+      "column": "9",
+      "line": "2",
+      "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\es1642_port_stm8.h"
+    },
+    "name": "__ES1642_PORT_STM8_H",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@es1642_app_init",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void es1642_app_init(void)",
+    "location": {
+      "column": "6",
+      "line": "7",
+      "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\es1642_port_stm8.h"
+    },
+    "name": "es1642_app_init",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@es1642_app_init",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void es1642_app_init(void)",
+    "location": {
+      "column": "6",
+      "line": "7",
+      "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\es1642_port_stm8.h"
+    },
+    "name": "es1642_app_init",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@es1642_app_poll",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void es1642_app_poll(void)",
+    "location": {
+      "column": "6",
+      "line": "8",
+      "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\es1642_port_stm8.h"
+    },
+    "name": "es1642_app_poll",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@es1642_app_poll",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void es1642_app_poll(void)",
+    "location": {
+      "column": "6",
+      "line": "8",
+      "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\es1642_port_stm8.h"
+    },
+    "name": "es1642_app_poll",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@es1642_uart_rx_irq_handler",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void es1642_uart_rx_irq_handler(void)",
+    "location": {
+      "column": "6",
+      "line": "9",
+      "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\es1642_port_stm8.h"
+    },
+    "name": "es1642_uart_rx_irq_handler",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@es1642_uart_rx_irq_handler",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void es1642_uart_rx_irq_handler(void)",
+    "location": {
+      "column": "6",
+      "line": "9",
+      "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\es1642_port_stm8.h"
+    },
+    "name": "es1642_uart_rx_irq_handler",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@ES1642_ReadMac",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "int ES1642_ReadMac(void)",
+    "location": {
+      "column": "5",
+      "line": "10",
+      "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\es1642_port_stm8.h"
+    },
+    "name": "ES1642_ReadMac",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@ES1642_ReadMac",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "int ES1642_ReadMac(void)",
+    "location": {
+      "column": "5",
+      "line": "10",
+      "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\es1642_port_stm8.h"
+    },
+    "name": "ES1642_ReadMac",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stddef.h@100@macro@_STDDEF",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "_STDDEF",
+    "location": {
+      "column": "9",
+      "line": "4",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stddef.h"
+    },
+    "name": "_STDDEF",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stddef.h@304@macro@NULL",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "NULL",
+    "location": {
+      "column": "11",
+      "line": "18",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stddef.h"
+    },
+    "name": "NULL",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stddef.h@367@macro@offsetof",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "offsetof",
+    "location": {
+      "column": "11",
+      "line": "22",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stddef.h"
+    },
+    "name": "offsetof",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stddef.h@551@macro@_PTRDIFF_T",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "_PTRDIFF_T",
+    "location": {
+      "column": "11",
+      "line": "27",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stddef.h"
+    },
+    "name": "_PTRDIFF_T",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stddef.h@573@macro@_PTRDIFFT",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "_PTRDIFFT",
+    "location": {
+      "column": "11",
+      "line": "28",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stddef.h"
+    },
+    "name": "_PTRDIFFT",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stddef.h@594@macro@_STD_USING_PTRDIFF_T",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "_STD_USING_PTRDIFF_T",
+    "location": {
+      "column": "11",
+      "line": "29",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stddef.h"
+    },
+    "name": "_STD_USING_PTRDIFF_T",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stddef.h@T@ptrdiff_t",
+    "What": "Typedef",
+    "defdec": "Def",
+    "display": "_Ptrdifft",
+    "location": {
+      "column": "21",
+      "line": "30",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stddef.h"
+    },
+    "name": "ptrdiff_t",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stddef.h@735@macro@_WCHART",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "_WCHART",
+    "location": {
+      "column": "11",
+      "line": "34",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stddef.h"
+    },
+    "name": "_WCHART",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stddef.h@T@wchar_t",
+    "What": "Typedef",
+    "defdec": "Def",
+    "display": "_Wchart",
+    "location": {
+      "column": "19",
+      "line": "35",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stddef.h"
+    },
+    "name": "wchar_t",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
     "ID": "c:heater_ctrl.h@528@macro@__HEATER_CTRL_H",
     "What": "MacroDef",
     "defdec": "Def",
@@ -50845,35 +51111,7 @@
     "scope": null
   },
   {
-    "ID": "c:heater_ctrl.h@937@macro@VOL_THRES_72V",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "VOL_THRES_72V",
-    "location": {
-      "column": "9",
-      "line": "30",
-      "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\heater_ctrl.h"
-    },
-    "name": "VOL_THRES_72V",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:heater_ctrl.h@971@macro@VOL_THRES_HIGH_72V",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "VOL_THRES_HIGH_72V",
-    "location": {
-      "column": "9",
-      "line": "31",
-      "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\heater_ctrl.h"
-    },
-    "name": "VOL_THRES_HIGH_72V",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:heater_ctrl.h@1028@macro@VOL_START_36V",
+    "ID": "c:heater_ctrl.h@1032@macro@VOL_START_36V",
     "What": "MacroDef",
     "defdec": "Def",
     "display": "VOL_START_36V",
@@ -50887,35 +51125,7 @@
     "scope": null
   },
   {
-    "ID": "c:heater_ctrl.h@1062@macro@VOL_THRES_36V",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "VOL_THRES_36V",
-    "location": {
-      "column": "9",
-      "line": "35",
-      "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\heater_ctrl.h"
-    },
-    "name": "VOL_THRES_36V",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:heater_ctrl.h@1096@macro@VOL_THRES_HIGH_36V",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "VOL_THRES_HIGH_36V",
-    "location": {
-      "column": "9",
-      "line": "36",
-      "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\heater_ctrl.h"
-    },
-    "name": "VOL_THRES_HIGH_36V",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:heater_ctrl.h@1194@macro@RELAY_STATE_CLOSE",
+    "ID": "c:heater_ctrl.h@1202@macro@RELAY_STATE_CLOSE",
     "What": "MacroDef",
     "defdec": "Def",
     "display": "RELAY_STATE_CLOSE",
@@ -50929,7 +51139,7 @@
     "scope": null
   },
   {
-    "ID": "c:heater_ctrl.h@1259@macro@RELAY_STATE_DISCONNECT",
+    "ID": "c:heater_ctrl.h@1267@macro@RELAY_STATE_DISCONNECT",
     "What": "MacroDef",
     "defdec": "Def",
     "display": "RELAY_STATE_DISCONNECT",
@@ -50943,7 +51153,7 @@
     "scope": null
   },
   {
-    "ID": "c:heater_ctrl.h@1389@macro@ADC_SAMPLE_NUMS",
+    "ID": "c:heater_ctrl.h@1397@macro@ADC_SAMPLE_NUMS",
     "What": "MacroDef",
     "defdec": "Def",
     "display": "ADC_SAMPLE_NUMS",
@@ -50957,7 +51167,7 @@
     "scope": null
   },
   {
-    "ID": "c:heater_ctrl.h@1511@macro@HEATER_RETRY_MAX",
+    "ID": "c:heater_ctrl.h@1519@macro@HEATER_RETRY_MAX",
     "What": "MacroDef",
     "defdec": "Def",
     "display": "HEATER_RETRY_MAX",
@@ -50971,7 +51181,7 @@
     "scope": null
   },
   {
-    "ID": "c:heater_ctrl.h@1576@macro@RELAY_CHECK_WAIT_MS",
+    "ID": "c:heater_ctrl.h@1584@macro@RELAY_CHECK_WAIT_MS",
     "What": "MacroDef",
     "defdec": "Def",
     "display": "RELAY_CHECK_WAIT_MS",
@@ -50985,7 +51195,7 @@
     "scope": null
   },
   {
-    "ID": "c:heater_ctrl.h@1646@macro@RELAY_ACTION_DELAY_MS",
+    "ID": "c:heater_ctrl.h@1654@macro@RELAY_ACTION_DELAY_MS",
     "What": "MacroDef",
     "defdec": "Def",
     "display": "RELAY_ACTION_DELAY_MS",
@@ -50999,7 +51209,7 @@
     "scope": null
   },
   {
-    "ID": "c:heater_ctrl.h@1706@macro@MOS_PRE_DELAY_MS",
+    "ID": "c:heater_ctrl.h@1714@macro@MOS_PRE_DELAY_MS",
     "What": "MacroDef",
     "defdec": "Def",
     "display": "MOS_PRE_DELAY_MS",
@@ -51038,7 +51248,7 @@
         "scope": "_anonymous_heater_ctrl_h_56_9"
       },
       {
-        "ID": "c:@UA@HeaterState_t@S@heater_ctrl.h@1863",
+        "ID": "c:@UA@HeaterState_t@S@heater_ctrl.h@1871",
         "What": "Struct",
         "defdec": "Def",
         "display": "",
@@ -51049,7 +51259,7 @@
         },
         "members": [
           {
-            "ID": "c:@UA@HeaterState_t@S@heater_ctrl.h@1863@FI@ac_heating",
+            "ID": "c:@UA@HeaterState_t@S@heater_ctrl.h@1871@FI@ac_heating",
             "What": "FieldDecl",
             "defdec": "Def",
             "display": "ac_heating",
@@ -51063,7 +51273,7 @@
             "scope": "_anonymous_heater_ctrl_h_56_9::_anonymous_heater_ctrl_h_58_5"
           },
           {
-            "ID": "c:@UA@HeaterState_t@S@heater_ctrl.h@1863@FI@dc_heating",
+            "ID": "c:@UA@HeaterState_t@S@heater_ctrl.h@1871@FI@dc_heating",
             "What": "FieldDecl",
             "defdec": "Def",
             "display": "dc_heating",
@@ -51077,7 +51287,7 @@
             "scope": "_anonymous_heater_ctrl_h_56_9::_anonymous_heater_ctrl_h_58_5"
           },
           {
-            "ID": "c:@UA@HeaterState_t@S@heater_ctrl.h@1863@FI@ac_present",
+            "ID": "c:@UA@HeaterState_t@S@heater_ctrl.h@1871@FI@ac_present",
             "What": "FieldDecl",
             "defdec": "Def",
             "display": "ac_present",
@@ -51091,7 +51301,7 @@
             "scope": "_anonymous_heater_ctrl_h_56_9::_anonymous_heater_ctrl_h_58_5"
           },
           {
-            "ID": "c:@UA@HeaterState_t@S@heater_ctrl.h@1863@FI@dc_present",
+            "ID": "c:@UA@HeaterState_t@S@heater_ctrl.h@1871@FI@dc_present",
             "What": "FieldDecl",
             "defdec": "Def",
             "display": "dc_present",
@@ -51105,7 +51315,7 @@
             "scope": "_anonymous_heater_ctrl_h_56_9::_anonymous_heater_ctrl_h_58_5"
           },
           {
-            "ID": "c:@UA@HeaterState_t@S@heater_ctrl.h@1863@FI@vol_high_alarm",
+            "ID": "c:@UA@HeaterState_t@S@heater_ctrl.h@1871@FI@vol_high_alarm",
             "What": "FieldDecl",
             "defdec": "Def",
             "display": "vol_high_alarm",
@@ -51119,7 +51329,7 @@
             "scope": "_anonymous_heater_ctrl_h_56_9::_anonymous_heater_ctrl_h_58_5"
           },
           {
-            "ID": "c:@UA@HeaterState_t@S@heater_ctrl.h@1863@FI@relay_err_off",
+            "ID": "c:@UA@HeaterState_t@S@heater_ctrl.h@1871@FI@relay_err_off",
             "What": "FieldDecl",
             "defdec": "Def",
             "display": "relay_err_off",
@@ -51133,7 +51343,7 @@
             "scope": "_anonymous_heater_ctrl_h_56_9::_anonymous_heater_ctrl_h_58_5"
           },
           {
-            "ID": "c:@UA@HeaterState_t@S@heater_ctrl.h@1863@FI@dry_burn_err",
+            "ID": "c:@UA@HeaterState_t@S@heater_ctrl.h@1871@FI@dry_burn_err",
             "What": "FieldDecl",
             "defdec": "Def",
             "display": "dry_burn_err",
@@ -51147,7 +51357,7 @@
             "scope": "_anonymous_heater_ctrl_h_56_9::_anonymous_heater_ctrl_h_58_5"
           },
           {
-            "ID": "c:@UA@HeaterState_t@S@heater_ctrl.h@1863@FI@power_reverse",
+            "ID": "c:@UA@HeaterState_t@S@heater_ctrl.h@1871@FI@power_reverse",
             "What": "FieldDecl",
             "defdec": "Def",
             "display": "power_reverse",
@@ -51563,258 +51773,6 @@
     "scope": null
   },
   {
-    "ID": "c:stddef.h@100@macro@_STDDEF",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "_STDDEF",
-    "location": {
-      "column": "9",
-      "line": "4",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stddef.h"
-    },
-    "name": "_STDDEF",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stddef.h@304@macro@NULL",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "NULL",
-    "location": {
-      "column": "11",
-      "line": "18",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stddef.h"
-    },
-    "name": "NULL",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stddef.h@367@macro@offsetof",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "offsetof",
-    "location": {
-      "column": "11",
-      "line": "22",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stddef.h"
-    },
-    "name": "offsetof",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stddef.h@551@macro@_PTRDIFF_T",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "_PTRDIFF_T",
-    "location": {
-      "column": "11",
-      "line": "27",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stddef.h"
-    },
-    "name": "_PTRDIFF_T",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stddef.h@573@macro@_PTRDIFFT",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "_PTRDIFFT",
-    "location": {
-      "column": "11",
-      "line": "28",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stddef.h"
-    },
-    "name": "_PTRDIFFT",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stddef.h@594@macro@_STD_USING_PTRDIFF_T",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "_STD_USING_PTRDIFF_T",
-    "location": {
-      "column": "11",
-      "line": "29",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stddef.h"
-    },
-    "name": "_STD_USING_PTRDIFF_T",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stddef.h@T@ptrdiff_t",
-    "What": "Typedef",
-    "defdec": "Def",
-    "display": "_Ptrdifft",
-    "location": {
-      "column": "21",
-      "line": "30",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stddef.h"
-    },
-    "name": "ptrdiff_t",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stddef.h@735@macro@_WCHART",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "_WCHART",
-    "location": {
-      "column": "11",
-      "line": "34",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stddef.h"
-    },
-    "name": "_WCHART",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stddef.h@T@wchar_t",
-    "What": "Typedef",
-    "defdec": "Def",
-    "display": "_Wchart",
-    "location": {
-      "column": "19",
-      "line": "35",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stddef.h"
-    },
-    "name": "wchar_t",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:es1642_port_stm8.h@38@macro@__ES1642_PORT_STM8_H",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "__ES1642_PORT_STM8_H",
-    "location": {
-      "column": "9",
-      "line": "2",
-      "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\es1642_port_stm8.h"
-    },
-    "name": "__ES1642_PORT_STM8_H",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@es1642_app_init",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void es1642_app_init(void)",
-    "location": {
-      "column": "6",
-      "line": "7",
-      "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\es1642_port_stm8.h"
-    },
-    "name": "es1642_app_init",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@es1642_app_init",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void es1642_app_init(void)",
-    "location": {
-      "column": "6",
-      "line": "7",
-      "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\es1642_port_stm8.h"
-    },
-    "name": "es1642_app_init",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@es1642_app_poll",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void es1642_app_poll(void)",
-    "location": {
-      "column": "6",
-      "line": "8",
-      "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\es1642_port_stm8.h"
-    },
-    "name": "es1642_app_poll",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@es1642_app_poll",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void es1642_app_poll(void)",
-    "location": {
-      "column": "6",
-      "line": "8",
-      "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\es1642_port_stm8.h"
-    },
-    "name": "es1642_app_poll",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@es1642_uart_rx_irq_handler",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void es1642_uart_rx_irq_handler(void)",
-    "location": {
-      "column": "6",
-      "line": "9",
-      "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\es1642_port_stm8.h"
-    },
-    "name": "es1642_uart_rx_irq_handler",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@es1642_uart_rx_irq_handler",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void es1642_uart_rx_irq_handler(void)",
-    "location": {
-      "column": "6",
-      "line": "9",
-      "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\es1642_port_stm8.h"
-    },
-    "name": "es1642_uart_rx_irq_handler",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@ES1642_ReadMac",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "int ES1642_ReadMac(void)",
-    "location": {
-      "column": "5",
-      "line": "10",
-      "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\es1642_port_stm8.h"
-    },
-    "name": "ES1642_ReadMac",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@ES1642_ReadMac",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "int ES1642_ReadMac(void)",
-    "location": {
-      "column": "5",
-      "line": "10",
-      "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\es1642_port_stm8.h"
-    },
-    "name": "ES1642_ReadMac",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
     "ID": "c:stdbool.h@173@macro@_STDBOOL",
     "What": "MacroDef",
     "defdec": "Def",
@@ -52081,7 +52039,7 @@
     "scope": null
   },
   {
-    "ID": "c:heater_ctrl.c@2906@macro@TEMP_ERR_RETRY_CNT",
+    "ID": "c:heater_ctrl.c@2951@macro@TEMP_ERR_RETRY_CNT",
     "What": "MacroDef",
     "defdec": "Def",
     "display": "TEMP_ERR_RETRY_CNT",
@@ -52207,7 +52165,7 @@
     "scope": null
   },
   {
-    "ID": "c:heater_ctrl.c@4613@F@adc_read_channel@sum",
+    "ID": "c:heater_ctrl.c@4658@F@adc_read_channel@sum",
     "What": "Variable",
     "defdec": "Def",
     "display": "sum",
@@ -52221,7 +52179,7 @@
     "scope": null
   },
   {
-    "ID": "c:heater_ctrl.c@4636@F@adc_read_channel@i",
+    "ID": "c:heater_ctrl.c@4681@F@adc_read_channel@i",
     "What": "Variable",
     "defdec": "Def",
     "display": "i",
@@ -52235,7 +52193,7 @@
     "scope": null
   },
   {
-    "ID": "c:heater_ctrl.c@4636@F@adc_read_channel@count",
+    "ID": "c:heater_ctrl.c@4681@F@adc_read_channel@count",
     "What": "Variable",
     "defdec": "Dec",
     "display": "count",
@@ -52291,30 +52249,30 @@
     "scope": null
   },
   {
-    "ID": "c:@val",
-    "What": "Variable",
-    "defdec": "Dec",
-    "display": "val",
-    "location": {
-      "column": "9",
-      "line": "153",
-      "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\heater_ctrl.c"
-    },
-    "name": "val",
-    "origin": "project_file",
-    "scope": null
-  },
-  {
     "ID": "c:@F@heater_get_relay_state",
     "What": "Function",
     "defdec": "Def",
     "display": "uint8_t heater_get_relay_state(void)",
     "location": {
       "column": "9",
-      "line": "154",
+      "line": "153",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\heater_ctrl.c"
     },
     "name": "heater_get_relay_state",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:heater_ctrl.c@5816@F@heater_get_relay_state@val",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "val",
+    "location": {
+      "column": "13",
+      "line": "155",
+      "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\heater_ctrl.c"
+    },
+    "name": "val",
     "origin": "project_file",
     "scope": null
   },
@@ -52325,7 +52283,7 @@
     "display": "uint8_t heater_is_power_reverse(void)",
     "location": {
       "column": "9",
-      "line": "165",
+      "line": "164",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\heater_ctrl.c"
     },
     "name": "heater_is_power_reverse",
@@ -52339,7 +52297,7 @@
     "display": "int8_t heater_get_temperature(void)",
     "location": {
       "column": "8",
-      "line": "187",
+      "line": "186",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\heater_ctrl.c"
     },
     "name": "heater_get_temperature",
@@ -52347,13 +52305,13 @@
     "scope": null
   },
   {
-    "ID": "c:heater_ctrl.c@6750@F@heater_get_temperature@i",
+    "ID": "c:heater_ctrl.c@6767@F@heater_get_temperature@i",
     "What": "Variable",
     "defdec": "Def",
     "display": "i",
     "location": {
       "column": "13",
-      "line": "189",
+      "line": "188",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\heater_ctrl.c"
     },
     "name": "i",
@@ -52361,13 +52319,13 @@
     "scope": null
   },
   {
-    "ID": "c:heater_ctrl.c@6750@F@heater_get_temperature@high",
+    "ID": "c:heater_ctrl.c@6767@F@heater_get_temperature@high",
     "What": "Variable",
     "defdec": "Dec",
     "display": "high",
     "location": {
       "column": "16",
-      "line": "189",
+      "line": "188",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\heater_ctrl.c"
     },
     "name": "high",
@@ -52375,13 +52333,13 @@
     "scope": null
   },
   {
-    "ID": "c:heater_ctrl.c@6750@F@heater_get_temperature@low",
+    "ID": "c:heater_ctrl.c@6767@F@heater_get_temperature@low",
     "What": "Variable",
     "defdec": "Dec",
     "display": "low",
     "location": {
       "column": "22",
-      "line": "189",
+      "line": "188",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\heater_ctrl.c"
     },
     "name": "low",
@@ -52389,13 +52347,13 @@
     "scope": null
   },
   {
-    "ID": "c:heater_ctrl.c@6777@F@heater_get_temperature@adc_value",
+    "ID": "c:heater_ctrl.c@6794@F@heater_get_temperature@adc_value",
     "What": "Variable",
     "defdec": "Def",
     "display": "adc_value",
     "location": {
       "column": "14",
-      "line": "190",
+      "line": "189",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\heater_ctrl.c"
     },
     "name": "adc_value",
@@ -52409,7 +52367,7 @@
     "display": "uint8_t heater_get_input_vol(void)",
     "location": {
       "column": "9",
-      "line": "263",
+      "line": "262",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\heater_ctrl.c"
     },
     "name": "heater_get_input_vol",
@@ -52417,13 +52375,13 @@
     "scope": null
   },
   {
-    "ID": "c:heater_ctrl.c@9134@F@heater_get_input_vol@cal",
+    "ID": "c:heater_ctrl.c@9151@F@heater_get_input_vol@cal",
     "What": "Variable",
     "defdec": "Def",
     "display": "cal",
     "location": {
       "column": "14",
-      "line": "265",
+      "line": "264",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\heater_ctrl.c"
     },
     "name": "cal",
@@ -52431,13 +52389,13 @@
     "scope": null
   },
   {
-    "ID": "c:heater_ctrl.c@9153@F@heater_get_input_vol@adc_value",
+    "ID": "c:heater_ctrl.c@9170@F@heater_get_input_vol@adc_value",
     "What": "Variable",
     "defdec": "Def",
     "display": "adc_value",
     "location": {
       "column": "14",
-      "line": "266",
+      "line": "265",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\heater_ctrl.c"
     },
     "name": "adc_value",
@@ -52451,7 +52409,7 @@
     "display": "uint8_t heater_open(void)",
     "location": {
       "column": "9",
-      "line": "298",
+      "line": "297",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\heater_ctrl.c"
     },
     "name": "heater_open",
@@ -52459,13 +52417,13 @@
     "scope": null
   },
   {
-    "ID": "c:heater_ctrl.c@10534@F@heater_open@retry",
+    "ID": "c:heater_ctrl.c@10551@F@heater_open@retry",
     "What": "Variable",
     "defdec": "Def",
     "display": "retry",
     "location": {
       "column": "13",
-      "line": "300",
+      "line": "299",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\heater_ctrl.c"
     },
     "name": "retry",
@@ -52479,7 +52437,7 @@
     "display": "uint8_t heater_close(void)",
     "location": {
       "column": "9",
-      "line": "365",
+      "line": "364",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\heater_ctrl.c"
     },
     "name": "heater_close",
@@ -52487,13 +52445,13 @@
     "scope": null
   },
   {
-    "ID": "c:heater_ctrl.c@12952@F@heater_close@retry",
+    "ID": "c:heater_ctrl.c@12971@F@heater_close@retry",
     "What": "Variable",
     "defdec": "Def",
     "display": "retry",
     "location": {
       "column": "13",
-      "line": "367",
+      "line": "366",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\heater_ctrl.c"
     },
     "name": "retry",
@@ -52507,7 +52465,7 @@
     "display": "void heater_delay_seconds(uint16_t)",
     "location": {
       "column": "6",
-      "line": "418",
+      "line": "416",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\heater_ctrl.c"
     },
     "name": "heater_delay_seconds",
@@ -52521,7 +52479,7 @@
     "display": "void heater_process(void)",
     "location": {
       "column": "6",
-      "line": "478",
+      "line": "476",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\heater_ctrl.c"
     },
     "name": "heater_process",
@@ -52535,7 +52493,7 @@
     "display": "i",
     "location": {
       "column": "13",
-      "line": "480",
+      "line": "478",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\heater_ctrl.c"
     },
     "name": "i",

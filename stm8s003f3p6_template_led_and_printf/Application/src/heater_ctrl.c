@@ -62,7 +62,7 @@ uint16_t g_input_vol = 0;       /* 当前光伏输入电压 (单位:V) */
 uint8_t  g_master_cmd = 0;      /* 主机命令: 0=停止加热, 1=启动加热 */
 HeaterState_t g_state = {0};    /* 当前设备状态 (用于上报主机) */
 
-static uint16_t s_vol_start = VOL_START_72V;  /* 启动加热的最低电压阈值 */
+static uint16_t s_vol_start = VOL_START_72V;  /* 启动加热的最低电压阈值, 不同的光伏板只需要修改这里的最低电压阈值就行*/
 
 static int8_t  s_temp_last = 0;       /* 上一次温度采样值 (用于滤波) */
 static uint8_t s_temp_filter_cnt = 0; /* 温度滤波计数器 */
@@ -140,7 +140,7 @@ static void adc_read_channel(uint16_t *value, ADC1_Channel_TypeDef channel, uint
  */
 static void led_on(void)  { BOARD_OUT1_ON(); }
 static void led_off(void) { BOARD_OUT1_OFF(); }
-static void led_toggle(void) { BOARD_OUT1_PORT->ODR ^= BOARD_OUT1_PIN; }
+static void led_toggle(void) { BOARD_OUT1_REV(); }
 
 /* ==================== 继电器状态 / 电源检测 ========================= */
 
@@ -150,10 +150,9 @@ static void led_toggle(void) { BOARD_OUT1_PORT->ODR ^= BOARD_OUT1_PIN; }
  *         RELAY_STATE_DISCONNECT(1) = 继电器断开, 加热管断电
  * 检测方式: 通过数字输入引脚(INPUT1)读取, 低电平=闭合
  */
-uint8_t val;
 uint8_t heater_get_relay_state(void)
 {
-    val = board_input1_read();
+    uint8_t val = board_input1_read();
     return (val == 0) ? RELAY_STATE_CLOSE : RELAY_STATE_DISCONNECT;
 }
 
@@ -325,7 +324,7 @@ uint8_t heater_open(void)
     /* 步骤4: 触发继电器闭合 (磁保持继电器需要脉冲驱动) */
     BOARD_OUT3_OFF();    /* OUT3 → 继电器闭合线圈, 低电平触发 */
     ek_delay(RELAY_ACTION_DELAY_MS);  /* 等待继电器机械动作完成 */
-    BOARD_OUT3_OFF();    /* 保持关闭状态 */
+//    BOARD_OUT3_OFF();    /* 保持关闭状态 */
     ek_delay(400);       /* 等待状态稳定 */
 
     /* 步骤5: 验证继电器是否成功闭合 */
@@ -391,7 +390,6 @@ uint8_t heater_close(void)
     BOARD_OUT3_ON();     /* OUT3 → 继电器断开线圈, 高电平触发 */
     ek_delay(RELAY_ACTION_DELAY_MS);
     BOARD_OUT2_OFF();    /* 断开MOS管 */
-    ek_delay(10);
     ek_delay(400);
 
     /* 步骤4: 验证继电器是否成功断开 */
@@ -486,8 +484,14 @@ void heater_process(void)
     /* 更新LED指示 (电源正常时根据继电器状态控制LED) */
     if (!heater_is_power_reverse())
     {
-        if (heater_get_relay_state() == RELAY_STATE_DISCONNECT) { led_off(); }
-        else { led_on(); }
+        if (heater_get_relay_state() == RELAY_STATE_DISCONNECT)
+        { 
+          led_off(); 
+        }
+        else 
+        { 
+          led_on(); 
+        }
     }
 
     /* ====== 第2步: 安全保护 (最高优先级) ====== */
@@ -507,11 +511,12 @@ void heater_process(void)
         return;            /* 安全保护后直接返回, 不执行正常控制 */
     }
 
-    /* ====== 第3步: 异常恢复处理 ====== */
+    /* ====== 第3步: 异常恢复处理，闪灯30s ====== */
     if (s_abnormal_flag)
     {
-        ek_delay(500);    /* 500ms延时, LED闪烁频率约1Hz */
+        ek_delay(250);    /* 500ms延时, LED闪烁频率约1Hz */
         led_toggle();     /* LED翻转 */
+        ek_delay(250);    /* 500ms延时, LED闪烁频率约1Hz */
         s_normal_cnt++;
         if (s_normal_cnt >= 60)  /* 60次 × 500ms = 30秒后恢复 */
         {

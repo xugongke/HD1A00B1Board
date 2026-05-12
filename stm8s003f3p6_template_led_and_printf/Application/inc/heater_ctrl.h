@@ -27,13 +27,13 @@
 
 /* 72V光伏板参数 */
 #define VOL_START_72V         17
-#define VOL_THRES_72V         23
-#define VOL_THRES_HIGH_72V    28
+//#define VOL_THRES_72V         23
+//#define VOL_THRES_HIGH_72V    28
 
 /* 36V光伏板参数 */
 #define VOL_START_36V         16
-#define VOL_THRES_36V         18
-#define VOL_THRES_HIGH_36V    21
+//#define VOL_THRES_36V         18
+//#define VOL_THRES_HIGH_36V    21
 
 /* ==================== 继电器状态 ==================== */
 
