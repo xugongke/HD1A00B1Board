@@ -1,8 +1,14 @@
 #include "ek_tim.h"
 #include "ek_gpio.h"
 #include "heater_ctrl.h"
+#include "stm8s_iwdg.h"
+
 /* forward declaration to avoid include path issue */
 extern void es1642_app_poll(void);
+
+#ifndef WDG_ENABLE
+#define WDG_ENABLE  1  /* ???????, ????????? */
+#endif
 
 __IO uint32_t ek_delay_tick = 0;
 
@@ -33,6 +39,9 @@ void ek_delay(__IO uint32_t nms)
     while(ek_delay_tick)
     {
         es1642_app_poll();
+#if WDG_ENABLE
+        IWDG_ReloadCounter();  /* 延时期间喂狗, 防止长时间延时触发看门狗复位 */
+#endif
     }
 }
 

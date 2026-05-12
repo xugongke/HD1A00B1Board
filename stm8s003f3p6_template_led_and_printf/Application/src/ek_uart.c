@@ -6,15 +6,6 @@ static volatile uint8_t s_rx_fifo[UART_RX_FIFO_SIZE];
 static volatile uint8_t s_rx_w = 0U;
 static volatile uint8_t s_rx_r = 0U;
 
-int putchar(int c)
-{
-    UART1_SendData8((uint8_t)c);
-    while (UART1_GetFlagStatus(UART1_FLAG_TXE) == RESET)
-    {
-    }
-    return c;
-}
-
 void ek_uart_send_bytes(const uint8_t *data, uint16_t len)
 {
     uint16_t i;

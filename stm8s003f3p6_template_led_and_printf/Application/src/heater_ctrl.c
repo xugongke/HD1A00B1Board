@@ -64,19 +64,13 @@ HeaterState_t g_state = {0};    /* 当前设备状态 (用于上报主机) */
 
 static uint16_t s_vol_start = VOL_START_72V;  /* 启动加热的最低电压阈值, 不同的光伏板只需要修改这里的最低电压阈值就行*/
 
-static int8_t  s_temp_last = 0;       /* 上一次温度采样值 (用于滤波) */
-static uint8_t s_temp_filter_cnt = 0; /* 温度滤波计数器 */
-
-static uint8_t s_over_err_cnt = 0;    /* 传感器异常连续检测计数 */
-static uint8_t s_err_over_cycle = 0;  /* 传感器异常确认周期数 */
-#define TEMP_ERR_RETRY_CNT  1          /* 连续异常多少次后确认 (防抖) */
 
 static uint8_t s_abnormal_flag = 0;   /* 继电器控制异常标志 (3次重试均失败) */
 static uint16_t s_normal_cnt = 0;     /* 异常恢复倒计时计数器 */
 
 /* ==================== 内部函数声明 ==================== */
 
-static void adc_read_channel(uint16_t *value, ADC1_Channel_TypeDef channel, uint16_t samples);
+static void adc_read_channel(uint16_t *value, ADC1_Channel_TypeDef channel, uint8_t samples);
 static void led_on(void);
 static void led_off(void);
 static void led_toggle(void);
@@ -115,27 +109,25 @@ void heater_ctrl_init(void)
  *
  * 采样流程: 切换通道 → 启动转换 → 等待EOC → 读取结果 → 累加 → 取平均
  */
-static void adc_read_channel(uint16_t *value, ADC1_Channel_TypeDef channel, uint16_t samples)
+static void adc_read_channel(uint16_t *value, ADC1_Channel_TypeDef channel, uint8_t samples)
 {
-    uint32_t sum = 0;
-    uint16_t i, count;
+    uint16_t sum = 0, i;
     ADC1_ConversionConfig(ADC1_CONVERSIONMODE_SINGLE, channel, ADC1_ALIGN_RIGHT);
     
-    /* 关键修复：通道切换后做一次空转换，让采样保持电容建立 */
+    /* 空转换：让采样保持电容建立到新通道电压 */
     ADC1_Cmd(ENABLE);
     while (ADC1_GetFlagStatus(ADC1_FLAG_EOC) == RESET);
     ADC1_ClearFlag(ADC1_FLAG_EOC);
-    (void)ADC1_GetConversionValue();  /* 丢弃第一次结果 */
+    (void)ADC1_GetConversionValue();
     
     for (i = 0; i < samples; i++)
     {
         ADC1_Cmd(ENABLE);
         while (ADC1_GetFlagStatus(ADC1_FLAG_EOC) == RESET);
         ADC1_ClearFlag(ADC1_FLAG_EOC);
-        count = ADC1_GetConversionValue();
-        sum += count;
+        sum += (uint16_t)ADC1_GetConversionValue();
     }
-    *value = (uint16_t)(sum / samples);
+    *value = sum / samples;
 }
 
 /* ==================== LED状态指示 ========================= */
@@ -197,27 +189,11 @@ int8_t heater_get_temperature(void)
     /* 第1步: ADC采样 */
     adc_read_channel(&adc_value, ADC1_CHANNEL_4, ADC_SAMPLE_NUMS);
 
-    /* 第2步: 传感器短路检测 (ADC值低于最低温度点 → 温度超过120℃) */
-    if (adc_value < TempTable[35])
-    {
-        s_over_err_cnt++;
-        if (s_over_err_cnt > TEMP_ERR_RETRY_CNT) { s_over_err_cnt = 0; s_err_over_cycle++; }
-        if (s_err_over_cycle > 1) { g_temperature = 120; }
-        return g_temperature;
-    }
+    /* 传感器短路检测 (ADC值低于最低温度点 → 温度超过120℃) */
+    if (adc_value < TempTable[35]) { g_temperature = 120; return g_temperature; }
 
     /* 传感器断路检测 (ADC值高于最高温度点 → 温度低于-20℃) */
-    if (adc_value > TempTable[0])
-    {
-        s_over_err_cnt++;
-        if (s_over_err_cnt > TEMP_ERR_RETRY_CNT) { s_err_over_cycle++; s_over_err_cnt = 0; }
-        if (s_err_over_cycle > 1) { g_temperature = -20; }
-        return g_temperature;
-    }
-
-    /* 传感器正常, 清除异常计数 */
-    s_over_err_cnt = 0;
-    s_err_over_cycle = 0;
+    if (adc_value > TempTable[0]) { g_temperature = -20; return g_temperature; }
 
     /* 第3步: 二分查找确定温度索引 (36项, 4°C步长) */
     i = 18;    /* 起始猜测点: 18×4-20=52℃ */
@@ -231,23 +207,8 @@ int8_t heater_get_temperature(void)
         i = (high + low) / 2;
     }
 
-    /* 第4步: 索引转实际温度 */
-    i = i * 4 - 20;  /* 温度 = 索引×4 - 20 */
-
-    /* 第5步: 首次采样直接使用, 后续采样进行滤波 */
-    if (s_temp_last == 0) { s_temp_last = i; g_temperature = i; }
-
-    s_temp_filter_cnt++;
-    i = (i + s_temp_last) / 2;   /* 当前采样与上次取平均, 平滑突变 */
-    if (s_temp_filter_cnt > 2)
-    {
-        g_temperature = i;        /* 每3次采样更新一次输出温度 */
-        s_temp_filter_cnt = 0;
-    }
-    else
-    {
-        s_temp_last = i;          /* 中间值存入last, 下次继续平均 */
-    }
+    /* 第4步: 索引转实际温度 (4°C步长查表, 精度±2°C满足热水器需求) */
+    g_temperature = (int8_t)(i * 4 - 20);
 
     return g_temperature;
 }
@@ -319,19 +280,17 @@ uint8_t heater_open(void)
     ek_delay(MOS_PRE_DELAY_MS);  /* 等待MOS管完全导通 */
 
     /* 步骤3: 等待MOS管导通后电流稳定, 继电器两端电压降低 */
-    retry = 0;
-    while (retry < 50)
+    retry = 50;
+    while (--retry)
     {
         if (heater_get_relay_state() == RELAY_STATE_CLOSE) { break; }
-        retry++;
         ek_delay(10);
     }
 
     /* 步骤4: 触发继电器闭合 (磁保持继电器需要脉冲驱动) */
     BOARD_OUT3_OFF();    /* OUT3 → 继电器闭合线圈, 低电平触发 */
-    ek_delay(RELAY_ACTION_DELAY_MS);  /* 等待继电器机械动作完成 */
-//    BOARD_OUT3_OFF();    /* 保持关闭状态 */
-    ek_delay(400);       /* 等待状态稳定 */
+    ek_delay(RELAY_ACTION_DELAY_MS);
+    ek_delay(400);
 
     /* 步骤5: 验证继电器是否成功闭合 */
     if (heater_get_relay_state() == RELAY_STATE_CLOSE)
@@ -384,11 +343,10 @@ uint8_t heater_close(void)
     ek_delay(MOS_PRE_DELAY_MS);
 
     /* 步骤2: 等待MOS管导通后电流稳定 */
-    retry = 0;
-    while (retry < 50)
+    retry = 50;
+    while (--retry)
     {
         if (heater_get_relay_state() == RELAY_STATE_CLOSE) { break; }
-        retry++;
         ek_delay(10);
     }
 
@@ -427,7 +385,6 @@ void heater_delay_seconds(uint16_t sec)
         heater_get_input_vol();     /* 更新电压 */
         heater_get_temperature();   /* 更新温度 */
         ek_delay(1000);             /* 等待1秒 */
-        heater_get_temperature();   /* 再次采样温度(提高可靠性) */
         /* 安全保护: 温度异常立即关闭加热 */
         if ((g_temperature < -10) || (g_temperature >= TEMP_HIGH_THRESHOLD)) { heater_close(); }
     }
