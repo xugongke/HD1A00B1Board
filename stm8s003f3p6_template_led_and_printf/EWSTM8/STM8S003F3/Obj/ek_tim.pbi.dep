@@ -1,4 +1,5 @@
 ek_tim.pbi: \
+  F:\Cubemx_Project\STM8XB\stm8s003f3p6_template_led_and_printf\EWSTM8\..\Application\inc\heater_ctrl.h \
   F:\Cubemx_Project\STM8XB\stm8s003f3p6_template_led_and_printf\EWSTM8\..\Application\inc\ek_gpio.h \
   E:\IARSTM8\stm8\inc\c\intrinsics.h \
   F:\Cubemx_Project\STM8XB\stm8s003f3p6_template_led_and_printf\EWSTM8\..\Libraries\STM8S_StdPeriph_Driver\inc\stm8s.h \

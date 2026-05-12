@@ -1,12 +1,25 @@
 #include "ek_tim.h"
 #include "ek_gpio.h"
+#include "heater_ctrl.h"
 
 __IO uint32_t ek_delay_tick = 0;
 
 /* software timer */
+u32 tick_10ms;
+u32 sec_time;
 void ek_soft_timer(void)
 {
     /* for led control */
+    tick_10ms++;        //¶ÔºÁÃëÊý¼ÇÂ¼
+    if((tick_10ms % ONE_SECOND_TICK) == 0){
+       sec_time++;
+    }
+     if((tick_10ms % (ONE_SECOND_TICK/4)) == 0)
+    {
+        if (g_state.bits.power_reverse != 0){
+            BOARD_OUT1_REV();
+        }
+    }
 }
 
 /* nms @1ms */

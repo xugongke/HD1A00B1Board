@@ -11,10 +11,10 @@ uint8_t board_input1_read(void)
 {
     return (GPIO_ReadInputPin(BOARD_IN1_PORT, BOARD_IN1_PIN) != RESET) ? 1U : 0U;
 }
-
+//PC7读取到高电平是正接，读取到低电平是反接
 uint8_t board_input2_read(void)
 {
-    return (GPIO_ReadInputPin(BOARD_IN2_PORT, BOARD_IN2_PIN) != RESET) ? 1U : 0U;
+    return (GPIO_ReadInputPin(BOARD_IN2_PORT, BOARD_IN2_PIN) != RESET) ? 0U : 1U;
 }
 
 void ek_gpio_init(void)

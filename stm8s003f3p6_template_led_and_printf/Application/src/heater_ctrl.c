@@ -152,8 +152,7 @@ static void led_toggle(void) { BOARD_OUT1_REV(); }
  */
 uint8_t heater_get_relay_state(void)
 {
-    uint8_t val = board_input1_read();
-    return (val == 0) ? RELAY_STATE_CLOSE : RELAY_STATE_DISCONNECT;
+    return (board_input1_read() == 0) ? RELAY_STATE_CLOSE : RELAY_STATE_DISCONNECT;
 }
 
 /*

@@ -453,7 +453,7 @@ INTERRUPT_HANDLER(TIM6_UPD_OVF_TRG_IRQHandler, 23)
  INTERRUPT_HANDLER(TIM4_UPD_OVF_IRQHandler, 23)
  {
     /* software timer */
-    ek_soft_timer();
+    ek_soft_timer();//周期性任务调度
     /* counter for delay function */
     ek_delay_counter();
     /* clear interrupt pending bit */
