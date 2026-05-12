@@ -18,7 +18,7 @@
 
 /* ==================== ø¥√≈π∑≈‰÷√ ==================== */
 
-#define WDG_ENABLE  0
+#define WDG_ENABLE  1
 
 #if WDG_ENABLE
 static void iwdg_init(void)

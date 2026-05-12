@@ -1,6 +1,8 @@
 #include "ek_tim.h"
 #include "ek_gpio.h"
 #include "heater_ctrl.h"
+/* forward declaration to avoid include path issue */
+extern void es1642_app_poll(void);
 
 __IO uint32_t ek_delay_tick = 0;
 
@@ -28,7 +30,10 @@ void ek_delay(__IO uint32_t nms)
     ek_delay_tick = nms;
     
     /* wait */
-    while(ek_delay_tick);
+    while(ek_delay_tick)
+    {
+        es1642_app_poll();
+    }
 }
 
 /* count for delay function */
