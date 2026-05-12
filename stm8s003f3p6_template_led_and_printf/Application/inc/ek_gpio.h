@@ -38,7 +38,7 @@
 #define ES1642_RES_ON()             GPIO_WriteLow(ES1642_RES_PORT, ES1642_RES_PIN)
 #define ES1642_RES_OFF()            GPIO_WriteHigh(ES1642_RES_PORT, ES1642_RES_PIN)
 
-#define ONE_SECOND_TICK   100
+#define ONE_SECOND_TICK   1000
 
 void ek_gpio_init(void);
 void board_outputs_all_off(void);

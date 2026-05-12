@@ -120,6 +120,13 @@ static void adc_read_channel(uint16_t *value, ADC1_Channel_TypeDef channel, uint
     uint32_t sum = 0;
     uint16_t i, count;
     ADC1_ConversionConfig(ADC1_CONVERSIONMODE_SINGLE, channel, ADC1_ALIGN_RIGHT);
+    
+    /* 关键修复：通道切换后做一次空转换，让采样保持电容建立 */
+    ADC1_Cmd(ENABLE);
+    while (ADC1_GetFlagStatus(ADC1_FLAG_EOC) == RESET);
+    ADC1_ClearFlag(ADC1_FLAG_EOC);
+    (void)ADC1_GetConversionValue();  /* 丢弃第一次结果 */
+    
     for (i = 0; i < samples; i++)
     {
         ADC1_Cmd(ENABLE);
