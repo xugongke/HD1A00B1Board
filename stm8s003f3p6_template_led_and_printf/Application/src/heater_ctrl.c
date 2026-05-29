@@ -461,17 +461,27 @@ void heater_process(void)
     /* 温度≥75℃ 或 传感器异常(<-10℃) → 必须停止加热 */
     if ((g_temperature >= TEMP_HIGH_THRESHOLD) || (g_temperature < -10))
     {
+        g_state.bits.dry_burn_err = 1;
         if (heater_get_relay_state() == RELAY_STATE_CLOSE)
         {
             heater_delay_seconds(15);  /* 延时15秒再关 (防止温度波动导致频繁开关) */
             for (i = 0; i < HEATER_RETRY_MAX; i++)
             {
-                if (heater_close() == 1) break;       /* 关闭成功 */
+                if (heater_close() == 1) 
+                {
+                  g_state.bits.relay_err = 0;
+                  break;       /* 关闭成功 */
+                }
+                g_state.bits.relay_err = 1;
                 heater_delay_seconds(120);             /* 失败后等2分钟再试 */
             }
         }
         g_master_cmd = 0;  /* 清除主机命令, 强制停止 */
         return;            /* 安全保护后直接返回, 不执行正常控制 */
+    }
+    else
+    {
+      g_state.bits.dry_burn_err = 0;
     }
 
     /* ====== 第3步: 异常恢复处理，闪灯30s ====== */
@@ -485,6 +495,7 @@ void heater_process(void)
         {
             s_normal_cnt = 0;
             s_abnormal_flag = 0;  /* 清除异常标志, 重新进入正常控制 */
+            g_state.bits.relay_err = 0;
         }
         return;
     }
@@ -500,7 +511,12 @@ void heater_process(void)
                 /* 继电器当前断开, 尝试启动加热 */
                 for (i = 0; i < HEATER_RETRY_MAX; i++)
                 {
-                    if (heater_open() == 1) break;     /* 启动成功 */
+                    if (heater_open() == 1)
+                    {
+                      g_state.bits.relay_err = 0;
+                      break;     /* 启动成功 */
+                    }
+                    g_state.bits.relay_err = 1;
                     heater_delay_seconds(120);          /* 失败后等2分钟再试 */
                 }
                 /* 3次都失败 → 进入异常状态 */
@@ -516,7 +532,12 @@ void heater_process(void)
             /* 继电器当前闭合, 尝试关闭加热 */
             for (i = 0; i < HEATER_RETRY_MAX; i++)
             {
-                if (heater_close() == 1) break;        /* 关闭成功 */
+                if (heater_close() == 1) 
+                {
+                  g_state.bits.relay_err = 0;
+                  break;        /* 关闭成功 */
+                }
+                g_state.bits.relay_err = 1;
                 heater_delay_seconds(120);              /* 失败后等2分钟再试 */
             }
             /* 3次都失败 → 进入异常状态 */

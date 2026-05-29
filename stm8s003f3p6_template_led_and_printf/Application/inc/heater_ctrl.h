@@ -57,13 +57,13 @@ typedef union {
     uint8_t byte;
     struct {
         uint8_t ac_heating    : 1;  /* bit0: 1=交流加热中 */
-        uint8_t dc_heating    : 1;  /* bit1: 1=直流加热中 */
+        uint8_t dc_heating    : 1;  /* bit1: 1=直流加热中（有效） */
         uint8_t ac_present    : 1;  /* bit2: 交流电是否存在 */
         uint8_t dc_present    : 1;  /* bit3: 直流电是否存在 */
         uint8_t vol_high_alarm: 1;  /* bit4: 光伏电压过高报警 */
-        uint8_t relay_err_off : 1;  /* bit5: 继电器断开异常 */
-        uint8_t dry_burn_err  : 1;  /* bit6: 干烧/DCDC异常 */
-        uint8_t power_reverse : 1;  /* bit7: 电源正负接反 */
+        uint8_t relay_err     : 1;  /* bit5: 继电器控制异常 （有效）*/
+        uint8_t dry_burn_err  : 1;  /* bit6: 干烧/DCDC异常 （有效）*/
+        uint8_t power_reverse : 1;  /* bit7: 电源正负接反 （有效）*/
     } bits;
 } HeaterState_t;
 
