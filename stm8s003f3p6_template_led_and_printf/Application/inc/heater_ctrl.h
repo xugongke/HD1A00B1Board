@@ -26,13 +26,12 @@
 /* ==================== 电压阈值配置 (单位: V, 经ADC换算后) ==================== */
 
 /* 72V光伏板参数 */
-//#define VOL_START_72V         17
-#define VOL_START_72V         30
-//#define VOL_THRES_72V         23
-//#define VOL_THRES_HIGH_72V    28
+#define VOL_START_72V         17    /* 启动加热最低电压 (载波通信正常时的阈值) */  
+#define VOL_THRES_72V         23    /* 低压阈值: 低于此电压载波通信无法工作 */
+#define VOL_THRES_HIGH_72V    28    /* 低压恢复阈值: 电压回升到此值以上退出低压模式 */
 
 /* 36V光伏板参数 */
-#define VOL_START_36V         16
+//#define VOL_START_36V         16
 //#define VOL_THRES_36V         18
 //#define VOL_THRES_HIGH_36V    21
 

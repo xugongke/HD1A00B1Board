@@ -17,8 +17,9 @@
  *   │ 2. 更新LED指示灯状态            │
  *   │ 3. 温度≥75℃ 或 传感器异常?      │──→ 强制关闭加热, 清除主机命令
  *   │ 4. 继电器控制异常?              │──→ LED闪烁报警30秒后自动恢复
- *   │ 5. 主机命令=启动加热?           │──→ 检查电压→启动加热(最多重试3次)
- *   │ 6. 主机命令=停止加热?           │──→ 关闭加热(最多重试3次)
+ *   │ 5. 电压低于载波通信阈值?        │──→ 进入低压自主控制模式
+ *   │ 6. 主机命令=启动加热?           │──→ 检查电压→启动加热(最多重试3次)
+ *   │ 7. 主机命令=停止加热?           │──→ 关闭加热(最多重试3次)
  *   └─────────────────────────────────┘
  */
 
@@ -62,7 +63,8 @@ uint16_t g_input_vol = 0;       /* 当前光伏输入电压 (单位:V) */
 uint8_t  g_master_cmd = 1;      /* 主机命令: 0=停止加热, 1=启动加热 (默认=1, 上电无主机命令时自动启动加热) */
 HeaterState_t g_state = {.bits.dc_heating = 1};    /* 当前设备状态 (用于上报主机) */
 
-static uint16_t s_vol_start = VOL_START_72V;  /* 启动加热的最低电压阈值, 不同的光伏板只需要修改这里的最低电压阈值就行*/
+/* 电压阈值直接使用头文件中的宏定义 VOL_START_72V / VOL_THRES_72V / VOL_THRES_HIGH_72V,
+ * 不再用静态变量, 节省STM8S003宝贵的RAM空间 */
 
 
 static uint8_t s_abnormal_flag = 0;   /* 继电器控制异常标志 (3次重试均失败) */
@@ -417,13 +419,21 @@ void heater_delay_seconds(uint16_t sec)
  *   │   │        直接return                            │
  *   │   └── 否 → 继续                                 │
  *   ├─────────────────────────────────────────────────┤
- *   │ 第4步: 执行主机命令                              │
+ *   │ 第4步: 低压自主控制                              │
+ *   │   电压 < VOL_THRES (载波通信无法工作)?           │
+ *   │   ├── 是 → 二次确认(5秒后再测)                   │
+ *   │   │   ├── 仍低 → 进入低压循环:                   │
+ *   │   │   │   继电器断开+电压>VolStart+温度安全?     │
+ *   │   │   │   └── 自主启动加热(最多重试3次)          │
+ *   │   │   │   电压恢复到VolThresHigh? → 退出循环     │
+ *   │   │   └── 已恢复 → return                       │
+ *   │   └── 否 → 继续                                 │
+ *   ├─────────────────────────────────────────────────┤
+ *   │ 第5步: 执行主机命令 (电压已足够, 无需再检查)     │
  *   │   g_master_cmd==1 (启动加热)?                    │
- *   │   ├── 是 → 电压 ≥ 启动阈值?                     │
- *   │   │        ├── 是 → 继电器当前断开?              │
- *   │   │        │        └── 启动加热(最多重试3次)    │
- *   │   │        │            失败3次 → 置异常标志     │
- *   │   │        └── 否 → 不操作(电压不足)             │
+ *   │   ├── 是 → 继电器当前断开?                       │
+ *   │   │        └── 启动加热(最多重试3次)             │
+ *   │   │            失败3次 → 置异常标志              │
  *   │   └── 否 (g_master_cmd==0, 停止加热)            │
  *   │            继电器当前闭合?                        │
  *   │            └── 关闭加热(最多重试3次)             │
@@ -500,28 +510,86 @@ void heater_process(void)
         return;
     }
 
-    /* ====== 第4步: 执行主机命令 ====== */
+    /* ====== 第4步: 低压自主控制 ====== */
+    /* 参考老工程师逻辑: 当光伏电压低于VOL_THRES_72V时, 载波通信模块无法工作,
+     * 无法接收主机命令, 此时从机需要自主判断是否启动加热:
+     *   - 电压已足够低(VOL_THRES)且二次确认仍低 → 进入低压模式
+     *   - 低压模式下: 继电器断开 + 电压>VolStart + 温度安全 → 自主启动加热
+     *   - 低压模式下持续循环, 直到电压恢复到VOL_THRES_HIGH以上才退出
+     *   - 退出低压模式后回到正常控制流程(return, 下次循环由主机命令控制)
+     */
+    if (g_input_vol < VOL_THRES_72V)
+    {
+        /* 第一次检测到电压过低, 等待5秒后二次确认, 防止电压瞬时波动 */
+        heater_delay_seconds(5);
+        heater_get_input_vol();
+        if (g_input_vol >= VOL_THRES_72V)
+        {
+            return;  /* 电压已恢复, 回到正常控制, 下次循环再处理 */
+        }
+
+        /* 二次确认电压确实过低, 进入低压自主控制循环 */
+        do {
+            /* 如果继电器当前断开, 且电压>VolStart 且 温度安全, 则自主启动加热 */
+            if (heater_get_relay_state() == RELAY_STATE_DISCONNECT)
+            {
+                if ((g_input_vol > VOL_START_72V) && (g_temperature < TEMP_HIGH_THRESHOLD))
+                {
+                    for (i = 0; i < HEATER_RETRY_MAX; i++)
+                    {
+                        if (heater_open() == 1) { break; }
+                        heater_delay_seconds(120);
+                    }
+                    s_abnormal_flag = (i == HEATER_RETRY_MAX) ? 1 : 0;
+                }
+            }
+
+            /* 更新电压, 判断是否可以退出低压模式 */
+            heater_get_input_vol();
+            if (g_input_vol < VOL_THRES_HIGH_72V)
+            {
+                /* 电压仍然过低, 等待1分钟后再次检测 */
+                heater_delay_seconds(60);
+                heater_get_input_vol();
+                if (g_input_vol < VOL_THRES_HIGH_72V)
+                {
+                    continue;  /* 电压仍然不足, 继续低压模式循环 */
+                }
+                else
+                {
+                    break;     /* 电压恢复到VolThresHigh以上, 退出低压模式 */
+                }
+            }
+            else
+            {
+                break;         /* 电压已恢复到VolThresHigh以上, 退出低压模式 */
+            }
+        } while (1);
+
+        return;  /* 退出低压模式后返回, 下次循环进入正常主机命令控制 */
+    }
+
+    /* ====== 第5步: 执行主机命令 ====== */
+    /* 注意: 能执行到这里说明电压 >= VOL_THRES_72V(23V) >= VOL_START_72V(30V),
+     *       无需再次检查光伏电压是否足够 (参考老工程师逻辑) */
     if (g_master_cmd == 1)
     {
         /* 主机命令=启动加热 */
-        if (g_input_vol >= s_vol_start)  /* 检查光伏电压是否足够 */
+        if (heater_get_relay_state() == RELAY_STATE_DISCONNECT)
         {
-            if (heater_get_relay_state() == RELAY_STATE_DISCONNECT)
+            /* 继电器当前断开, 尝试启动加热 */
+            for (i = 0; i < HEATER_RETRY_MAX; i++)
             {
-                /* 继电器当前断开, 尝试启动加热 */
-                for (i = 0; i < HEATER_RETRY_MAX; i++)
+                if (heater_open() == 1)
                 {
-                    if (heater_open() == 1)
-                    {
-                      g_state.bits.relay_err = 0;
-                      break;     /* 启动成功 */
-                    }
-                    g_state.bits.relay_err = 1;
-                    heater_delay_seconds(120);          /* 失败后等2分钟再试 */
+                    g_state.bits.relay_err = 0;
+                    break;     /* 启动成功 */
                 }
-                /* 3次都失败 → 进入异常状态 */
-                s_abnormal_flag = (i == HEATER_RETRY_MAX) ? 1 : 0;
+                g_state.bits.relay_err = 1;
+                heater_delay_seconds(120);          /* 失败后等2分钟再试 */
             }
+            /* 3次都失败 → 进入异常状态 */
+            s_abnormal_flag = (i == HEATER_RETRY_MAX) ? 1 : 0;
         }
     }
     else
