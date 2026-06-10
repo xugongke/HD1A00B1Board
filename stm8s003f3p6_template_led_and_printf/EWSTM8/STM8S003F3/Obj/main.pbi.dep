@@ -34,5 +34,4 @@ main.pbi: \
   E:\IARSTM8\stm8\inc\c\ystdio.h \
   F:\Cubemx_Project\STM8XB\stm8s003f3p6_template_led_and_printf\EWSTM8\..\Application\inc\es1642_port_stm8.h \
   F:\Cubemx_Project\STM8XB\stm8s003f3p6_template_led_and_printf\EWSTM8\..\Application\inc/es1642.h \
-  E:\IARSTM8\stm8\inc\c\stdbool.h E:\IARSTM8\stm8\inc\c\stddef.h \
   F:\Cubemx_Project\STM8XB\stm8s003f3p6_template_led_and_printf\EWSTM8\..\Application\inc\heater_ctrl.h

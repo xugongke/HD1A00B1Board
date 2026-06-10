@@ -19,9 +19,8 @@
 extern "C" {
 #endif
 
-#include <stdbool.h>
-#include <stddef.h>
-#include <stdint.h>
+/* bool, uint8_t, uint16_t, uint32_t 等基础类型由 stm8s.h / stdint.h 提供，
+ * 本文件不再重复 include，避免与 stm8s.h 中的 bool 定义冲突。 */
 
 /* ========================= 基本常量 ========================= */
 
@@ -256,38 +255,16 @@ typedef struct
     es1642_net_param_t net_param;
 } es1642_remote_net_param_t;
 
-struct es1642_handle;
-typedef struct es1642_handle es1642_handle_t;
-
-/* 串口发送回调函数
- * 返回值：
- * >=0  : 实际发送字节数
- *  <0  : 发送失败 */
-typedef int32_t (*es1642_write_fn_t)(const uint8_t *data, uint16_t len);
-
-/* 完整帧到达后的回调函数
- * 注意：frame->data / 解码结构体中的 user_data / attribute 指针都指向驱动内部 RX 缓冲。
- * 如果上层要长期保存，必须自行拷贝。 */
-typedef void (*es1642_frame_cb_t)(es1642_handle_t *handle,
-                                  const es1642_frame_t *frame);
-
 typedef struct
 {
-    es1642_write_fn_t write;
-    es1642_frame_cb_t on_frame;
-} es1642_port_t;
-
-struct es1642_handle
-{
-    es1642_port_t port;
     uint8_t rx_buf[ES1642_MAX_FRAME_LEN];
     uint16_t rx_index;
     uint16_t rx_expected_len;
-};
+}es1642_handle_t;
 
 /* ========================= 通用工具函数 ========================= */
 
-void ES1642_Init(es1642_handle_t *handle, const es1642_port_t *port);
+void ES1642_Init(es1642_handle_t *handle);
 void ES1642_ResetRx(es1642_handle_t *handle);
 
 uint8_t ES1642_MakeDeviceRequestCtrl(void);

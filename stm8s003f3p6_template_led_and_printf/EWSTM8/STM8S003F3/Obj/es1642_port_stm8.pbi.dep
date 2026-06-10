@@ -29,7 +29,6 @@ es1642_port_stm8.pbi: \
   F:\Cubemx_Project\STM8XB\stm8s003f3p6_template_led_and_printf\EWSTM8\..\Libraries\STM8S_StdPeriph_Driver\inc\stm8s_wwdg.h \
   E:\IARSTM8\stm8\inc\c\intrinsics.h \
   F:\Cubemx_Project\STM8XB\stm8s003f3p6_template_led_and_printf\EWSTM8\..\Application\inc/es1642.h \
-  E:\IARSTM8\stm8\inc\c\stdbool.h E:\IARSTM8\stm8\inc\c\stddef.h \
   F:\Cubemx_Project\STM8XB\stm8s003f3p6_template_led_and_printf\EWSTM8\..\Application\inc\ek_uart.h \
   E:\IARSTM8\stm8\inc\c\stdio.h E:\IARSTM8\stm8\inc\c\ystdio.h \
   F:\Cubemx_Project\STM8XB\stm8s003f3p6_template_led_and_printf\EWSTM8\..\Application\inc\ek_gpio.h \

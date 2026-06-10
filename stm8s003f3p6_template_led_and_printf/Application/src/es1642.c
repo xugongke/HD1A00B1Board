@@ -12,6 +12,7 @@
  * 4. 已删除工程中未使用的全部函数，仅保留实际用到的接口。
  */
 
+#include "es1642_port_stm8.h"
 #include "es1642.h"
 #include <string.h>
 
@@ -80,10 +81,9 @@ static es1642_status_t es1642_expect_normal_cmd(const es1642_frame_t *frame, uin
 
 /* ========================= 对外基础接口 ========================= */
 
-void ES1642_Init(es1642_handle_t *handle, const es1642_port_t *port)
+void ES1642_Init(es1642_handle_t *handle)
 {
     (void)memset(handle, 0, sizeof(*handle));
-    handle->port = *port;
 }
 
 void ES1642_ResetRx(es1642_handle_t *handle)
@@ -159,12 +159,6 @@ es1642_status_t ES1642_SendFrame(es1642_handle_t *handle,
     int32_t send_len;
     es1642_status_t status;
 
-    /* 保留：write 回调可能未注册，调用 NULL 函数指针会硬件异常 */
-    if (handle->port.write == NULL)
-    {
-        return ES1642_STATUS_ERROR_NO_TX_PORT;
-    }
-
     status = ES1642_BuildFrame(ctrl, cmd, data, data_len,
                                frame_buf, (uint16_t)sizeof(frame_buf), &frame_len);
     if (status != ES1642_STATUS_OK)
@@ -172,7 +166,7 @@ es1642_status_t ES1642_SendFrame(es1642_handle_t *handle,
         return status;
     }
 
-    send_len = handle->port.write(frame_buf, frame_len);
+    send_len = stm8_es1642_write(frame_buf, frame_len);
 
     if (send_len != (int32_t)frame_len)
     {
@@ -293,11 +287,6 @@ es1642_status_t ES1642_InputByte(es1642_handle_t *handle, uint8_t byte)
 
         if (status == ES1642_STATUS_OK)
         {
-            if (handle->port.on_frame != NULL)
-            {
-                handle->port.on_frame(handle, &frame);
-            }
-
             ES1642_ResetRx(handle);
             return ES1642_STATUS_FRAME_READY;
         }

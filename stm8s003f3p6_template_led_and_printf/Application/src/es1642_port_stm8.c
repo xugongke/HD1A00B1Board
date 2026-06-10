@@ -15,7 +15,7 @@
 static es1642_handle_t g_es1642;
 static uint8_t mac_addr[ES1642_ADDR_LEN];
 
-static int32_t stm8_es1642_write(const uint8_t *data, uint16_t len)
+int32_t stm8_es1642_write(const uint8_t *data, uint16_t len)
 {
     if ((data == 0) || (len == 0U))
     {
@@ -29,7 +29,7 @@ static int32_t stm8_es1642_write(const uint8_t *data, uint16_t len)
 static es1642_search_notify_t notify;
 static es1642_recv_data_t recv_data;
 
-static void es1642_on_frame(es1642_handle_t *handle, const es1642_frame_t *frame)
+void es1642_on_frame(es1642_handle_t *handle, const es1642_frame_t *frame)
 {
     es1642_status_t status;
     if ((handle == 0) || (frame == 0)) { return; }
@@ -131,11 +131,7 @@ static void es1642_on_frame(es1642_handle_t *handle, const es1642_frame_t *frame
 
 void es1642_app_init(void)
 {
-    es1642_port_t port;
-    memset(&port, 0, sizeof(port));
-    port.write = stm8_es1642_write;
-    port.on_frame = es1642_on_frame;
-    ES1642_Init(&g_es1642, &port);
+    ES1642_Init(&g_es1642);
     ES1642_ResetRx(&g_es1642);
 }
 
