@@ -59,8 +59,8 @@ static const uint16_t TempTable[36] = {
 
 int8_t  g_temperature = 0;      /* 当前水箱温度 (单位:℃) */
 uint16_t g_input_vol = 0;       /* 当前光伏输入电压 (单位:V) */
-uint8_t  g_master_cmd = 0;      /* 主机命令: 0=停止加热, 1=启动加热 */
-HeaterState_t g_state = {0};    /* 当前设备状态 (用于上报主机) */
+uint8_t  g_master_cmd = 1;      /* 主机命令: 0=停止加热, 1=启动加热 (默认=1, 上电无主机命令时自动启动加热) */
+HeaterState_t g_state = {.bits.dc_heating = 1};    /* 当前设备状态 (用于上报主机) */
 
 static uint16_t s_vol_start = VOL_START_72V;  /* 启动加热的最低电压阈值, 不同的光伏板只需要修改这里的最低电压阈值就行*/
 
@@ -526,7 +526,7 @@ void heater_process(void)
     }
     else
     {
-        /* 主机命令=停止加热 (或无命令) */
+        /* 主机命令=停止加热 */
         if (heater_get_relay_state() == RELAY_STATE_CLOSE)
         {
             /* 继电器当前闭合, 尝试关闭加热 */

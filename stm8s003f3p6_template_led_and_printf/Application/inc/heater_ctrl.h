@@ -26,7 +26,8 @@
 /* ==================== 电压阈值配置 (单位: V, 经ADC换算后) ==================== */
 
 /* 72V光伏板参数 */
-#define VOL_START_72V         17
+//#define VOL_START_72V         17
+#define VOL_START_72V         30
 //#define VOL_THRES_72V         23
 //#define VOL_THRES_HIGH_72V    28
 
@@ -62,7 +63,7 @@ typedef union {
         uint8_t dc_present    : 1;  /* bit3: 直流电是否存在 */
         uint8_t vol_high_alarm: 1;  /* bit4: 光伏电压过高报警 */
         uint8_t relay_err     : 1;  /* bit5: 继电器控制异常 （有效）*/
-        uint8_t dry_burn_err  : 1;  /* bit6: 干烧/DCDC异常 （有效）*/
+        uint8_t dry_burn_err  : 1;  /* bit6: 温度异常 （有效）*/
         uint8_t power_reverse : 1;  /* bit7: 电源正负接反 （有效）*/
     } bits;
 } HeaterState_t;

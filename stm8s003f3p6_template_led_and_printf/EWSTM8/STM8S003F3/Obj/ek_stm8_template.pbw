@@ -45188,13 +45188,13 @@
     "scope": null
   },
   {
-    "ID": "c:heater_ctrl.h@903@macro@VOL_START_72V",
+    "ID": "c:heater_ctrl.h@939@macro@VOL_START_72V",
     "What": "MacroDef",
     "defdec": "Def",
     "display": "VOL_START_72V",
     "location": {
       "column": "9",
-      "line": "29",
+      "line": "30",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\heater_ctrl.h"
     },
     "name": "VOL_START_72V",
@@ -45202,13 +45202,13 @@
     "scope": null
   },
   {
-    "ID": "c:heater_ctrl.h@1032@macro@VOL_START_36V",
+    "ID": "c:heater_ctrl.h@1068@macro@VOL_START_36V",
     "What": "MacroDef",
     "defdec": "Def",
     "display": "VOL_START_36V",
     "location": {
       "column": "9",
-      "line": "34",
+      "line": "35",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\heater_ctrl.h"
     },
     "name": "VOL_START_36V",
@@ -45216,13 +45216,13 @@
     "scope": null
   },
   {
-    "ID": "c:heater_ctrl.h@1202@macro@RELAY_STATE_CLOSE",
+    "ID": "c:heater_ctrl.h@1238@macro@RELAY_STATE_CLOSE",
     "What": "MacroDef",
     "defdec": "Def",
     "display": "RELAY_STATE_CLOSE",
     "location": {
       "column": "9",
-      "line": "40",
+      "line": "41",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\heater_ctrl.h"
     },
     "name": "RELAY_STATE_CLOSE",
@@ -45230,13 +45230,13 @@
     "scope": null
   },
   {
-    "ID": "c:heater_ctrl.h@1267@macro@RELAY_STATE_DISCONNECT",
+    "ID": "c:heater_ctrl.h@1303@macro@RELAY_STATE_DISCONNECT",
     "What": "MacroDef",
     "defdec": "Def",
     "display": "RELAY_STATE_DISCONNECT",
     "location": {
       "column": "9",
-      "line": "41",
+      "line": "42",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\heater_ctrl.h"
     },
     "name": "RELAY_STATE_DISCONNECT",
@@ -45244,13 +45244,13 @@
     "scope": null
   },
   {
-    "ID": "c:heater_ctrl.h@1397@macro@ADC_SAMPLE_NUMS",
+    "ID": "c:heater_ctrl.h@1433@macro@ADC_SAMPLE_NUMS",
     "What": "MacroDef",
     "defdec": "Def",
     "display": "ADC_SAMPLE_NUMS",
     "location": {
       "column": "9",
-      "line": "45",
+      "line": "46",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\heater_ctrl.h"
     },
     "name": "ADC_SAMPLE_NUMS",
@@ -45258,13 +45258,13 @@
     "scope": null
   },
   {
-    "ID": "c:heater_ctrl.h@1519@macro@HEATER_RETRY_MAX",
+    "ID": "c:heater_ctrl.h@1555@macro@HEATER_RETRY_MAX",
     "What": "MacroDef",
     "defdec": "Def",
     "display": "HEATER_RETRY_MAX",
     "location": {
       "column": "9",
-      "line": "49",
+      "line": "50",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\heater_ctrl.h"
     },
     "name": "HEATER_RETRY_MAX",
@@ -45272,13 +45272,13 @@
     "scope": null
   },
   {
-    "ID": "c:heater_ctrl.h@1584@macro@RELAY_CHECK_WAIT_MS",
+    "ID": "c:heater_ctrl.h@1620@macro@RELAY_CHECK_WAIT_MS",
     "What": "MacroDef",
     "defdec": "Def",
     "display": "RELAY_CHECK_WAIT_MS",
     "location": {
       "column": "9",
-      "line": "50",
+      "line": "51",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\heater_ctrl.h"
     },
     "name": "RELAY_CHECK_WAIT_MS",
@@ -45286,13 +45286,13 @@
     "scope": null
   },
   {
-    "ID": "c:heater_ctrl.h@1654@macro@RELAY_ACTION_DELAY_MS",
+    "ID": "c:heater_ctrl.h@1690@macro@RELAY_ACTION_DELAY_MS",
     "What": "MacroDef",
     "defdec": "Def",
     "display": "RELAY_ACTION_DELAY_MS",
     "location": {
       "column": "9",
-      "line": "51",
+      "line": "52",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\heater_ctrl.h"
     },
     "name": "RELAY_ACTION_DELAY_MS",
@@ -45300,13 +45300,13 @@
     "scope": null
   },
   {
-    "ID": "c:heater_ctrl.h@1714@macro@MOS_PRE_DELAY_MS",
+    "ID": "c:heater_ctrl.h@1750@macro@MOS_PRE_DELAY_MS",
     "What": "MacroDef",
     "defdec": "Def",
     "display": "MOS_PRE_DELAY_MS",
     "location": {
       "column": "9",
-      "line": "52",
+      "line": "53",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\heater_ctrl.h"
     },
     "name": "MOS_PRE_DELAY_MS",
@@ -45320,7 +45320,7 @@
     "display": "",
     "location": {
       "column": "9",
-      "line": "56",
+      "line": "57",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\heater_ctrl.h"
     },
     "members": [
@@ -45331,135 +45331,135 @@
         "display": "byte",
         "location": {
           "column": "13",
-          "line": "57",
+          "line": "58",
           "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\heater_ctrl.h"
         },
         "name": "byte",
         "origin": "user_include",
-        "scope": "_anonymous_heater_ctrl_h_56_9"
+        "scope": "_anonymous_heater_ctrl_h_57_9"
       },
       {
-        "ID": "c:@UA@HeaterState_t@S@heater_ctrl.h@1871",
+        "ID": "c:@UA@HeaterState_t@S@heater_ctrl.h@1907",
         "What": "Struct",
         "defdec": "Def",
         "display": "",
         "location": {
           "column": "5",
-          "line": "58",
+          "line": "59",
           "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\heater_ctrl.h"
         },
         "members": [
           {
-            "ID": "c:@UA@HeaterState_t@S@heater_ctrl.h@1871@FI@ac_heating",
+            "ID": "c:@UA@HeaterState_t@S@heater_ctrl.h@1907@FI@ac_heating",
             "What": "FieldDecl",
             "defdec": "Def",
             "display": "ac_heating",
             "location": {
               "column": "17",
-              "line": "59",
+              "line": "60",
               "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\heater_ctrl.h"
             },
             "name": "ac_heating",
             "origin": "user_include",
-            "scope": "_anonymous_heater_ctrl_h_56_9::_anonymous_heater_ctrl_h_58_5"
+            "scope": "_anonymous_heater_ctrl_h_57_9::_anonymous_heater_ctrl_h_59_5"
           },
           {
-            "ID": "c:@UA@HeaterState_t@S@heater_ctrl.h@1871@FI@dc_heating",
+            "ID": "c:@UA@HeaterState_t@S@heater_ctrl.h@1907@FI@dc_heating",
             "What": "FieldDecl",
             "defdec": "Def",
             "display": "dc_heating",
             "location": {
               "column": "17",
-              "line": "60",
+              "line": "61",
               "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\heater_ctrl.h"
             },
             "name": "dc_heating",
             "origin": "user_include",
-            "scope": "_anonymous_heater_ctrl_h_56_9::_anonymous_heater_ctrl_h_58_5"
+            "scope": "_anonymous_heater_ctrl_h_57_9::_anonymous_heater_ctrl_h_59_5"
           },
           {
-            "ID": "c:@UA@HeaterState_t@S@heater_ctrl.h@1871@FI@ac_present",
+            "ID": "c:@UA@HeaterState_t@S@heater_ctrl.h@1907@FI@ac_present",
             "What": "FieldDecl",
             "defdec": "Def",
             "display": "ac_present",
             "location": {
               "column": "17",
-              "line": "61",
+              "line": "62",
               "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\heater_ctrl.h"
             },
             "name": "ac_present",
             "origin": "user_include",
-            "scope": "_anonymous_heater_ctrl_h_56_9::_anonymous_heater_ctrl_h_58_5"
+            "scope": "_anonymous_heater_ctrl_h_57_9::_anonymous_heater_ctrl_h_59_5"
           },
           {
-            "ID": "c:@UA@HeaterState_t@S@heater_ctrl.h@1871@FI@dc_present",
+            "ID": "c:@UA@HeaterState_t@S@heater_ctrl.h@1907@FI@dc_present",
             "What": "FieldDecl",
             "defdec": "Def",
             "display": "dc_present",
             "location": {
               "column": "17",
-              "line": "62",
+              "line": "63",
               "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\heater_ctrl.h"
             },
             "name": "dc_present",
             "origin": "user_include",
-            "scope": "_anonymous_heater_ctrl_h_56_9::_anonymous_heater_ctrl_h_58_5"
+            "scope": "_anonymous_heater_ctrl_h_57_9::_anonymous_heater_ctrl_h_59_5"
           },
           {
-            "ID": "c:@UA@HeaterState_t@S@heater_ctrl.h@1871@FI@vol_high_alarm",
+            "ID": "c:@UA@HeaterState_t@S@heater_ctrl.h@1907@FI@vol_high_alarm",
             "What": "FieldDecl",
             "defdec": "Def",
             "display": "vol_high_alarm",
             "location": {
               "column": "17",
-              "line": "63",
+              "line": "64",
               "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\heater_ctrl.h"
             },
             "name": "vol_high_alarm",
             "origin": "user_include",
-            "scope": "_anonymous_heater_ctrl_h_56_9::_anonymous_heater_ctrl_h_58_5"
+            "scope": "_anonymous_heater_ctrl_h_57_9::_anonymous_heater_ctrl_h_59_5"
           },
           {
-            "ID": "c:@UA@HeaterState_t@S@heater_ctrl.h@1871@FI@relay_err",
+            "ID": "c:@UA@HeaterState_t@S@heater_ctrl.h@1907@FI@relay_err",
             "What": "FieldDecl",
             "defdec": "Def",
             "display": "relay_err",
             "location": {
               "column": "17",
-              "line": "64",
+              "line": "65",
               "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\heater_ctrl.h"
             },
             "name": "relay_err",
             "origin": "user_include",
-            "scope": "_anonymous_heater_ctrl_h_56_9::_anonymous_heater_ctrl_h_58_5"
+            "scope": "_anonymous_heater_ctrl_h_57_9::_anonymous_heater_ctrl_h_59_5"
           },
           {
-            "ID": "c:@UA@HeaterState_t@S@heater_ctrl.h@1871@FI@dry_burn_err",
+            "ID": "c:@UA@HeaterState_t@S@heater_ctrl.h@1907@FI@dry_burn_err",
             "What": "FieldDecl",
             "defdec": "Def",
             "display": "dry_burn_err",
             "location": {
               "column": "17",
-              "line": "65",
+              "line": "66",
               "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\heater_ctrl.h"
             },
             "name": "dry_burn_err",
             "origin": "user_include",
-            "scope": "_anonymous_heater_ctrl_h_56_9::_anonymous_heater_ctrl_h_58_5"
+            "scope": "_anonymous_heater_ctrl_h_57_9::_anonymous_heater_ctrl_h_59_5"
           },
           {
-            "ID": "c:@UA@HeaterState_t@S@heater_ctrl.h@1871@FI@power_reverse",
+            "ID": "c:@UA@HeaterState_t@S@heater_ctrl.h@1907@FI@power_reverse",
             "What": "FieldDecl",
             "defdec": "Def",
             "display": "power_reverse",
             "location": {
               "column": "17",
-              "line": "66",
+              "line": "67",
               "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\heater_ctrl.h"
             },
             "name": "power_reverse",
             "origin": "user_include",
-            "scope": "_anonymous_heater_ctrl_h_56_9::_anonymous_heater_ctrl_h_58_5"
+            "scope": "_anonymous_heater_ctrl_h_57_9::_anonymous_heater_ctrl_h_59_5"
           },
           {
             "ID": "c:@UA@HeaterState_t@FI@bits",
@@ -45468,17 +45468,17 @@
             "display": "bits",
             "location": {
               "column": "7",
-              "line": "67",
+              "line": "68",
               "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\heater_ctrl.h"
             },
             "name": "bits",
             "origin": "user_include",
-            "scope": "_anonymous_heater_ctrl_h_56_9::_anonymous_heater_ctrl_h_58_5"
+            "scope": "_anonymous_heater_ctrl_h_57_9::_anonymous_heater_ctrl_h_59_5"
           }
         ],
         "name": "",
         "origin": "user_include",
-        "scope": "_anonymous_heater_ctrl_h_56_9"
+        "scope": "_anonymous_heater_ctrl_h_57_9"
       },
       {
         "ID": "c:@T@HeaterState_t",
@@ -45487,12 +45487,12 @@
         "display": "union HeaterState_t",
         "location": {
           "column": "3",
-          "line": "68",
+          "line": "69",
           "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\heater_ctrl.h"
         },
         "name": "HeaterState_t",
         "origin": "user_include",
-        "scope": "_anonymous_heater_ctrl_h_56_9"
+        "scope": "_anonymous_heater_ctrl_h_57_9"
       }
     ],
     "name": "",
@@ -45506,7 +45506,7 @@
     "display": "g_temperature",
     "location": {
       "column": "16",
-      "line": "72",
+      "line": "73",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\heater_ctrl.h"
     },
     "name": "g_temperature",
@@ -45520,7 +45520,7 @@
     "display": "g_temperature",
     "location": {
       "column": "16",
-      "line": "72",
+      "line": "73",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\heater_ctrl.h"
     },
     "name": "g_temperature",
@@ -45534,7 +45534,7 @@
     "display": "g_input_vol",
     "location": {
       "column": "17",
-      "line": "73",
+      "line": "74",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\heater_ctrl.h"
     },
     "name": "g_input_vol",
@@ -45548,7 +45548,7 @@
     "display": "g_input_vol",
     "location": {
       "column": "17",
-      "line": "73",
+      "line": "74",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\heater_ctrl.h"
     },
     "name": "g_input_vol",
@@ -45562,7 +45562,7 @@
     "display": "g_master_cmd",
     "location": {
       "column": "17",
-      "line": "74",
+      "line": "75",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\heater_ctrl.h"
     },
     "name": "g_master_cmd",
@@ -45576,7 +45576,7 @@
     "display": "g_master_cmd",
     "location": {
       "column": "17",
-      "line": "74",
+      "line": "75",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\heater_ctrl.h"
     },
     "name": "g_master_cmd",
@@ -45590,7 +45590,7 @@
     "display": "g_state",
     "location": {
       "column": "22",
-      "line": "75",
+      "line": "76",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\heater_ctrl.h"
     },
     "name": "g_state",
@@ -45604,7 +45604,7 @@
     "display": "g_state",
     "location": {
       "column": "22",
-      "line": "75",
+      "line": "76",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\heater_ctrl.h"
     },
     "name": "g_state",
@@ -45618,7 +45618,7 @@
     "display": "void heater_ctrl_init(void)",
     "location": {
       "column": "6",
-      "line": "82",
+      "line": "83",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\heater_ctrl.h"
     },
     "name": "heater_ctrl_init",
@@ -45632,7 +45632,7 @@
     "display": "void heater_ctrl_init(void)",
     "location": {
       "column": "6",
-      "line": "82",
+      "line": "83",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\heater_ctrl.h"
     },
     "name": "heater_ctrl_init",
@@ -45646,7 +45646,7 @@
     "display": "int8_t heater_get_temperature(void)",
     "location": {
       "column": "8",
-      "line": "88",
+      "line": "89",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\heater_ctrl.h"
     },
     "name": "heater_get_temperature",
@@ -45660,7 +45660,7 @@
     "display": "int8_t heater_get_temperature(void)",
     "location": {
       "column": "8",
-      "line": "88",
+      "line": "89",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\heater_ctrl.h"
     },
     "name": "heater_get_temperature",
@@ -45674,7 +45674,7 @@
     "display": "uint8_t heater_get_input_vol(void)",
     "location": {
       "column": "9",
-      "line": "94",
+      "line": "95",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\heater_ctrl.h"
     },
     "name": "heater_get_input_vol",
@@ -45688,7 +45688,7 @@
     "display": "uint8_t heater_get_input_vol(void)",
     "location": {
       "column": "9",
-      "line": "94",
+      "line": "95",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\heater_ctrl.h"
     },
     "name": "heater_get_input_vol",
@@ -45702,7 +45702,7 @@
     "display": "uint8_t heater_get_relay_state(void)",
     "location": {
       "column": "9",
-      "line": "100",
+      "line": "101",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\heater_ctrl.h"
     },
     "name": "heater_get_relay_state",
@@ -45716,7 +45716,7 @@
     "display": "uint8_t heater_get_relay_state(void)",
     "location": {
       "column": "9",
-      "line": "100",
+      "line": "101",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\heater_ctrl.h"
     },
     "name": "heater_get_relay_state",
@@ -45730,7 +45730,7 @@
     "display": "uint8_t heater_is_power_reverse(void)",
     "location": {
       "column": "9",
-      "line": "106",
+      "line": "107",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\heater_ctrl.h"
     },
     "name": "heater_is_power_reverse",
@@ -45744,7 +45744,7 @@
     "display": "uint8_t heater_is_power_reverse(void)",
     "location": {
       "column": "9",
-      "line": "106",
+      "line": "107",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\heater_ctrl.h"
     },
     "name": "heater_is_power_reverse",
@@ -45758,7 +45758,7 @@
     "display": "uint8_t heater_open(void)",
     "location": {
       "column": "9",
-      "line": "112",
+      "line": "113",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\heater_ctrl.h"
     },
     "name": "heater_open",
@@ -45772,7 +45772,7 @@
     "display": "uint8_t heater_open(void)",
     "location": {
       "column": "9",
-      "line": "112",
+      "line": "113",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\heater_ctrl.h"
     },
     "name": "heater_open",
@@ -45786,7 +45786,7 @@
     "display": "uint8_t heater_close(void)",
     "location": {
       "column": "9",
-      "line": "118",
+      "line": "119",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\heater_ctrl.h"
     },
     "name": "heater_close",
@@ -45800,7 +45800,7 @@
     "display": "uint8_t heater_close(void)",
     "location": {
       "column": "9",
-      "line": "118",
+      "line": "119",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\heater_ctrl.h"
     },
     "name": "heater_close",
@@ -45814,7 +45814,7 @@
     "display": "void heater_process(void)",
     "location": {
       "column": "6",
-      "line": "124",
+      "line": "125",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\heater_ctrl.h"
     },
     "name": "heater_process",
@@ -45828,7 +45828,7 @@
     "display": "void heater_process(void)",
     "location": {
       "column": "6",
-      "line": "124",
+      "line": "125",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\heater_ctrl.h"
     },
     "name": "heater_process",
@@ -45842,7 +45842,7 @@
     "display": "void heater_delay_seconds(uint16_t)",
     "location": {
       "column": "6",
-      "line": "130",
+      "line": "131",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\heater_ctrl.h"
     },
     "name": "heater_delay_seconds",
@@ -45856,7 +45856,7 @@
     "display": "void heater_delay_seconds(uint16_t)",
     "location": {
       "column": "6",
-      "line": "130",
+      "line": "131",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\heater_ctrl.h"
     },
     "name": "heater_delay_seconds",
@@ -49648,7 +49648,7 @@
     "ID": "c:@F@ES1642_IsBroadcastAddr",
     "What": "Function",
     "defdec": "Dec",
-    "display": "_Bool ES1642_IsBroadcastAddr(const uint8_t *)",
+    "display": "bool ES1642_IsBroadcastAddr(const uint8_t *)",
     "location": {
       "column": "6",
       "line": "300",
@@ -49662,7 +49662,7 @@
     "ID": "c:@F@ES1642_IsBroadcastAddr",
     "What": "Function",
     "defdec": "Dec",
-    "display": "bool ES1642_IsBroadcastAddr(const uint8_t *)",
+    "display": "_Bool ES1642_IsBroadcastAddr(const uint8_t *)",
     "location": {
       "column": "6",
       "line": "300",
@@ -50040,7 +50040,7 @@
     "ID": "c:@F@ES1642_SendSearchReply",
     "What": "Function",
     "defdec": "Dec",
-    "display": "es1642_status_t ES1642_SendSearchReply(es1642_handle_t *, const uint8_t *, uint8_t, bool, const uint8_t *, uint8_t)",
+    "display": "es1642_status_t ES1642_SendSearchReply(es1642_handle_t *, const uint8_t *, uint8_t, _Bool, const uint8_t *, uint8_t)",
     "location": {
       "column": "17",
       "line": "358",
@@ -50054,7 +50054,7 @@
     "ID": "c:@F@ES1642_SendSearchReply",
     "What": "Function",
     "defdec": "Dec",
-    "display": "es1642_status_t ES1642_SendSearchReply(es1642_handle_t *, const uint8_t *, uint8_t, _Bool, const uint8_t *, uint8_t)",
+    "display": "es1642_status_t ES1642_SendSearchReply(es1642_handle_t *, const uint8_t *, uint8_t, bool, const uint8_t *, uint8_t)",
     "location": {
       "column": "17",
       "line": "358",
@@ -51759,7 +51759,7 @@
     "scope": null
   },
   {
-    "ID": "c:heater_ctrl.c@4313@F@adc_read_channel@sum",
+    "ID": "c:heater_ctrl.c@4371@F@adc_read_channel@sum",
     "What": "Variable",
     "defdec": "Def",
     "display": "sum",
@@ -51773,7 +51773,7 @@
     "scope": null
   },
   {
-    "ID": "c:heater_ctrl.c@4313@F@adc_read_channel@i",
+    "ID": "c:heater_ctrl.c@4371@F@adc_read_channel@i",
     "What": "Variable",
     "defdec": "Dec",
     "display": "i",
@@ -51871,7 +51871,7 @@
     "scope": null
   },
   {
-    "ID": "c:heater_ctrl.c@6567@F@heater_get_temperature@i",
+    "ID": "c:heater_ctrl.c@6625@F@heater_get_temperature@i",
     "What": "Variable",
     "defdec": "Def",
     "display": "i",
@@ -51885,7 +51885,7 @@
     "scope": null
   },
   {
-    "ID": "c:heater_ctrl.c@6567@F@heater_get_temperature@high",
+    "ID": "c:heater_ctrl.c@6625@F@heater_get_temperature@high",
     "What": "Variable",
     "defdec": "Dec",
     "display": "high",
@@ -51899,7 +51899,7 @@
     "scope": null
   },
   {
-    "ID": "c:heater_ctrl.c@6567@F@heater_get_temperature@low",
+    "ID": "c:heater_ctrl.c@6625@F@heater_get_temperature@low",
     "What": "Variable",
     "defdec": "Dec",
     "display": "low",
@@ -51913,7 +51913,7 @@
     "scope": null
   },
   {
-    "ID": "c:heater_ctrl.c@6594@F@heater_get_temperature@adc_value",
+    "ID": "c:heater_ctrl.c@6652@F@heater_get_temperature@adc_value",
     "What": "Variable",
     "defdec": "Def",
     "display": "adc_value",
@@ -51941,7 +51941,7 @@
     "scope": null
   },
   {
-    "ID": "c:heater_ctrl.c@8072@F@heater_get_input_vol@cal",
+    "ID": "c:heater_ctrl.c@8130@F@heater_get_input_vol@cal",
     "What": "Variable",
     "defdec": "Def",
     "display": "cal",
@@ -51955,7 +51955,7 @@
     "scope": null
   },
   {
-    "ID": "c:heater_ctrl.c@8091@F@heater_get_input_vol@adc_value",
+    "ID": "c:heater_ctrl.c@8149@F@heater_get_input_vol@adc_value",
     "What": "Variable",
     "defdec": "Def",
     "display": "adc_value",
@@ -51983,7 +51983,7 @@
     "scope": null
   },
   {
-    "ID": "c:heater_ctrl.c@9472@F@heater_open@retry",
+    "ID": "c:heater_ctrl.c@9530@F@heater_open@retry",
     "What": "Variable",
     "defdec": "Def",
     "display": "retry",
@@ -52011,7 +52011,7 @@
     "scope": null
   },
   {
-    "ID": "c:heater_ctrl.c@11770@F@heater_close@retry",
+    "ID": "c:heater_ctrl.c@11828@F@heater_close@retry",
     "What": "Variable",
     "defdec": "Def",
     "display": "retry",
@@ -52053,7 +52053,7 @@
     "scope": null
   },
   {
-    "ID": "c:heater_ctrl.c@16165@F@heater_process@i",
+    "ID": "c:heater_ctrl.c@16223@F@heater_process@i",
     "What": "Variable",
     "defdec": "Def",
     "display": "i",
@@ -52064,6 +52064,76 @@
     },
     "name": "i",
     "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:stdbool.h@173@macro@_STDBOOL",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "_STDBOOL",
+    "location": {
+      "column": "9",
+      "line": "7",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdbool.h"
+    },
+    "name": "_STDBOOL",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stdbool.h@277@macro@bool",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "bool",
+    "location": {
+      "column": "9",
+      "line": "16",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdbool.h"
+    },
+    "name": "bool",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stdbool.h@297@macro@true",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "true",
+    "location": {
+      "column": "9",
+      "line": "17",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdbool.h"
+    },
+    "name": "true",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stdbool.h@313@macro@false",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "false",
+    "location": {
+      "column": "9",
+      "line": "18",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdbool.h"
+    },
+    "name": "false",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stdbool.h@361@macro@__bool_true_false_are_defined",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "__bool_true_false_are_defined",
+    "location": {
+      "column": "9",
+      "line": "22",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdbool.h"
+    },
+    "name": "__bool_true_false_are_defined",
+    "origin": "system_include",
     "scope": null
   },
   {
@@ -52189,76 +52259,6 @@
       "path": "E:\\IARSTM8\\stm8\\inc\\c\\stddef.h"
     },
     "name": "wchar_t",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stdbool.h@173@macro@_STDBOOL",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "_STDBOOL",
-    "location": {
-      "column": "9",
-      "line": "7",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdbool.h"
-    },
-    "name": "_STDBOOL",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stdbool.h@277@macro@bool",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "bool",
-    "location": {
-      "column": "9",
-      "line": "16",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdbool.h"
-    },
-    "name": "bool",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stdbool.h@297@macro@true",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "true",
-    "location": {
-      "column": "9",
-      "line": "17",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdbool.h"
-    },
-    "name": "true",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stdbool.h@313@macro@false",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "false",
-    "location": {
-      "column": "9",
-      "line": "18",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdbool.h"
-    },
-    "name": "false",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stdbool.h@361@macro@__bool_true_false_are_defined",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "__bool_true_false_are_defined",
-    "location": {
-      "column": "9",
-      "line": "22",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stdbool.h"
-    },
-    "name": "__bool_true_false_are_defined",
     "origin": "system_include",
     "scope": null
   },
