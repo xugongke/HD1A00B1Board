@@ -287,6 +287,7 @@ es1642_status_t ES1642_InputByte(es1642_handle_t *handle, uint8_t byte)
 
         if (status == ES1642_STATUS_OK)
         {
+            es1642_on_frame(handle, &frame);
             ES1642_ResetRx(handle);
             return ES1642_STATUS_FRAME_READY;
         }

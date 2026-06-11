@@ -67,7 +67,7 @@ void main(void)
     enableInterrupts();
 
     /* 上电延时等待电压稳定 */
-    ek_delay(200);
+//    ek_delay(200);
 
     /* LED上电指示 */
     BOARD_OUT1_ON();

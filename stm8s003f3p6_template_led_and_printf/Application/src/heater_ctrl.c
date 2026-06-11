@@ -532,7 +532,7 @@ void heater_process(void)
         do {
             /* 如果继电器当前断开, 且电压>VolStart 且 温度安全, 则自主启动加热 */
             if (heater_get_relay_state() == RELAY_STATE_DISCONNECT)
-            {
+            {//如果电压小于17V，小板直接无法启动，继电器恢复常闭状态，直接启动加热
                 if ((g_input_vol > VOL_START_72V) && (g_temperature < TEMP_HIGH_THRESHOLD))
                 {
                     for (i = 0; i < HEATER_RETRY_MAX; i++)
