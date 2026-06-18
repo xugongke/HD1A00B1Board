@@ -221,8 +221,13 @@ int8_t heater_get_temperature(void)
  * heater_get_input_vol - 获取光伏板输入电压
  *
  * 硬件: 200K+10K电阻分压 → ADC采样 → 软件换算
- * 公式: V输入 = ADC值 × 105 / 1024
- *       (105 = 5V × 21K / 10K / 1024 的简化系数)
+ * 换算公式: V输入 = ADC值 × 5 × 21 / 1024 = ADC值 × 105 / 1024
+ *   5    = ADC参考电压(V)
+ *   21   = 分压系数 (上200K + 下10K, (200+10)/10 = 21)
+ *   1024 = 10位ADC满量程
+ * 应该把分压电阻修改为300K+10K, 分压系数变为31
+ * 注意: 必须先乘后除! 若先做 (ADC值>>10) 再相乘, 由于ADC值∈[0,1023],
+ *       ADC值/1024 会被整除截断为0, 导致结果恒为0。
  *
  * 同时更新 g_state.bits.power_reverse 电源反接状态
  *
@@ -234,8 +239,9 @@ uint8_t heater_get_input_vol(void)
     uint16_t adc_value;
     adc_read_channel(&adc_value, ADC1_CHANNEL_3, ADC_SAMPLE_NUMS);
     cal = adc_value;
-    cal = 105 * cal;     /* 乘以分压系数 */
-    cal = cal >> 10;     /* 除以1024 */
+    cal = cal * 5;             /* 先乘ADC参考电压5V */
+    cal = cal * 21;            /* 再乘分压系数 (200K+10K, 比=21) */
+    cal = cal >> 10;           /* 最后除以1024(10位ADC满量程); 若先除会被整除为0! */
     g_input_vol = (uint16_t)cal;
     g_state.bits.power_reverse = heater_is_power_reverse() ? 1 : 0;
     return (uint8_t)g_input_vol;
@@ -533,7 +539,7 @@ void heater_process(void)
             /* 如果继电器当前断开, 且电压>VolStart 且 温度安全, 则自主启动加热 */
             if (heater_get_relay_state() == RELAY_STATE_DISCONNECT)
             {//如果电压小于17V，小板直接无法启动，继电器恢复常闭状态，直接启动加热
-                if ((g_input_vol > VOL_START_72V) && (g_temperature < TEMP_HIGH_THRESHOLD))
+                if (g_temperature < TEMP_HIGH_THRESHOLD)
                 {
                     for (i = 0; i < HEATER_RETRY_MAX; i++)
                     {
