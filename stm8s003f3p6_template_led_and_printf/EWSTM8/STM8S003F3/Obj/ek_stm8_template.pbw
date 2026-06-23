@@ -50454,188 +50454,6 @@
     "scope": null
   },
   {
-    "ID": "c:es1642_port_stm8.h@38@macro@__ES1642_PORT_STM8_H",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "__ES1642_PORT_STM8_H",
-    "location": {
-      "column": "9",
-      "line": "2",
-      "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\es1642_port_stm8.h"
-    },
-    "name": "__ES1642_PORT_STM8_H",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@stm8_es1642_write",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "int32_t stm8_es1642_write(const uint8_t *, uint16_t)",
-    "location": {
-      "column": "9",
-      "line": "7",
-      "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\es1642_port_stm8.h"
-    },
-    "name": "stm8_es1642_write",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@stm8_es1642_write",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "int32_t stm8_es1642_write(const uint8_t *, uint16_t)",
-    "location": {
-      "column": "9",
-      "line": "7",
-      "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\es1642_port_stm8.h"
-    },
-    "name": "stm8_es1642_write",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@es1642_on_frame",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void es1642_on_frame(es1642_handle_t *, const es1642_frame_t *)",
-    "location": {
-      "column": "6",
-      "line": "8",
-      "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\es1642_port_stm8.h"
-    },
-    "name": "es1642_on_frame",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@es1642_on_frame",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void es1642_on_frame(es1642_handle_t *, const es1642_frame_t *)",
-    "location": {
-      "column": "6",
-      "line": "8",
-      "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\es1642_port_stm8.h"
-    },
-    "name": "es1642_on_frame",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@es1642_app_init",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void es1642_app_init(void)",
-    "location": {
-      "column": "6",
-      "line": "10",
-      "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\es1642_port_stm8.h"
-    },
-    "name": "es1642_app_init",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@es1642_app_init",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void es1642_app_init(void)",
-    "location": {
-      "column": "6",
-      "line": "10",
-      "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\es1642_port_stm8.h"
-    },
-    "name": "es1642_app_init",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@es1642_app_poll",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void es1642_app_poll(void)",
-    "location": {
-      "column": "6",
-      "line": "11",
-      "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\es1642_port_stm8.h"
-    },
-    "name": "es1642_app_poll",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@es1642_app_poll",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void es1642_app_poll(void)",
-    "location": {
-      "column": "6",
-      "line": "11",
-      "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\es1642_port_stm8.h"
-    },
-    "name": "es1642_app_poll",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@es1642_uart_rx_irq_handler",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void es1642_uart_rx_irq_handler(void)",
-    "location": {
-      "column": "6",
-      "line": "12",
-      "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\es1642_port_stm8.h"
-    },
-    "name": "es1642_uart_rx_irq_handler",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@es1642_uart_rx_irq_handler",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void es1642_uart_rx_irq_handler(void)",
-    "location": {
-      "column": "6",
-      "line": "12",
-      "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\es1642_port_stm8.h"
-    },
-    "name": "es1642_uart_rx_irq_handler",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@ES1642_ReadMac",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "int ES1642_ReadMac(void)",
-    "location": {
-      "column": "5",
-      "line": "13",
-      "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\es1642_port_stm8.h"
-    },
-    "name": "ES1642_ReadMac",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@ES1642_ReadMac",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "int ES1642_ReadMac(void)",
-    "location": {
-      "column": "5",
-      "line": "13",
-      "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\es1642_port_stm8.h"
-    },
-    "name": "ES1642_ReadMac",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
     "ID": "c:string.h@100@macro@_STRING",
     "What": "MacroDef",
     "defdec": "Def",
@@ -51210,6 +51028,188 @@
     "scope": null
   },
   {
+    "ID": "c:es1642_port_stm8.h@38@macro@__ES1642_PORT_STM8_H",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "__ES1642_PORT_STM8_H",
+    "location": {
+      "column": "9",
+      "line": "2",
+      "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\es1642_port_stm8.h"
+    },
+    "name": "__ES1642_PORT_STM8_H",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@stm8_es1642_write",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "int32_t stm8_es1642_write(const uint8_t *, uint16_t)",
+    "location": {
+      "column": "9",
+      "line": "7",
+      "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\es1642_port_stm8.h"
+    },
+    "name": "stm8_es1642_write",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@stm8_es1642_write",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "int32_t stm8_es1642_write(const uint8_t *, uint16_t)",
+    "location": {
+      "column": "9",
+      "line": "7",
+      "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\es1642_port_stm8.h"
+    },
+    "name": "stm8_es1642_write",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@es1642_on_frame",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void es1642_on_frame(es1642_handle_t *, const es1642_frame_t *)",
+    "location": {
+      "column": "6",
+      "line": "8",
+      "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\es1642_port_stm8.h"
+    },
+    "name": "es1642_on_frame",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@es1642_on_frame",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void es1642_on_frame(es1642_handle_t *, const es1642_frame_t *)",
+    "location": {
+      "column": "6",
+      "line": "8",
+      "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\es1642_port_stm8.h"
+    },
+    "name": "es1642_on_frame",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@es1642_app_init",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void es1642_app_init(void)",
+    "location": {
+      "column": "6",
+      "line": "10",
+      "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\es1642_port_stm8.h"
+    },
+    "name": "es1642_app_init",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@es1642_app_init",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void es1642_app_init(void)",
+    "location": {
+      "column": "6",
+      "line": "10",
+      "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\es1642_port_stm8.h"
+    },
+    "name": "es1642_app_init",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@es1642_app_poll",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void es1642_app_poll(void)",
+    "location": {
+      "column": "6",
+      "line": "11",
+      "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\es1642_port_stm8.h"
+    },
+    "name": "es1642_app_poll",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@es1642_app_poll",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void es1642_app_poll(void)",
+    "location": {
+      "column": "6",
+      "line": "11",
+      "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\es1642_port_stm8.h"
+    },
+    "name": "es1642_app_poll",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@es1642_uart_rx_irq_handler",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void es1642_uart_rx_irq_handler(void)",
+    "location": {
+      "column": "6",
+      "line": "12",
+      "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\es1642_port_stm8.h"
+    },
+    "name": "es1642_uart_rx_irq_handler",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@es1642_uart_rx_irq_handler",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void es1642_uart_rx_irq_handler(void)",
+    "location": {
+      "column": "6",
+      "line": "12",
+      "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\es1642_port_stm8.h"
+    },
+    "name": "es1642_uart_rx_irq_handler",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@ES1642_ReadMac",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "int ES1642_ReadMac(void)",
+    "location": {
+      "column": "5",
+      "line": "13",
+      "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\es1642_port_stm8.h"
+    },
+    "name": "ES1642_ReadMac",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@ES1642_ReadMac",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "int ES1642_ReadMac(void)",
+    "location": {
+      "column": "5",
+      "line": "13",
+      "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\inc\\es1642_port_stm8.h"
+    },
+    "name": "ES1642_ReadMac",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
     "ID": "c:es1642_port_stm8.c@132@macro@MASTER_CMD_SET_ADDR",
     "What": "MacroDef",
     "defdec": "Def",
@@ -51434,13 +51434,13 @@
     "scope": null
   },
   {
-    "ID": "c:es1642_port_stm8.c@2130@F@es1642_on_frame@reply",
+    "ID": "c:es1642_port_stm8.c@2595@F@es1642_on_frame@reply",
     "What": "Variable",
     "defdec": "Def",
     "display": "reply",
     "location": {
       "column": "39",
-      "line": "64",
+      "line": "71",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\es1642_port_stm8.c"
     },
     "name": "reply",
@@ -51448,41 +51448,13 @@
     "scope": null
   },
   {
-    "ID": "c:es1642_port_stm8.c@2642@F@es1642_on_frame@reply",
-    "What": "Variable",
-    "defdec": "Def",
-    "display": "reply",
-    "location": {
-      "column": "39",
-      "line": "73",
-      "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\es1642_port_stm8.c"
-    },
-    "name": "reply",
-    "origin": "project_file",
-    "scope": null
-  },
-  {
-    "ID": "c:es1642_port_stm8.c@3160@F@es1642_on_frame@reply",
-    "What": "Variable",
-    "defdec": "Def",
-    "display": "reply",
-    "location": {
-      "column": "39",
-      "line": "81",
-      "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\es1642_port_stm8.c"
-    },
-    "name": "reply",
-    "origin": "project_file",
-    "scope": null
-  },
-  {
-    "ID": "c:es1642_port_stm8.c@4256@F@es1642_on_frame@reply",
+    "ID": "c:es1642_port_stm8.c@3691@F@es1642_on_frame@reply",
     "What": "Variable",
     "defdec": "Def",
     "display": "reply",
     "location": {
       "column": "23",
-      "line": "104",
+      "line": "94",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\es1642_port_stm8.c"
     },
     "name": "reply",
@@ -51490,13 +51462,13 @@
     "scope": null
   },
   {
-    "ID": "c:es1642_port_stm8.c@4459@F@es1642_on_frame@reply",
+    "ID": "c:es1642_port_stm8.c@3894@F@es1642_on_frame@reply",
     "What": "Variable",
     "defdec": "Def",
     "display": "reply",
     "location": {
       "column": "23",
-      "line": "109",
+      "line": "99",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\es1642_port_stm8.c"
     },
     "name": "reply",
@@ -51510,7 +51482,7 @@
     "display": "void es1642_app_init(void)",
     "location": {
       "column": "6",
-      "line": "132",
+      "line": "122",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\es1642_port_stm8.c"
     },
     "name": "es1642_app_init",
@@ -51524,7 +51496,7 @@
     "display": "void es1642_app_poll(void)",
     "location": {
       "column": "6",
-      "line": "138",
+      "line": "128",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\es1642_port_stm8.c"
     },
     "name": "es1642_app_poll",
@@ -51532,13 +51504,13 @@
     "scope": null
   },
   {
-    "ID": "c:es1642_port_stm8.c@5252@F@es1642_app_poll@byte",
+    "ID": "c:es1642_port_stm8.c@4687@F@es1642_app_poll@byte",
     "What": "Variable",
     "defdec": "Def",
     "display": "byte",
     "location": {
       "column": "13",
-      "line": "140",
+      "line": "130",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\es1642_port_stm8.c"
     },
     "name": "byte",
@@ -51552,7 +51524,7 @@
     "display": "void es1642_uart_rx_irq_handler(void)",
     "location": {
       "column": "6",
-      "line": "147",
+      "line": "137",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\es1642_port_stm8.c"
     },
     "name": "es1642_uart_rx_irq_handler",
@@ -51566,7 +51538,7 @@
     "display": "int ES1642_ReadMac(void)",
     "location": {
       "column": "5",
-      "line": "152",
+      "line": "142",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\es1642_port_stm8.c"
     },
     "name": "ES1642_ReadMac",
@@ -51574,13 +51546,13 @@
     "scope": null
   },
   {
-    "ID": "c:es1642_port_stm8.c@5483@F@ES1642_ReadMac@status",
+    "ID": "c:es1642_port_stm8.c@4918@F@ES1642_ReadMac@status",
     "What": "Variable",
     "defdec": "Def",
     "display": "status",
     "location": {
       "column": "21",
-      "line": "154",
+      "line": "144",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\es1642_port_stm8.c"
     },
     "name": "status",

@@ -57,22 +57,12 @@ void es1642_on_frame(es1642_handle_t *handle, const es1642_frame_t *frame)
                           }
                           break;
                       case MASTER_CMD_HEATER_ON:
-                          /* 主机命令启动加热: 设置全局命令标志 */
+                          /* 主机命令启动加热: 设置全局命令标志 (不回ACK, 主机异步架构不等响应) */
                           g_master_cmd = 1;
-                          /* 回复主机: [cmd][len][result] */
-                          {
-                              uint8_t reply[3] = {MASTER_CMD_HEATER_ON, 0x01, SLAVE_RESULT_OK};
-                              (void)ES1642_SendData(handle, recv_data.src_addr, reply, 3U, 0U);
-                          }
                           break;
                       case MASTER_CMD_HEATER_OFF:
-                          /* 主机命令停止加热: 清除全局命令标志 */
+                          /* 主机命令停止加热: 清除全局命令标志 (不回ACK, 主机异步架构不等响应) */
                           g_master_cmd = 0;
-                          /* 回复主机: [cmd][len][result] */
-                          {
-                              uint8_t reply[3] = {MASTER_CMD_HEATER_OFF, 0x01, SLAVE_RESULT_OK};
-                              (void)ES1642_SendData(handle, recv_data.src_addr, reply, 3U, 0U);
-                          }
                           break;
                       case MASTER_CMD_READ_STATUS:
                           /* 主机请求读取从机状态: 打包温度+电压+状态字节回复 */
