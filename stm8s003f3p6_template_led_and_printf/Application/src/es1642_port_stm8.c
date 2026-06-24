@@ -1,4 +1,3 @@
-#include <string.h>
 #include "es1642_port_stm8.h"
 #include "ek_uart.h"
 #include "ek_gpio.h"
@@ -112,7 +111,7 @@ void es1642_on_frame(es1642_handle_t *handle, const es1642_frame_t *frame)
           status = ES1642_DecodeMac(frame, mac_addr);
           if (status == ES1642_STATUS_OK)
           {
-              ES1642_SendSearchReply(handle, notify.src_addr, notify.task_id, 1, mac_addr, ES1642_ADDR_LEN);
+              ES1642_SendSearchReply(handle, notify.src_addr, notify.task_id, TRUE, mac_addr, ES1642_ADDR_LEN);
           }
           break;
       }
