@@ -62,7 +62,7 @@
 /* Exported constants --------------------------------------------------------*/
 /* Uncomment the line below to expanse the "assert_param" macro in the
    Standard Peripheral Library drivers code */
-#define USE_FULL_ASSERT    (1) 
+/* #define USE_FULL_ASSERT    (1) */  /* 已禁用：每个 SPL 模块占用约112字节 Flash 存 __FILE__ 字符串，共浪费约676字节 */
 
 /* Exported macro ------------------------------------------------------------*/
 #ifdef  USE_FULL_ASSERT
