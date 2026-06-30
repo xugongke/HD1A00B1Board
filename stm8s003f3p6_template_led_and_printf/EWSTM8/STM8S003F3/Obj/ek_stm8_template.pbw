@@ -45228,13 +45228,41 @@
     "scope": null
   },
   {
+    "ID": "c:ek_uart.c@467@F@ek_uart_read_byte@r",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "r",
+    "location": {
+      "column": "13",
+      "line": "23",
+      "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\ek_uart.c"
+    },
+    "name": "r",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:ek_uart.c@491@F@ek_uart_read_byte@w",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "w",
+    "location": {
+      "column": "13",
+      "line": "24",
+      "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\ek_uart.c"
+    },
+    "name": "w",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
     "ID": "c:@F@ek_uart_rx_isr",
     "What": "Function",
     "defdec": "Def",
     "display": "void ek_uart_rx_isr(void)",
     "location": {
       "column": "6",
-      "line": "33",
+      "line": "36",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\ek_uart.c"
     },
     "name": "ek_uart_rx_isr",
@@ -45242,13 +45270,13 @@
     "scope": null
   },
   {
-    "ID": "c:ek_uart.c@678@F@ek_uart_rx_isr@data",
+    "ID": "c:ek_uart.c@707@F@ek_uart_rx_isr@data",
     "What": "Variable",
     "defdec": "Def",
     "display": "data",
     "location": {
       "column": "13",
-      "line": "35",
+      "line": "38",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\ek_uart.c"
     },
     "name": "data",
@@ -45256,13 +45284,13 @@
     "scope": null
   },
   {
-    "ID": "c:ek_uart.c@719@F@ek_uart_rx_isr@next",
+    "ID": "c:ek_uart.c@748@F@ek_uart_rx_isr@next",
     "What": "Variable",
     "defdec": "Def",
     "display": "next",
     "location": {
       "column": "13",
-      "line": "36",
+      "line": "39",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\ek_uart.c"
     },
     "name": "next",
@@ -45276,7 +45304,7 @@
     "display": "void ek_uart_init(void)",
     "location": {
       "column": "6",
-      "line": "45",
+      "line": "48",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\ek_uart.c"
     },
     "name": "ek_uart_init",
@@ -47054,7 +47082,7 @@
     "scope": null
   },
   {
-    "ID": "c:es1642.c@7119@F@ES1642_InputByte@frame",
+    "ID": "c:es1642.c@7131@F@ES1642_InputByte@frame",
     "What": "Variable",
     "defdec": "Def",
     "display": "frame",
@@ -47068,7 +47096,7 @@
     "scope": null
   },
   {
-    "ID": "c:es1642.c@7146@F@ES1642_InputByte@status",
+    "ID": "c:es1642.c@7158@F@ES1642_InputByte@status",
     "What": "Variable",
     "defdec": "Def",
     "display": "status",
@@ -47082,7 +47110,7 @@
     "scope": null
   },
   {
-    "ID": "c:es1642.c@7908@F@ES1642_InputByte@data_len",
+    "ID": "c:es1642.c@7920@F@ES1642_InputByte@data_len",
     "What": "Variable",
     "defdec": "Def",
     "display": "data_len",
@@ -47138,7 +47166,7 @@
     "scope": null
   },
   {
-    "ID": "c:es1642.c@9969@F@ES1642_SendData@payload",
+    "ID": "c:es1642.c@9981@F@ES1642_SendData@payload",
     "What": "Variable",
     "defdec": "Def",
     "display": "payload",
@@ -47152,7 +47180,7 @@
     "scope": null
   },
   {
-    "ID": "c:es1642.c@10012@F@ES1642_SendData@data_ctrl",
+    "ID": "c:es1642.c@10024@F@ES1642_SendData@data_ctrl",
     "What": "Variable",
     "defdec": "Def",
     "display": "data_ctrl",
@@ -47166,7 +47194,7 @@
     "scope": null
   },
   {
-    "ID": "c:es1642.c@10037@F@ES1642_SendData@payload_len",
+    "ID": "c:es1642.c@10049@F@ES1642_SendData@payload_len",
     "What": "Variable",
     "defdec": "Def",
     "display": "payload_len",
@@ -47194,7 +47222,7 @@
     "scope": null
   },
   {
-    "ID": "c:es1642.c@11200@F@ES1642_SendSearchReply@payload",
+    "ID": "c:es1642.c@11212@F@ES1642_SendSearchReply@payload",
     "What": "Variable",
     "defdec": "Def",
     "display": "payload",
@@ -47208,7 +47236,7 @@
     "scope": null
   },
   {
-    "ID": "c:es1642.c@11243@F@ES1642_SendSearchReply@data_ctrl",
+    "ID": "c:es1642.c@11255@F@ES1642_SendSearchReply@data_ctrl",
     "What": "Variable",
     "defdec": "Def",
     "display": "data_ctrl",
@@ -47222,7 +47250,7 @@
     "scope": null
   },
   {
-    "ID": "c:es1642.c@11268@F@ES1642_SendSearchReply@payload_len",
+    "ID": "c:es1642.c@11280@F@ES1642_SendSearchReply@payload_len",
     "What": "Variable",
     "defdec": "Def",
     "display": "payload_len",
@@ -47250,7 +47278,7 @@
     "scope": null
   },
   {
-    "ID": "c:es1642.c@12334@F@ES1642_DecodeEmptyResponse@status",
+    "ID": "c:es1642.c@12346@F@ES1642_DecodeEmptyResponse@status",
     "What": "Variable",
     "defdec": "Def",
     "display": "status",
@@ -47278,7 +47306,7 @@
     "scope": null
   },
   {
-    "ID": "c:es1642.c@12716@F@ES1642_DecodeMac@status",
+    "ID": "c:es1642.c@12728@F@ES1642_DecodeMac@status",
     "What": "Variable",
     "defdec": "Def",
     "display": "status",
@@ -47306,7 +47334,7 @@
     "scope": null
   },
   {
-    "ID": "c:es1642.c@13223@F@ES1642_DecodeRecvData@raw_data_ctrl",
+    "ID": "c:es1642.c@13235@F@ES1642_DecodeRecvData@raw_data_ctrl",
     "What": "Variable",
     "defdec": "Def",
     "display": "raw_data_ctrl",
@@ -47320,7 +47348,7 @@
     "scope": null
   },
   {
-    "ID": "c:es1642.c@13252@F@ES1642_DecodeRecvData@user_data_len",
+    "ID": "c:es1642.c@13264@F@ES1642_DecodeRecvData@user_data_len",
     "What": "Variable",
     "defdec": "Def",
     "display": "user_data_len",
@@ -47334,7 +47362,7 @@
     "scope": null
   },
   {
-    "ID": "c:es1642.c@13281@F@ES1642_DecodeRecvData@status",
+    "ID": "c:es1642.c@13293@F@ES1642_DecodeRecvData@status",
     "What": "Variable",
     "defdec": "Def",
     "display": "status",
@@ -47362,7 +47390,7 @@
     "scope": null
   },
   {
-    "ID": "c:es1642.c@14428@F@ES1642_DecodeSearchNotify@attribute_len",
+    "ID": "c:es1642.c@14440@F@ES1642_DecodeSearchNotify@attribute_len",
     "What": "Variable",
     "defdec": "Def",
     "display": "attribute_len",
@@ -47376,7 +47404,7 @@
     "scope": null
   },
   {
-    "ID": "c:es1642.c@14456@F@ES1642_DecodeSearchNotify@status",
+    "ID": "c:es1642.c@14468@F@ES1642_DecodeSearchNotify@status",
     "What": "Variable",
     "defdec": "Def",
     "display": "status",
@@ -51504,132 +51532,6 @@
     "scope": null
   },
   {
-    "ID": "c:stddef.h@100@macro@_STDDEF",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "_STDDEF",
-    "location": {
-      "column": "9",
-      "line": "4",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stddef.h"
-    },
-    "name": "_STDDEF",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stddef.h@304@macro@NULL",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "NULL",
-    "location": {
-      "column": "11",
-      "line": "18",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stddef.h"
-    },
-    "name": "NULL",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stddef.h@367@macro@offsetof",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "offsetof",
-    "location": {
-      "column": "11",
-      "line": "22",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stddef.h"
-    },
-    "name": "offsetof",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stddef.h@551@macro@_PTRDIFF_T",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "_PTRDIFF_T",
-    "location": {
-      "column": "11",
-      "line": "27",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stddef.h"
-    },
-    "name": "_PTRDIFF_T",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stddef.h@573@macro@_PTRDIFFT",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "_PTRDIFFT",
-    "location": {
-      "column": "11",
-      "line": "28",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stddef.h"
-    },
-    "name": "_PTRDIFFT",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stddef.h@594@macro@_STD_USING_PTRDIFF_T",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "_STD_USING_PTRDIFF_T",
-    "location": {
-      "column": "11",
-      "line": "29",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stddef.h"
-    },
-    "name": "_STD_USING_PTRDIFF_T",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stddef.h@T@ptrdiff_t",
-    "What": "Typedef",
-    "defdec": "Def",
-    "display": "_Ptrdifft",
-    "location": {
-      "column": "21",
-      "line": "30",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stddef.h"
-    },
-    "name": "ptrdiff_t",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stddef.h@735@macro@_WCHART",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "_WCHART",
-    "location": {
-      "column": "11",
-      "line": "34",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stddef.h"
-    },
-    "name": "_WCHART",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stddef.h@T@wchar_t",
-    "What": "Typedef",
-    "defdec": "Def",
-    "display": "_Wchart",
-    "location": {
-      "column": "19",
-      "line": "35",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stddef.h"
-    },
-    "name": "wchar_t",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
     "ID": "c:es1642_port_stm8.h@38@macro@__ES1642_PORT_STM8_H",
     "What": "MacroDef",
     "defdec": "Def",
@@ -51809,6 +51711,132 @@
     },
     "name": "ES1642_ReadMac",
     "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stddef.h@100@macro@_STDDEF",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "_STDDEF",
+    "location": {
+      "column": "9",
+      "line": "4",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stddef.h"
+    },
+    "name": "_STDDEF",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stddef.h@304@macro@NULL",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "NULL",
+    "location": {
+      "column": "11",
+      "line": "18",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stddef.h"
+    },
+    "name": "NULL",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stddef.h@367@macro@offsetof",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "offsetof",
+    "location": {
+      "column": "11",
+      "line": "22",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stddef.h"
+    },
+    "name": "offsetof",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stddef.h@551@macro@_PTRDIFF_T",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "_PTRDIFF_T",
+    "location": {
+      "column": "11",
+      "line": "27",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stddef.h"
+    },
+    "name": "_PTRDIFF_T",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stddef.h@573@macro@_PTRDIFFT",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "_PTRDIFFT",
+    "location": {
+      "column": "11",
+      "line": "28",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stddef.h"
+    },
+    "name": "_PTRDIFFT",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stddef.h@594@macro@_STD_USING_PTRDIFF_T",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "_STD_USING_PTRDIFF_T",
+    "location": {
+      "column": "11",
+      "line": "29",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stddef.h"
+    },
+    "name": "_STD_USING_PTRDIFF_T",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stddef.h@T@ptrdiff_t",
+    "What": "Typedef",
+    "defdec": "Def",
+    "display": "_Ptrdifft",
+    "location": {
+      "column": "21",
+      "line": "30",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stddef.h"
+    },
+    "name": "ptrdiff_t",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stddef.h@735@macro@_WCHART",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "_WCHART",
+    "location": {
+      "column": "11",
+      "line": "34",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stddef.h"
+    },
+    "name": "_WCHART",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stddef.h@T@wchar_t",
+    "What": "Typedef",
+    "defdec": "Def",
+    "display": "_Wchart",
+    "location": {
+      "column": "19",
+      "line": "35",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stddef.h"
+    },
+    "name": "wchar_t",
+    "origin": "system_include",
     "scope": null
   },
   {

@@ -20,13 +20,16 @@ void ek_uart_send_bytes(const uint8_t *data, uint16_t len)
 
 uint8_t ek_uart_read_byte(uint8_t *byte)
 {
-    if ((byte == 0) || (s_rx_r == s_rx_w))
+    uint8_t r = s_rx_r;
+    uint8_t w = s_rx_w;
+
+    if ((byte == 0) || (r == w))
     {
         return 0U;
     }
 
-    *byte = s_rx_fifo[s_rx_r];
-    s_rx_r = (uint8_t)((s_rx_r + 1U) % UART_RX_FIFO_SIZE);
+    *byte = s_rx_fifo[r];
+    s_rx_r = (uint8_t)((r + 1U) % UART_RX_FIFO_SIZE);
     return 1U;
 }
 

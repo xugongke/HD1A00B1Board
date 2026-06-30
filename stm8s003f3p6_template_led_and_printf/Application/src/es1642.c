@@ -248,8 +248,8 @@ es1642_status_t ES1642_ParseFrame(const uint8_t *raw_frame,
     frame->data = (data_len > 0U) ? &raw_frame[5] : NULL;
     frame->csum = raw_frame[(uint16_t)(5U + data_len)];
     frame->cxor = raw_frame[(uint16_t)(6U + data_len)];
-    frame->prm = ((raw_frame[3] & ES1642_CTRL_BIT_PRM) != 0U);
-    frame->is_exception = ((raw_frame[3] & ES1642_CTRL_BIT_RESPOND) != 0U);
+    frame->prm = (bool)((raw_frame[3] & ES1642_CTRL_BIT_PRM) != 0U);
+    frame->is_exception = (bool)((raw_frame[3] & ES1642_CTRL_BIT_RESPOND) != 0U);
     frame->exception_code = (frame->is_exception && (data_len > 0U))
                           ? raw_frame[(uint16_t)(4U + data_len)]
                           : 0xFFU;
