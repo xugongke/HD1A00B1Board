@@ -14,7 +14,32 @@
 
 #include "es1642_port_stm8.h"
 #include "es1642.h"
-#include <string.h>
+#include <stddef.h>   /* NULL 定义，freestanding 头文件，不占用 Flash */
+
+/* ========================= 内部工具函数（替代 string.h，节省 Flash） ========================= */
+
+static void es1642_memset(void *dst, uint8_t val, uint16_t len)
+{
+    uint8_t *p = (uint8_t *)dst;
+
+    while (len > 0U)
+    {
+        *p++ = val;
+        --len;
+    }
+}
+
+static void es1642_memcpy(void *dst, const void *src, uint16_t len)
+{
+    uint8_t *d = (uint8_t *)dst;
+    const uint8_t *s = (const uint8_t *)src;
+
+    while (len > 0U)
+    {
+        *d++ = *s++;
+        --len;
+    }
+}
 
 /* ========================= 内部工具函数 ========================= */
 
@@ -83,7 +108,7 @@ static es1642_status_t es1642_expect_normal_cmd(const es1642_frame_t *frame, uin
 
 void ES1642_Init(es1642_handle_t *handle)
 {
-    (void)memset(handle, 0, sizeof(*handle));
+    es1642_memset(handle, 0x00U, (uint16_t)sizeof(*handle));
 }
 
 void ES1642_ResetRx(es1642_handle_t *handle)
@@ -136,7 +161,7 @@ es1642_status_t ES1642_BuildFrame(uint8_t ctrl,
 
     if (data_len > 0U)
     {
-        (void)memcpy(&out_frame[5], data, data_len);
+        es1642_memcpy(&out_frame[5], data, data_len);
     }
 
     es1642_calc_checksum(&out_frame[1], (uint16_t)(data_len + 4U), &csum, &cxor);
@@ -340,12 +365,12 @@ es1642_status_t ES1642_SendData(es1642_handle_t *handle,
     data_ctrl = ES1642_MakeTxDataCtrl(relay_depth);
 
     es1642_put_le16(&payload[0], data_ctrl);
-    (void)memcpy(&payload[2], dst_addr, ES1642_ADDR_LEN);
+    es1642_memcpy(&payload[2], dst_addr, ES1642_ADDR_LEN);
     es1642_put_le16(&payload[8], user_data_len);
 
     if (user_data_len > 0U)
     {
-        (void)memcpy(&payload[10], user_data, user_data_len);
+        es1642_memcpy(&payload[10], user_data, user_data_len);
     }
 
     return ES1642_SendFrame(handle,
@@ -382,13 +407,13 @@ es1642_status_t ES1642_SendSearchReply(es1642_handle_t *handle,
     data_ctrl = ES1642_MakeSearchReplyCtrl(participate);
 
     es1642_put_le16(&payload[0], data_ctrl);
-    (void)memcpy(&payload[2], src_addr, ES1642_ADDR_LEN);
+    es1642_memcpy(&payload[2], src_addr, ES1642_ADDR_LEN);
     payload[8] = task_id;
     payload[9] = attribute_len;
 
     if (attribute_len > 0U)
     {
-        (void)memcpy(&payload[10], attribute, attribute_len);
+        es1642_memcpy(&payload[10], attribute, attribute_len);
     }
 
     return ES1642_SendFrame(handle,
@@ -427,7 +452,7 @@ es1642_status_t ES1642_DecodeMac(const es1642_frame_t *frame,
         return ES1642_STATUS_ERROR_PAYLOAD_LENGTH;
     }
 
-    (void)memcpy(mac, frame->data, ES1642_ADDR_LEN);
+    es1642_memcpy(mac, frame->data, ES1642_ADDR_LEN);
     return ES1642_STATUS_OK;
 }
 
@@ -459,7 +484,7 @@ es1642_status_t ES1642_DecodeRecvData(const es1642_frame_t *frame,
     recv_data->raw_data_ctrl = raw_data_ctrl;
     recv_data->relay_depth = (uint8_t)((raw_data_ctrl >> 8) & 0x0FU);
     recv_data->rssi = es1642_sign_extend_9bit((uint16_t)((raw_data_ctrl >> 15) & 0x01FFU));
-    (void)memcpy(recv_data->src_addr, &frame->data[3], ES1642_ADDR_LEN);
+    es1642_memcpy(recv_data->src_addr, &frame->data[3], ES1642_ADDR_LEN);
     recv_data->user_data_len = user_data_len;
     recv_data->user_data = (user_data_len > 0U) ? &frame->data[11] : NULL;
 
@@ -490,7 +515,7 @@ es1642_status_t ES1642_DecodeSearchNotify(const es1642_frame_t *frame,
     }
 
     notify->raw_data_ctrl = es1642_get_le16(&frame->data[0]);
-    (void)memcpy(notify->src_addr, &frame->data[2], ES1642_ADDR_LEN);
+    es1642_memcpy(notify->src_addr, &frame->data[2], ES1642_ADDR_LEN);
     notify->task_id = frame->data[8];
     notify->attribute_len = attribute_len;
     notify->attribute = (attribute_len > 0U) ? &frame->data[10] : NULL;

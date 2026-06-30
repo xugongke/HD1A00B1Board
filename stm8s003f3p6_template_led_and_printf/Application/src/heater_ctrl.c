@@ -62,6 +62,7 @@ int8_t  g_temperature = 0;      /* 当前水箱温度 (单位:℃) */
 uint16_t g_input_vol = 0;       /* 当前光伏输入电压 (单位:V) */
 uint8_t  g_master_cmd = 1;      /* 主机命令: 0=停止加热, 1=启动加热 (默认=1, 上电无主机命令时自动启动加热) */
 HeaterState_t g_state = {.bits.dc_heating = 1};    /* 当前设备状态 (用于上报主机) */
+uint32_t g_energy_Ws = 0;     /* 累计用电量(单位:瓦秒), 仅增不减, 掉电清零 */
 
 /* 电压阈值直接使用头文件中的宏定义 VOL_START_72V / VOL_THRES_72V / VOL_THRES_HIGH_72V,
  * 不再用静态变量, 节省STM8S003宝贵的RAM空间 */
@@ -396,6 +397,41 @@ void heater_delay_seconds(uint16_t sec)
         /* 安全保护: 温度异常立即关闭加热 */
         if ((g_temperature < -10) || (g_temperature >= TEMP_HIGH_THRESHOLD)) { heater_close(); }
     }
+}
+
+/* ==================== 用电量计量 ========================= */
+
+/*
+ * heater_energy_accumulate - 每秒累加一次用电量 (在 TIM4 秒中断 ek_soft_timer 中调用)
+ *
+ * 原理: 数值积分(分段累加)。每秒用当前光伏电压计算瞬时功率 P=U?/R,
+ *       累加到 g_energy_Ws(瓦秒)。因为每秒都用当时的真实电压,
+ *       所以加热时间越长, 采样点越多但每个点都准, 总误差不随时间发散。
+ *
+ * 纯整数运算(无浮点):
+ *   P(W) = U?/14.06 = U?×100/1406  (R=14.06Ω 用 1406 厘欧表示)
+ *   例如 U=72V → 72?×100/1406 = 518400/1406 ≈ 368W
+ *
+ * 精度: 整数除法每秒截断误差 <1W, 一天(86400s)累积 <24Wh,
+ *       相对每天1~3kWh耗电, 误差 <1%, 远优于 ±5% 要求。
+ */
+void heater_energy_accumulate(void)
+{
+    if (g_state.bits.dc_heating)          /* 仅在直流加热激活时累计 */
+    {
+        uint16_t u = g_input_vol;         /* 当前光伏电压(V) */
+        uint32_t p = (uint32_t)u * u * 100U / HEATER_RESISTANCE_CENTI;  /* 当前功率(W) */
+        g_energy_Ws += p;                 /* 累加瓦秒 */
+    }
+}
+
+/*
+ * heater_get_energy_wh - 获取累计用电量
+ * @return 累计用电量(Wh) = 瓦秒总数 / 3600
+ */
+uint32_t heater_get_energy_wh(void)
+{
+    return g_energy_Ws / 3600U;
 }
 
 /* ==================== 加热控制主处理 ==================== */

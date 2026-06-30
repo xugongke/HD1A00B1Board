@@ -56,24 +56,37 @@ void es1642_on_frame(es1642_handle_t *handle, const es1642_frame_t *frame)
                           }
                           break;
                       case MASTER_CMD_HEATER_ON:
-                          /* 主机命令启动加热: 设置全局命令标志 (不回ACK, 主机异步架构不等响应) */
+                          /* 主机命令启动加热: 设置全局命令标志 + 回复ACK */
                           g_master_cmd = 1;
+                          {
+                              uint8_t reply[3] = {MASTER_CMD_HEATER_ON, 0x01, SLAVE_RESULT_OK};
+                              (void)ES1642_SendData(handle, recv_data.src_addr, reply, 3U, 0U);
+                          }
                           break;
                       case MASTER_CMD_HEATER_OFF:
-                          /* 主机命令停止加热: 清除全局命令标志 (不回ACK, 主机异步架构不等响应) */
+                          /* 主机命令停止加热: 清除全局命令标志 + 回复ACK */
                           g_master_cmd = 0;
+                          {
+                              uint8_t reply[3] = {MASTER_CMD_HEATER_OFF, 0x01, SLAVE_RESULT_OK};
+                              (void)ES1642_SendData(handle, recv_data.src_addr, reply, 3U, 0U);
+                          }
                           break;
                       case MASTER_CMD_READ_STATUS:
-                          /* 主机请求读取从机状态: 打包温度+电压+状态字节回复 */
+                          /* 主机请求读取从机状态: 打包温度+电压+状态+累计用电量(Wh)回复 */
                           {
-                              /* 回复格式: [cmd=0x04][len=0x04][temp][vol_lo][vol_hi][state] */
-                              uint8_t reply[2 + 4];
+                              uint32_t wh = heater_get_energy_wh();
+                              /* 回复格式: [cmd=0x04][len=0x08][temp][vol_lo][vol_hi][state][wh0~wh3] */
+                              uint8_t reply[2 + 8];
                               reply[0] = MASTER_CMD_READ_STATUS;
-                              reply[1] = 0x04;  /* 数据长度: 4字节 */
+                              reply[1] = 0x08;  /* 数据长度: 8字节 */
                               reply[2] = (uint8_t)g_temperature;                    /* 温度 (int8_t) */
                               reply[3] = (uint8_t)(g_input_vol & 0xFF);             /* 电压低字节 */
                               reply[4] = (uint8_t)((g_input_vol >> 8) & 0xFF);      /* 电压高字节 */
                               reply[5] = g_state.byte;                               /* 状态字 */
+                              reply[6] = (uint8_t)(wh & 0xFF);                       /* 累计用电量Wh 低字节 */
+                              reply[7] = (uint8_t)((wh >> 8) & 0xFF);                /* 累计用电量Wh */
+                              reply[8] = (uint8_t)((wh >> 16) & 0xFF);               /* 累计用电量Wh */
+                              reply[9] = (uint8_t)((wh >> 24) & 0xFF);               /* 累计用电量Wh 高字节 */
                               (void)ES1642_SendData(handle, recv_data.src_addr, reply, sizeof(reply), 0U);
                           }
                           break;

@@ -1,5 +1,5 @@
 es1642.pbi: E:\IARSTM8\stm8\inc\c\ycheck.h E:\IARSTM8\stm8\inc\c\ysizet.h \
-  E:\IARSTM8\stm8\inc\c\string.h \
+  E:\IARSTM8\stm8\inc\c\stddef.h \
   F:\Cubemx_Project\STM8XB\stm8s003f3p6_template_led_and_printf\EWSTM8\..\Application\inc\es1642.h \
   E:\IARSTM8\stm8\inc\c\intrinsics.h \
   F:\Cubemx_Project\STM8XB\stm8s003f3p6_template_led_and_printf\EWSTM8\..\Libraries\STM8S_StdPeriph_Driver\inc\stm8s.h \

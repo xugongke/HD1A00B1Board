@@ -51,6 +51,11 @@
 #define RELAY_ACTION_DELAY_MS  150 /* 继电器动作延迟 ms */
 #define MOS_PRE_DELAY_MS       100 /* MOS管预闭合延迟 ms */
 
+/* ==================== 用电量计量配置 ==================== */
+
+/* 加热管固定电阻 14.06Ω，用"厘欧(×100)"表示为整数 1406，避免浮点运算 */
+#define HEATER_RESISTANCE_CENTI   1406
+
 /* ==================== 从机状态字 ==================== */
 
 typedef union {
@@ -128,5 +133,20 @@ void heater_process(void);
  * @param  sec 延时秒数
  */
 void heater_delay_seconds(uint16_t sec);
+
+/* ==================== 用电量计量 ==================== */
+
+/**
+ * @brief  每秒累加一次用电量 (在 TIM4 秒中断中调用)
+ * @note   仅当 dc_heating 有效时累计; 用 P=U?/R 按当前电压分段积分,
+ *         避免长时加热因电压波动导致的累积误差
+ */
+void heater_energy_accumulate(void);
+
+/**
+ * @brief  获取累计用电量
+ * @return 累计用电量 (单位: Wh)
+ */
+uint32_t heater_get_energy_wh(void);
 
 #endif /* __HEATER_CTRL_H */

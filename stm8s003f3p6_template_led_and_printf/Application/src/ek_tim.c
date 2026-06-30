@@ -21,6 +21,8 @@ void ek_soft_timer(void)
     tick_10ms++;        //对毫秒数记录
     if((tick_10ms % ONE_SECOND_TICK) == 0){
        sec_time++;
+       /* 每秒累加一次用电量: 加热中则按当前电压 P=U?/R 分段积分(瓦秒) */
+       heater_energy_accumulate();
     }
      if((tick_10ms % (ONE_SECOND_TICK/4)) == 0)
     {
