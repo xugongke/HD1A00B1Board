@@ -47418,6 +47418,132 @@
     "scope": null
   },
   {
+    "ID": "c:stddef.h@100@macro@_STDDEF",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "_STDDEF",
+    "location": {
+      "column": "9",
+      "line": "4",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stddef.h"
+    },
+    "name": "_STDDEF",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stddef.h@304@macro@NULL",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "NULL",
+    "location": {
+      "column": "11",
+      "line": "18",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stddef.h"
+    },
+    "name": "NULL",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stddef.h@367@macro@offsetof",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "offsetof",
+    "location": {
+      "column": "11",
+      "line": "22",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stddef.h"
+    },
+    "name": "offsetof",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stddef.h@551@macro@_PTRDIFF_T",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "_PTRDIFF_T",
+    "location": {
+      "column": "11",
+      "line": "27",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stddef.h"
+    },
+    "name": "_PTRDIFF_T",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stddef.h@573@macro@_PTRDIFFT",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "_PTRDIFFT",
+    "location": {
+      "column": "11",
+      "line": "28",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stddef.h"
+    },
+    "name": "_PTRDIFFT",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stddef.h@594@macro@_STD_USING_PTRDIFF_T",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "_STD_USING_PTRDIFF_T",
+    "location": {
+      "column": "11",
+      "line": "29",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stddef.h"
+    },
+    "name": "_STD_USING_PTRDIFF_T",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stddef.h@T@ptrdiff_t",
+    "What": "Typedef",
+    "defdec": "Def",
+    "display": "_Ptrdifft",
+    "location": {
+      "column": "21",
+      "line": "30",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stddef.h"
+    },
+    "name": "ptrdiff_t",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stddef.h@735@macro@_WCHART",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "_WCHART",
+    "location": {
+      "column": "11",
+      "line": "34",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stddef.h"
+    },
+    "name": "_WCHART",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stddef.h@T@wchar_t",
+    "What": "Typedef",
+    "defdec": "Def",
+    "display": "_Wchart",
+    "location": {
+      "column": "19",
+      "line": "35",
+      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stddef.h"
+    },
+    "name": "wchar_t",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
     "ID": "c:es1642.h@595@macro@ES1642_H",
     "What": "MacroDef",
     "defdec": "Def",
@@ -50978,7 +51104,7 @@
     "display": "TempTable",
     "location": {
       "column": "23",
-      "line": "48",
+      "line": "44",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\heater_ctrl.c"
     },
     "name": "TempTable",
@@ -50992,7 +51118,7 @@
     "display": "g_temperature",
     "location": {
       "column": "9",
-      "line": "83",
+      "line": "79",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\heater_ctrl.c"
     },
     "name": "g_temperature",
@@ -51006,7 +51132,7 @@
     "display": "g_input_vol",
     "location": {
       "column": "10",
-      "line": "84",
+      "line": "80",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\heater_ctrl.c"
     },
     "name": "g_input_vol",
@@ -51020,7 +51146,7 @@
     "display": "g_master_cmd",
     "location": {
       "column": "10",
-      "line": "85",
+      "line": "81",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\heater_ctrl.c"
     },
     "name": "g_master_cmd",
@@ -51034,7 +51160,7 @@
     "display": "g_state",
     "location": {
       "column": "15",
-      "line": "86",
+      "line": "82",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\heater_ctrl.c"
     },
     "name": "g_state",
@@ -51048,7 +51174,7 @@
     "display": "g_energy_Ws",
     "location": {
       "column": "10",
-      "line": "87",
+      "line": "83",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\heater_ctrl.c"
     },
     "name": "g_energy_Ws",
@@ -51062,7 +51188,7 @@
     "display": "s_abnormal_flag",
     "location": {
       "column": "16",
-      "line": "93",
+      "line": "89",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\heater_ctrl.c"
     },
     "name": "s_abnormal_flag",
@@ -51076,7 +51202,7 @@
     "display": "s_normal_cnt",
     "location": {
       "column": "17",
-      "line": "94",
+      "line": "90",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\heater_ctrl.c"
     },
     "name": "s_normal_cnt",
@@ -51090,7 +51216,7 @@
     "display": "void adc_read_channel(uint16_t *, ADC1_Channel_TypeDef, uint8_t)",
     "location": {
       "column": "13",
-      "line": "98",
+      "line": "94",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\heater_ctrl.c"
     },
     "name": "adc_read_channel",
@@ -51104,7 +51230,7 @@
     "display": "void led_on(void)",
     "location": {
       "column": "13",
-      "line": "99",
+      "line": "95",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\heater_ctrl.c"
     },
     "name": "led_on",
@@ -51118,7 +51244,7 @@
     "display": "void led_off(void)",
     "location": {
       "column": "13",
-      "line": "100",
+      "line": "96",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\heater_ctrl.c"
     },
     "name": "led_off",
@@ -51132,7 +51258,7 @@
     "display": "void led_toggle(void)",
     "location": {
       "column": "13",
-      "line": "101",
+      "line": "97",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\heater_ctrl.c"
     },
     "name": "led_toggle",
@@ -51146,7 +51272,7 @@
     "display": "void heater_ctrl_init(void)",
     "location": {
       "column": "6",
-      "line": "116",
+      "line": "112",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\heater_ctrl.c"
     },
     "name": "heater_ctrl_init",
@@ -51160,7 +51286,7 @@
     "display": "void adc_read_channel(uint16_t *, ADC1_Channel_TypeDef, uint8_t)",
     "location": {
       "column": "13",
-      "line": "137",
+      "line": "133",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\heater_ctrl.c"
     },
     "name": "adc_read_channel",
@@ -51168,13 +51294,13 @@
     "scope": null
   },
   {
-    "ID": "c:heater_ctrl.c@5482@F@adc_read_channel@sum",
+    "ID": "c:heater_ctrl.c@5146@F@adc_read_channel@sum",
     "What": "Variable",
     "defdec": "Def",
     "display": "sum",
     "location": {
       "column": "14",
-      "line": "139",
+      "line": "135",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\heater_ctrl.c"
     },
     "name": "sum",
@@ -51182,13 +51308,13 @@
     "scope": null
   },
   {
-    "ID": "c:heater_ctrl.c@5482@F@adc_read_channel@i",
+    "ID": "c:heater_ctrl.c@5146@F@adc_read_channel@i",
     "What": "Variable",
     "defdec": "Dec",
     "display": "i",
     "location": {
       "column": "23",
-      "line": "139",
+      "line": "135",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\heater_ctrl.c"
     },
     "name": "i",
@@ -51202,7 +51328,7 @@
     "display": "void led_on(void)",
     "location": {
       "column": "13",
-      "line": "165",
+      "line": "161",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\heater_ctrl.c"
     },
     "name": "led_on",
@@ -51216,7 +51342,7 @@
     "display": "void led_off(void)",
     "location": {
       "column": "13",
-      "line": "166",
+      "line": "162",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\heater_ctrl.c"
     },
     "name": "led_off",
@@ -51230,7 +51356,7 @@
     "display": "void led_toggle(void)",
     "location": {
       "column": "13",
-      "line": "167",
+      "line": "163",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\heater_ctrl.c"
     },
     "name": "led_toggle",
@@ -51244,7 +51370,7 @@
     "display": "uint8_t heater_get_relay_state(void)",
     "location": {
       "column": "9",
-      "line": "177",
+      "line": "173",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\heater_ctrl.c"
     },
     "name": "heater_get_relay_state",
@@ -51258,7 +51384,7 @@
     "display": "uint8_t heater_is_power_reverse(void)",
     "location": {
       "column": "9",
-      "line": "187",
+      "line": "183",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\heater_ctrl.c"
     },
     "name": "heater_is_power_reverse",
@@ -51272,7 +51398,7 @@
     "display": "int8_t heater_get_temperature(void)",
     "location": {
       "column": "8",
-      "line": "209",
+      "line": "205",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\heater_ctrl.c"
     },
     "name": "heater_get_temperature",
@@ -51280,13 +51406,13 @@
     "scope": null
   },
   {
-    "ID": "c:heater_ctrl.c@7737@F@heater_get_temperature@i",
+    "ID": "c:heater_ctrl.c@7396@F@heater_get_temperature@i",
     "What": "Variable",
     "defdec": "Def",
     "display": "i",
     "location": {
       "column": "13",
-      "line": "211",
+      "line": "207",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\heater_ctrl.c"
     },
     "name": "i",
@@ -51294,13 +51420,13 @@
     "scope": null
   },
   {
-    "ID": "c:heater_ctrl.c@7737@F@heater_get_temperature@high",
+    "ID": "c:heater_ctrl.c@7396@F@heater_get_temperature@high",
     "What": "Variable",
     "defdec": "Dec",
     "display": "high",
     "location": {
       "column": "16",
-      "line": "211",
+      "line": "207",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\heater_ctrl.c"
     },
     "name": "high",
@@ -51308,13 +51434,13 @@
     "scope": null
   },
   {
-    "ID": "c:heater_ctrl.c@7737@F@heater_get_temperature@low",
+    "ID": "c:heater_ctrl.c@7396@F@heater_get_temperature@low",
     "What": "Variable",
     "defdec": "Dec",
     "display": "low",
     "location": {
       "column": "22",
-      "line": "211",
+      "line": "207",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\heater_ctrl.c"
     },
     "name": "low",
@@ -51322,13 +51448,13 @@
     "scope": null
   },
   {
-    "ID": "c:heater_ctrl.c@7764@F@heater_get_temperature@adc_value",
+    "ID": "c:heater_ctrl.c@7423@F@heater_get_temperature@adc_value",
     "What": "Variable",
     "defdec": "Def",
     "display": "adc_value",
     "location": {
       "column": "14",
-      "line": "212",
+      "line": "208",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\heater_ctrl.c"
     },
     "name": "adc_value",
@@ -51342,7 +51468,7 @@
     "display": "uint8_t heater_get_input_vol(void)",
     "location": {
       "column": "9",
-      "line": "259",
+      "line": "255",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\heater_ctrl.c"
     },
     "name": "heater_get_input_vol",
@@ -51350,13 +51476,13 @@
     "scope": null
   },
   {
-    "ID": "c:heater_ctrl.c@9505@F@heater_get_input_vol@cal",
+    "ID": "c:heater_ctrl.c@9162@F@heater_get_input_vol@cal",
     "What": "Variable",
     "defdec": "Def",
     "display": "cal",
     "location": {
       "column": "14",
-      "line": "261",
+      "line": "257",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\heater_ctrl.c"
     },
     "name": "cal",
@@ -51364,13 +51490,13 @@
     "scope": null
   },
   {
-    "ID": "c:heater_ctrl.c@9524@F@heater_get_input_vol@adc_value",
+    "ID": "c:heater_ctrl.c@9181@F@heater_get_input_vol@adc_value",
     "What": "Variable",
     "defdec": "Def",
     "display": "adc_value",
     "location": {
       "column": "14",
-      "line": "262",
+      "line": "258",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\heater_ctrl.c"
     },
     "name": "adc_value",
@@ -51384,7 +51510,7 @@
     "display": "uint8_t heater_open(void)",
     "location": {
       "column": "9",
-      "line": "295",
+      "line": "291",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\heater_ctrl.c"
     },
     "name": "heater_open",
@@ -51392,13 +51518,13 @@
     "scope": null
   },
   {
-    "ID": "c:heater_ctrl.c@11030@F@heater_open@retry",
+    "ID": "c:heater_ctrl.c@10687@F@heater_open@retry",
     "What": "Variable",
     "defdec": "Def",
     "display": "retry",
     "location": {
       "column": "13",
-      "line": "297",
+      "line": "293",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\heater_ctrl.c"
     },
     "name": "retry",
@@ -51412,7 +51538,7 @@
     "display": "uint8_t heater_close(void)",
     "location": {
       "column": "9",
-      "line": "360",
+      "line": "356",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\heater_ctrl.c"
     },
     "name": "heater_close",
@@ -51420,13 +51546,13 @@
     "scope": null
   },
   {
-    "ID": "c:heater_ctrl.c@13328@F@heater_close@retry",
+    "ID": "c:heater_ctrl.c@12985@F@heater_close@retry",
     "What": "Variable",
     "defdec": "Def",
     "display": "retry",
     "location": {
       "column": "13",
-      "line": "362",
+      "line": "358",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\heater_ctrl.c"
     },
     "name": "retry",
@@ -51440,7 +51566,7 @@
     "display": "void heater_delay_seconds(uint16_t)",
     "location": {
       "column": "6",
-      "line": "411",
+      "line": "407",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\heater_ctrl.c"
     },
     "name": "heater_delay_seconds",
@@ -51454,7 +51580,7 @@
     "display": "void heater_energy_accumulate(void)",
     "location": {
       "column": "6",
-      "line": "440",
+      "line": "436",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\heater_ctrl.c"
     },
     "name": "heater_energy_accumulate",
@@ -51462,13 +51588,13 @@
     "scope": null
   },
   {
-    "ID": "c:heater_ctrl.c@15838@F@heater_energy_accumulate@u",
+    "ID": "c:heater_ctrl.c@15495@F@heater_energy_accumulate@u",
     "What": "Variable",
     "defdec": "Def",
     "display": "u",
     "location": {
       "column": "18",
-      "line": "444",
+      "line": "440",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\heater_ctrl.c"
     },
     "name": "u",
@@ -51476,13 +51602,13 @@
     "scope": null
   },
   {
-    "ID": "c:heater_ctrl.c@15903@F@heater_energy_accumulate@p",
+    "ID": "c:heater_ctrl.c@15560@F@heater_energy_accumulate@p",
     "What": "Variable",
     "defdec": "Def",
     "display": "p",
     "location": {
       "column": "18",
-      "line": "445",
+      "line": "441",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\heater_ctrl.c"
     },
     "name": "p",
@@ -51496,7 +51622,7 @@
     "display": "uint32_t heater_get_energy_wh(void)",
     "location": {
       "column": "10",
-      "line": "454",
+      "line": "450",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\heater_ctrl.c"
     },
     "name": "heater_get_energy_wh",
@@ -51510,7 +51636,7 @@
     "display": "void heater_process(void)",
     "location": {
       "column": "6",
-      "line": "513",
+      "line": "509",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\heater_ctrl.c"
     },
     "name": "heater_process",
@@ -51518,13 +51644,13 @@
     "scope": null
   },
   {
-    "ID": "c:heater_ctrl.c@19440@F@heater_process@i",
+    "ID": "c:heater_ctrl.c@19097@F@heater_process@i",
     "What": "Variable",
     "defdec": "Def",
     "display": "i",
     "location": {
       "column": "13",
-      "line": "515",
+      "line": "511",
       "path": "F:\\Cubemx_Project\\STM8XB\\stm8s003f3p6_template_led_and_printf\\Application\\src\\heater_ctrl.c"
     },
     "name": "i",
@@ -51711,132 +51837,6 @@
     },
     "name": "ES1642_ReadMac",
     "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stddef.h@100@macro@_STDDEF",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "_STDDEF",
-    "location": {
-      "column": "9",
-      "line": "4",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stddef.h"
-    },
-    "name": "_STDDEF",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stddef.h@304@macro@NULL",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "NULL",
-    "location": {
-      "column": "11",
-      "line": "18",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stddef.h"
-    },
-    "name": "NULL",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stddef.h@367@macro@offsetof",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "offsetof",
-    "location": {
-      "column": "11",
-      "line": "22",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stddef.h"
-    },
-    "name": "offsetof",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stddef.h@551@macro@_PTRDIFF_T",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "_PTRDIFF_T",
-    "location": {
-      "column": "11",
-      "line": "27",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stddef.h"
-    },
-    "name": "_PTRDIFF_T",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stddef.h@573@macro@_PTRDIFFT",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "_PTRDIFFT",
-    "location": {
-      "column": "11",
-      "line": "28",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stddef.h"
-    },
-    "name": "_PTRDIFFT",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stddef.h@594@macro@_STD_USING_PTRDIFF_T",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "_STD_USING_PTRDIFF_T",
-    "location": {
-      "column": "11",
-      "line": "29",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stddef.h"
-    },
-    "name": "_STD_USING_PTRDIFF_T",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stddef.h@T@ptrdiff_t",
-    "What": "Typedef",
-    "defdec": "Def",
-    "display": "_Ptrdifft",
-    "location": {
-      "column": "21",
-      "line": "30",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stddef.h"
-    },
-    "name": "ptrdiff_t",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stddef.h@735@macro@_WCHART",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "_WCHART",
-    "location": {
-      "column": "11",
-      "line": "34",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stddef.h"
-    },
-    "name": "_WCHART",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stddef.h@T@wchar_t",
-    "What": "Typedef",
-    "defdec": "Def",
-    "display": "_Wchart",
-    "location": {
-      "column": "19",
-      "line": "35",
-      "path": "E:\\IARSTM8\\stm8\\inc\\c\\stddef.h"
-    },
-    "name": "wchar_t",
-    "origin": "system_include",
     "scope": null
   },
   {

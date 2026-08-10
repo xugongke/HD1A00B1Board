@@ -40,10 +40,6 @@
  * 查找算法: 二分查找, 在TempTable中找到ADC值对应的索引位置
  *
  * 为什么用4°C步长而不是1°C:
-
-
-
-
  */
 static const uint16_t TempTable[141] = {
     /*-20C ~ -11C */
@@ -597,14 +593,9 @@ void heater_process(void)
             /* 如果继电器当前断开, 且电压>VolStart 且 温度安全, 则自主启动加热 */
             if (heater_get_relay_state() == RELAY_STATE_DISCONNECT)
             {//如果电压小于17V，小板直接无法启动，继电器恢复常闭状态，直接启动加热
-                if (g_temperature < TEMP_HIGH_THRESHOLD)
+                if ((g_input_vol > VOL_START_72V) && (g_temperature < TEMP_HIGH_THRESHOLD))
                 {
-                    for (i = 0; i < HEATER_RETRY_MAX; i++)
-                    {
-                        if (heater_open() == 1) { break; }
-                        heater_delay_seconds(120);
-                    }
-                    s_abnormal_flag = (i == HEATER_RETRY_MAX) ? 1 : 0;
+                    heater_open();
                 }
             }
 
